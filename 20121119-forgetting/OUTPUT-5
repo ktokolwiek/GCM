@@ -1,0 +1,961 @@
+
+Reading data...
+
+Reading Participant training data...
+Reading Participant test data...
+
+Fitting SVM to first training session...
+
+Ps: 112103 ScoreTest: 0.520703112513, k: 1, gamma: 0.01
+Ps: 112102 ScoreTest: 0.514618575977, k: 1, gamma: 0.01
+Ps: 112103 ScoreTest: 0.540466833933, k: 2, gamma: 0.01
+Ps: 112106 ScoreTest: 0.52861049975, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.558430463049, k: 1, gamma: 0.01
+Ps: 112101 ScoreTest: 0.500544311189, k: 1, gamma: 0.01
+Ps: 112103 ScoreTest: 0.558653206528, k: 3, gamma: 0.01
+Ps: 112102 ScoreTest: 0.528681629449, k: 2, gamma: 0.01
+Ps: 112104 ScoreTest: 0.506592208777, k: 1, gamma: 0.01
+Ps: 112203 ScoreTest: 0.505967344204, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.606028072974, k: 2, gamma: 0.01
+Ps: 112106 ScoreTest: 0.555216878682, k: 2, gamma: 0.01
+Ps: 112110 ScoreTest: 0.513602110154, k: 1, gamma: 0.01
+Ps: 112107 ScoreTest: 0.502793769752, k: 1, gamma: 0.01
+Ps: 112103 ScoreTest: 0.575008393422, k: 4, gamma: 0.01
+Ps: 112109 ScoreTest: 0.508985468396, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.641301412026, k: 3, gamma: 0.01
+Ps: 112203 ScoreTest: 0.511956886808, k: 2, gamma: 0.01
+Ps: 112105 ScoreTest: 0.499577489594, k: 1, gamma: 0.01
+Ps: 112102 ScoreTest: 0.541803174464, k: 3, gamma: 0.01
+Ps: 112103 ScoreTest: 0.58955853492, k: 5, gamma: 0.01
+Ps: 112108 ScoreTest: 0.501078974396, k: 1, gamma: 0.01
+Ps: 112106 ScoreTest: 0.578710462768, k: 3, gamma: 0.01
+Ps: 112202 ScoreTest: 0.667384376478, k: 4, gamma: 0.01
+Ps: 112104 ScoreTest: 0.513158184045, k: 2, gamma: 0.01
+Ps: 112101 ScoreTest: 0.501087701918, k: 2, gamma: 0.01
+Ps: 112110 ScoreTest: 0.526978577515, k: 2, gamma: 0.01
+Ps: 112203 ScoreTest: 0.517950088952, k: 3, gamma: 0.01
+Ps: 112202 ScoreTest: 0.687372149647, k: 5, gamma: 0.01
+Ps: 112109 ScoreTest: 0.517914389336, k: 2, gamma: 0.01
+Ps: 112106 ScoreTest: 0.598938353804, k: 4, gamma: 0.01
+Ps: 112107 ScoreTest: 0.505580751161, k: 2, gamma: 0.01
+Ps: 112102 ScoreTest: 0.553822455722, k: 4, gamma: 0.01
+Ps: 112203 ScoreTest: 0.52387842577, k: 4, gamma: 0.01
+Ps: 112104 ScoreTest: 0.51967232825, k: 3, gamma: 0.01
+Ps: 112106 ScoreTest: 0.616258642835, k: 5, gamma: 0.01
+Ps: 112110 ScoreTest: 0.539934427142, k: 3, gamma: 0.01
+Ps: 112108 ScoreTest: 0.502156685759, k: 2, gamma: 0.01
+Ps: 112103 ScoreTest: 0.596755610447, k: 2, gamma: 0.02
+Ps: 112109 ScoreTest: 0.526732862878, k: 3, gamma: 0.01
+Ps: 112203 ScoreTest: 0.52964602799, k: 5, gamma: 0.01
+Ps: 112202 ScoreTest: 0.712145072344, k: 3, gamma: 0.02
+Ps: 112101 ScoreTest: 0.501629258249, k: 3, gamma: 0.01
+Ps: 112102 ScoreTest: 0.564752144069, k: 5, gamma: 0.01
+Ps: 112107 ScoreTest: 0.508354379305, k: 3, gamma: 0.01
+Ps: 112202 ScoreTest: 0.734355206335, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.552325707673, k: 4, gamma: 0.01
+Ps: 112103 ScoreTest: 0.623730467944, k: 3, gamma: 0.02Ps: 112104 ScoreTest: 0.526110278206, k: 4, gamma: 0.01
+
+Ps: 112202 ScoreTest: 0.75136339932, k: 5, gamma: 0.02
+Ps: 112109 ScoreTest: 0.535391972486, k: 4, gamma: 0.01
+Ps: 112108 ScoreTest: 0.503231883324, k: 3, gamma: 0.01
+Ps: 112203 ScoreTest: 0.532125475779, k: 2, gamma: 0.02
+Ps: 112103 ScoreTest: 0.642662157794, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.564065217663, k: 5, gamma: 0.01
+Ps: 112106 ScoreTest: 0.640178959564, k: 3, gamma: 0.02Ps: 112107 ScoreTest: 0.511108518468, k: 4, gamma: 0.01
+
+Ps: 112104 ScoreTest: 0.532449432492, k: 5, gamma: 0.01Ps: 112101 ScoreTest: 0.502168079189, k: 4, gamma: 0.01
+
+Ps: 112109 ScoreTest: 0.543849564064, k: 5, gamma: 0.01
+Ps: 112203 ScoreTest: 0.542532078814, k: 3, gamma: 0.02
+Ps: 112106 ScoreTest: 0.661687261819, k: 4, gamma: 0.02Ps: 112103 ScoreTest: 0.656901404715, k: 5, gamma: 0.02
+Ps: 112102 ScoreTest: 0.570057305098, k: 2, gamma: 0.02
+
+Ps: 112202 ScoreTest: 0.762178736435, k: 4, gamma: 0.03
+Ps: 112203 ScoreTest: 0.550533168635, k: 4, gamma: 0.02
+Ps: 112107 ScoreTest: 0.51383763495, k: 5, gamma: 0.01
+Ps: 112106 ScoreTest: 0.679026058765, k: 5, gamma: 0.02
+Ps: 112108 ScoreTest: 0.504303340609, k: 4, gamma: 0.01Ps: 112202 ScoreTest: 0.779475243043, k: 5, gamma: 0.03
+
+Ps: 112102 ScoreTest: 0.589774286616, k: 3, gamma: 0.02
+Ps: 112101 ScoreTest: 0.502703282916, k: 5, gamma: 0.01
+Ps: 112203 ScoreTest: 0.557174755232, k: 5, gamma: 0.02
+Ps: 112102 ScoreTest: 0.605220754986, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.578434159934, k: 3, gamma: 0.02
+Ps: 112108 ScoreTest: 0.505369866921, k: 5, gamma: 0.01
+Ps: 112109 ScoreTest: 0.547508454912, k: 3, gamma: 0.02
+Ps: 112202 ScoreTest: 0.797084995249, k: 5, gamma: 0.04
+Ps: 112104 ScoreTest: 0.536150447765, k: 3, gamma: 0.02
+Ps: 112102 ScoreTest: 0.618164944696, k: 5, gamma: 0.02
+Ps: 112110 ScoreTest: 0.597485461322, k: 4, gamma: 0.02
+Ps: 112106 ScoreTest: 0.688562919577, k: 4, gamma: 0.03
+Ps: 112103 ScoreTest: 0.66958207052, k: 4, gamma: 0.03
+Ps: 112109 ScoreTest: 0.56197134662, k: 4, gamma: 0.02
+Ps: 112203 ScoreTest: 0.563635445834, k: 4, gamma: 0.03
+Ps: 112106 ScoreTest: 0.706582184239, k: 5, gamma: 0.03
+Ps: 112104 ScoreTest: 0.547396109369, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.613763128193, k: 5, gamma: 0.02
+Ps: 112103 ScoreTest: 0.681937949357, k: 5, gamma: 0.03
+Ps: 112203 ScoreTest: 0.570523436228, k: 5, gamma: 0.03Ps: 112107 ScoreTest: 0.515225901363, k: 3, gamma: 0.02
+
+Ps: 112109 ScoreTest: 0.575475147616, k: 5, gamma: 0.02
+Ps: 112202 ScoreTest: 0.809759947576, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112202.
+Ps: 112104 ScoreTest: 0.558037676021, k: 5, gamma: 0.02
+Ps: 112204 ScoreTest: 0.593352799942, k: 1, gamma: 0.01
+Ps: 112204 ScoreTest: 0.651666665308, k: 2, gamma: 0.01
+Ps: 112204 ScoreTest: 0.688202026542, k: 3, gamma: 0.01
+Ps: 112107 ScoreTest: 0.520118831826, k: 4, gamma: 0.02
+Ps: 112204 ScoreTest: 0.713762650085, k: 4, gamma: 0.01
+Ps: 112204 ScoreTest: 0.733244880529, k: 5, gamma: 0.01
+Ps: 112203 ScoreTest: 0.570974076153, k: 4, gamma: 0.04
+Ps: 112102 ScoreTest: 0.629351784587, k: 4, gamma: 0.03
+Ps: 112108 ScoreTest: 0.507712959358, k: 3, gamma: 0.02
+Ps: 112204 ScoreTest: 0.765335457278, k: 3, gamma: 0.02
+Ps: 112103 ScoreTest: 0.683597627034, k: 4, gamma: 0.04
+Ps: 112106 ScoreTest: 0.723217870845, k: 5, gamma: 0.04
+Ps: 112204 ScoreTest: 0.788113164183, k: 4, gamma: 0.02
+Ps: 112203 ScoreTest: 0.57826701502, k: 5, gamma: 0.04
+Ps: 112110 ScoreTest: 0.621734429353, k: 4, gamma: 0.03
+Ps: 112107 ScoreTest: 0.524876669247, k: 5, gamma: 0.02
+Ps: 112204 ScoreTest: 0.803964470112, k: 5, gamma: 0.02
+Ps: 112102 ScoreTest: 0.642763406227, k: 5, gamma: 0.03
+Ps: 112103 ScoreTest: 0.695154586688, k: 5, gamma: 0.04
+Ps: 112110 ScoreTest: 0.639267656059, k: 5, gamma: 0.03
+Ps: 112108 ScoreTest: 0.510113980891, k: 4, gamma: 0.02
+Ps: 112109 ScoreTest: 0.578163001448, k: 4, gamma: 0.03
+Ps: 112204 ScoreTest: 0.804196081226, k: 3, gamma: 0.03
+Ps: 112204 ScoreTest: 0.824243271634, k: 4, gamma: 0.03
+Ps: 112109 ScoreTest: 0.594031534894, k: 5, gamma: 0.03
+Ps: 112104 ScoreTest: 0.561145465134, k: 4, gamma: 0.03
+Ps: 112204 ScoreTest: 0.837309132453, k: 5, gamma: 0.03
+Ps: 112108 ScoreTest: 0.512385944597, k: 5, gamma: 0.02
+Ps: 112104 ScoreTest: 0.573915352409, k: 5, gamma: 0.03
+Ps: 112204 ScoreTest: 0.845515412726, k: 4, gamma: 0.04
+Ps: 112106 ScoreTest: 0.73482884657, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112106.
+Ps: 112204 ScoreTest: 0.856763320298, k: 5, gamma: 0.04
+Ps: 112203 ScoreTest: 0.584513195827, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112203.
+Ps: 112205 ScoreTest: 0.565909308267, k: 1, gamma: 0.01
+Ps: 112206 ScoreTest: 0.610730346427, k: 1, gamma: 0.01
+Ps: 112205 ScoreTest: 0.615747348308, k: 2, gamma: 0.01
+Ps: 112206 ScoreTest: 0.676078478877, k: 2, gamma: 0.01
+Ps: 112102 ScoreTest: 0.644114125781, k: 4, gamma: 0.04
+Ps: 112206 ScoreTest: 0.715983548626, k: 3, gamma: 0.01
+Ps: 112205 ScoreTest: 0.650089823858, k: 3, gamma: 0.01
+Ps: 112206 ScoreTest: 0.744362620316, k: 4, gamma: 0.01
+Ps: 112204 ScoreTest: 0.859556819433, k: 4, gamma: 0.05
+Ps: 112107 ScoreTest: 0.527225933891, k: 4, gamma: 0.03
+Ps: 112206 ScoreTest: 0.766666830287, k: 5, gamma: 0.01
+Ps: 112205 ScoreTest: 0.674466187289, k: 4, gamma: 0.01
+Ps: 112204 ScoreTest: 0.869645645516, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112204.
+Ps: 112103 ScoreTest: 0.703452389045, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112103.
+Ps: 112205 ScoreTest: 0.692841190701, k: 5, gamma: 0.01
+Ps: 112102 ScoreTest: 0.65784419412, k: 5, gamma: 0.04
+Ps: 112206 ScoreTest: 0.788262303548, k: 3, gamma: 0.02
+Ps: 112208 ScoreTest: 0.605172117386, k: 1, gamma: 0.01
+Ps: 112207 ScoreTest: 0.581909130299, k: 1, gamma: 0.01
+Ps: 112206 ScoreTest: 0.813684560417, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.656168888386, k: 5, gamma: 0.04
+Ps: 112208 ScoreTest: 0.665374303914, k: 2, gamma: 0.01
+Ps: 112206 ScoreTest: 0.833088526001, k: 5, gamma: 0.02
+Ps: 112207 ScoreTest: 0.633155736309, k: 2, gamma: 0.01
+Ps: 112107 ScoreTest: 0.533496589634, k: 5, gamma: 0.03
+Ps: 112208 ScoreTest: 0.700572535807, k: 3, gamma: 0.01
+Ps: 112208 ScoreTest: 0.724576297135, k: 4, gamma: 0.01
+Ps: 112207 ScoreTest: 0.664229156503, k: 3, gamma: 0.01
+Ps: 112205 ScoreTest: 0.721345978629, k: 3, gamma: 0.02
+Ps: 112208 ScoreTest: 0.742984522323, k: 5, gamma: 0.01
+Ps: 112206 ScoreTest: 0.843658920909, k: 4, gamma: 0.03
+Ps: 112207 ScoreTest: 0.685416631034, k: 4, gamma: 0.01
+Ps: 112109 ScoreTest: 0.607996855936, k: 5, gamma: 0.04
+Ps: 112206 ScoreTest: 0.862165432741, k: 5, gamma: 0.03
+Ps: 112205 ScoreTest: 0.743334179638, k: 4, gamma: 0.02
+Ps: 112207 ScoreTest: 0.701370575375, k: 5, gamma: 0.01
+Ps: 112208 ScoreTest: 0.747686625491, k: 2, gamma: 0.02
+Ps: 112205 ScoreTest: 0.759791228551, k: 5, gamma: 0.02
+Ps: 112208 ScoreTest: 0.77874595892, k: 3, gamma: 0.02
+Ps: 112208 ScoreTest: 0.798832378957, k: 4, gamma: 0.02
+Ps: 112206 ScoreTest: 0.878324208506, k: 5, gamma: 0.04
+Ps: 112207 ScoreTest: 0.715175245116, k: 2, gamma: 0.02
+Ps: 112208 ScoreTest: 0.813897755602, k: 5, gamma: 0.02
+Ps: 112207 ScoreTest: 0.739832159056, k: 3, gamma: 0.02
+Ps: 112104 ScoreTest: 0.585014662318, k: 5, gamma: 0.04
+Ps: 112207 ScoreTest: 0.75689704407, k: 4, gamma: 0.02
+Ps: 112206 ScoreTest: 0.889913667425, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112206.
+Ps: 112205 ScoreTest: 0.774871871517, k: 4, gamma: 0.03
+Ps: 112208 ScoreTest: 0.82811242093, k: 4, gamma: 0.03
+Ps: 112207 ScoreTest: 0.770027555924, k: 5, gamma: 0.02
+Ps: 112108 ScoreTest: 0.515308878991, k: 4, gamma: 0.03
+Ps: 112209 ScoreTest: 0.623097753939, k: 1, gamma: 0.01
+Ps: 112208 ScoreTest: 0.841774509923, k: 5, gamma: 0.03
+Ps: 112205 ScoreTest: 0.791960175867, k: 5, gamma: 0.03
+Ps: 112209 ScoreTest: 0.675170967032, k: 2, gamma: 0.01
+Ps: 112209 ScoreTest: 0.703831599403, k: 3, gamma: 0.01
+Ps: 112209 ScoreTest: 0.724183293725, k: 4, gamma: 0.01
+Ps: 112102 ScoreTest: 0.668709712365, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112102.
+Ps: 112208 ScoreTest: 0.845356022371, k: 4, gamma: 0.04
+Ps: 112110 ScoreTest: 0.667202178016, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112110.
+Ps: 112209 ScoreTest: 0.74039206031, k: 5, gamma: 0.01
+Ps: 112208 ScoreTest: 0.858219548757, k: 5, gamma: 0.04
+Ps: 112207 ScoreTest: 0.785530902404, k: 4, gamma: 0.03
+Ps: 112108 ScoreTest: 0.518041187104, k: 5, gamma: 0.03
+Ps: 112210 ScoreTest: 0.541297121823, k: 1, gamma: 0.01
+Ps: 112211 ScoreTest: 0.539240878434, k: 1, gamma: 0.01
+Ps: 112205 ScoreTest: 0.792547018446, k: 4, gamma: 0.04
+Ps: 112209 ScoreTest: 0.759045649503, k: 2, gamma: 0.02
+Ps: 112207 ScoreTest: 0.79799956805, k: 5, gamma: 0.03
+Ps: 112210 ScoreTest: 0.578675601947, k: 2, gamma: 0.01
+Ps: 112209 ScoreTest: 0.780338974157, k: 3, gamma: 0.02
+Ps: 112211 ScoreTest: 0.575212069834, k: 2, gamma: 0.01Ps: 112205 ScoreTest: 0.810016254535, k: 5, gamma: 0.04
+
+Ps: 112209 ScoreTest: 0.795145910086, k: 4, gamma: 0.02
+Ps: 112210 ScoreTest: 0.610339886929, k: 3, gamma: 0.01
+Ps: 112109 ScoreTest: 0.619001140844, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112109.
+Ps: 112211 ScoreTest: 0.606225445997, k: 3, gamma: 0.01
+Ps: 112209 ScoreTest: 0.806669835505, k: 5, gamma: 0.02
+Ps: 112208 ScoreTest: 0.870034144244, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112208.
+Ps: 112210 ScoreTest: 0.636444234275, k: 4, gamma: 0.01
+Ps: 112107 ScoreTest: 0.540196429035, k: 5, gamma: 0.04
+Ps: 112211 ScoreTest: 0.63217983813, k: 4, gamma: 0.01
+Ps: 112210 ScoreTest: 0.657940471198, k: 5, gamma: 0.01
+Ps: 112207 ScoreTest: 0.801863524414, k: 4, gamma: 0.04
+Ps: 112211 ScoreTest: 0.653745663582, k: 5, gamma: 0.01
+Ps: 112209 ScoreTest: 0.813020265718, k: 3, gamma: 0.03
+Ps: 112209 ScoreTest: 0.826043355158, k: 4, gamma: 0.03
+Ps: 112207 ScoreTest: 0.814125693918, k: 5, gamma: 0.04
+Ps: 122101 ScoreTest: 0.501504859693, k: 1, gamma: 0.01
+Ps: 112209 ScoreTest: 0.836074880373, k: 5, gamma: 0.03
+Ps: 122102 ScoreTest: 0.504628081297, k: 1, gamma: 0.01
+Ps: 112205 ScoreTest: 0.822878460546, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112205.
+Ps: 112210 ScoreTest: 0.673092898125, k: 3, gamma: 0.02
+Ps: 112104 ScoreTest: 0.593461950701, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112104.
+Ps: 112211 ScoreTest: 0.664588323625, k: 3, gamma: 0.02
+Ps: 112210 ScoreTest: 0.7022289395, k: 4, gamma: 0.02
+Ps: 112211 ScoreTest: 0.695562483154, k: 4, gamma: 0.02
+Ps: 112209 ScoreTest: 0.843657008837, k: 4, gamma: 0.04
+Ps: 122101 ScoreTest: 0.503002466497, k: 2, gamma: 0.01
+Ps: 112210 ScoreTest: 0.724521795686, k: 5, gamma: 0.02
+Ps: 122102 ScoreTest: 0.509248863162, k: 2, gamma: 0.01
+Ps: 112209 ScoreTest: 0.853025218939, k: 5, gamma: 0.04
+Ps: 112211 ScoreTest: 0.719277666129, k: 5, gamma: 0.02
+Ps: 112207 ScoreTest: 0.824722597612, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112207.
+Ps: 122103 ScoreTest: 0.498842193592, k: 1, gamma: 0.01
+Ps: 122104 ScoreTest: 0.50209393347, k: 1, gamma: 0.01
+Ps: 122101 ScoreTest: 0.504485876222, k: 3, gamma: 0.01
+Ps: 112209 ScoreTest: 0.854678272678, k: 4, gamma: 0.05
+Ps: 122102 ScoreTest: 0.513855111984, k: 3, gamma: 0.01
+Ps: 112209 ScoreTest: 0.863714100986, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112209.
+Ps: 122105 ScoreTest: 0.507129310382, k: 1, gamma: 0.01
+Ps: 112210 ScoreTest: 0.7319518106, k: 4, gamma: 0.03
+Ps: 112211 ScoreTest: 0.727230559171, k: 4, gamma: 0.03
+Ps: 112210 ScoreTest: 0.754385436427, k: 5, gamma: 0.03
+Ps: 112211 ScoreTest: 0.751139276528, k: 5, gamma: 0.03
+Ps: 122101 ScoreTest: 0.505948736204, k: 4, gamma: 0.01
+Ps: 122104 ScoreTest: 0.504186574369, k: 2, gamma: 0.01Ps: 112108 ScoreTest: 0.518531739693, k: 4, gamma: 0.04
+
+Ps: 122105 ScoreTest: 0.514223699946, k: 2, gamma: 0.01
+Ps: 122102 ScoreTest: 0.518439724311, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.501811007228, k: 1, gamma: 0.01
+Ps: 122105 ScoreTest: 0.521249212553, k: 3, gamma: 0.01
+Ps: 122101 ScoreTest: 0.507385520002, k: 5, gamma: 0.01
+Ps: 112107 ScoreTest: 0.545693755415, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112107.
+Ps: 122102 ScoreTest: 0.522995788283, k: 5, gamma: 0.01
+Ps: 112210 ScoreTest: 0.773500965269, k: 5, gamma: 0.04
+Ps: 112108 ScoreTest: 0.521053391205, k: 5, gamma: 0.04
+Ps: 122104 ScoreTest: 0.506276634811, k: 3, gamma: 0.01
+Ps: 112211 ScoreTest: 0.770284084369, k: 5, gamma: 0.04
+Ps: 122105 ScoreTest: 0.528173756889, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.503621381321, k: 2, gamma: 0.01
+Ps: 122107 ScoreTest: 0.516280722831, k: 1, gamma: 0.01
+Ps: 122107 ScoreTest: 0.532307468368, k: 2, gamma: 0.01
+Ps: 122105 ScoreTest: 0.534967885396, k: 5, gamma: 0.01
+Ps: 122104 ScoreTest: 0.508362836234, k: 4, gamma: 0.01
+Ps: 112210 ScoreTest: 0.787055591333, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112210.
+Ps: 122107 ScoreTest: 0.547853425901, k: 3, gamma: 0.01
+Ps: 122106 ScoreTest: 0.505430488072, k: 3, gamma: 0.01
+Ps: 122101 ScoreTest: 0.507648106798, k: 2, gamma: 0.02
+Ps: 112211 ScoreTest: 0.784403353009, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112211.
+Ps: 122107 ScoreTest: 0.562739004263, k: 4, gamma: 0.01
+Ps: 122102 ScoreTest: 0.523741135361, k: 2, gamma: 0.02
+Ps: 122104 ScoreTest: 0.510443913963, k: 5, gamma: 0.01
+Ps: 122108 ScoreTest: 0.503724664332, k: 1, gamma: 0.01
+Ps: 122107 ScoreTest: 0.576840979283, k: 5, gamma: 0.01
+Ps: 122101 ScoreTest: 0.511097633549, k: 3, gamma: 0.02
+Ps: 122106 ScoreTest: 0.507237691233, k: 4, gamma: 0.01
+Ps: 122110 ScoreTest: 0.507804617985, k: 1, gamma: 0.01
+Ps: 122102 ScoreTest: 0.535106089936, k: 3, gamma: 0.02
+Ps: 122108 ScoreTest: 0.507444279311, k: 2, gamma: 0.01
+Writing to disk. Predictions for Ps 112101.
+Ps: 122101 ScoreTest: 0.514192519992, k: 4, gamma: 0.02
+Ps: 122105 ScoreTest: 0.535697341801, k: 3, gamma: 0.02Ps: 122110 ScoreTest: 0.515418845066, k: 2, gamma: 0.01
+
+Writing to disk. Predictions for Ps 112105.
+Ps: 122106 ScoreTest: 0.509042351747, k: 5, gamma: 0.01
+Ps: 122102 ScoreTest: 0.545920768848, k: 4, gamma: 0.02
+Ps: 122202 ScoreTest: 0.538834628383, k: 1, gamma: 0.01
+Ps: 122107 ScoreTest: 0.594127464973, k: 3, gamma: 0.02
+Ps: 122201 ScoreTest: 0.512262288331, k: 1, gamma: 0.01
+Ps: 112108 ScoreTest: 0.522065133182, k: 4, gamma: 0.05
+Ps: 122108 ScoreTest: 0.511153899196, k: 3, gamma: 0.01
+Ps: 122105 ScoreTest: 0.546913703491, k: 4, gamma: 0.02
+Ps: 122110 ScoreTest: 0.522681433006, k: 3, gamma: 0.01
+Ps: 122202 ScoreTest: 0.573293237717, k: 2, gamma: 0.01
+Ps: 122101 ScoreTest: 0.516927534683, k: 5, gamma: 0.02
+Ps: 122107 ScoreTest: 0.617186929975, k: 4, gamma: 0.02
+Ps: 122201 ScoreTest: 0.524379485692, k: 2, gamma: 0.01
+Ps: 122202 ScoreTest: 0.60174685218, k: 3, gamma: 0.01
+Ps: 122102 ScoreTest: 0.556081899177, k: 5, gamma: 0.02
+Ps: 122105 ScoreTest: 0.557602051995, k: 5, gamma: 0.02
+Ps: 122107 ScoreTest: 0.636442630366, k: 5, gamma: 0.02
+Ps: 122108 ScoreTest: 0.514848775448, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.624751383621, k: 4, gamma: 0.01
+Ps: 122110 ScoreTest: 0.52947881353, k: 4, gamma: 0.01
+Ps: 122201 ScoreTest: 0.536218605313, k: 3, gamma: 0.01
+Ps: 112108 ScoreTest: 0.524655058589, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112108.
+Ps: 122202 ScoreTest: 0.643498902559, k: 5, gamma: 0.01
+Ps: 122203 ScoreTest: 0.555017139024, k: 1, gamma: 0.01
+Ps: 122201 ScoreTest: 0.54766829009, k: 4, gamma: 0.01
+Ps: 122108 ScoreTest: 0.518524431991, k: 5, gamma: 0.01Ps: 122110 ScoreTest: 0.535748987953, k: 5, gamma: 0.01
+
+Ps: 122203 ScoreTest: 0.597356811033, k: 2, gamma: 0.01
+Ps: 122203 ScoreTest: 0.627764993574, k: 3, gamma: 0.01
+Ps: 122201 ScoreTest: 0.558644174075, k: 5, gamma: 0.01
+Ps: 122202 ScoreTest: 0.666897913796, k: 3, gamma: 0.02
+Ps: 122203 ScoreTest: 0.650413246717, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.689616529867, k: 4, gamma: 0.02
+Ps: 122203 ScoreTest: 0.668159841999, k: 5, gamma: 0.01
+Ps: 122106 ScoreTest: 0.509328965582, k: 3, gamma: 0.02
+Ps: 122107 ScoreTest: 0.642950440875, k: 4, gamma: 0.03
+Ps: 122202 ScoreTest: 0.706937766454, k: 5, gamma: 0.02
+Ps: 122104 ScoreTest: 0.513247899092, k: 4, gamma: 0.02
+Ps: 122101 ScoreTest: 0.517062167591, k: 3, gamma: 0.03
+Ps: 122110 ScoreTest: 0.541923659056, k: 2, gamma: 0.02
+Ps: 122107 ScoreTest: 0.663085224388, k: 5, gamma: 0.03
+Ps: 122203 ScoreTest: 0.691382401628, k: 3, gamma: 0.02
+Ps: 122201 ScoreTest: 0.564153808571, k: 3, gamma: 0.02
+Ps: 122106 ScoreTest: 0.512413491077, k: 4, gamma: 0.02
+Ps: 122203 ScoreTest: 0.715226193996, k: 4, gamma: 0.02
+Ps: 122101 ScoreTest: 0.521262803787, k: 4, gamma: 0.03
+Ps: 122110 ScoreTest: 0.554103468232, k: 3, gamma: 0.02Ps: 122104 ScoreTest: 0.516480695006, k: 5, gamma: 0.02
+
+Ps: 122203 ScoreTest: 0.733255675592, k: 5, gamma: 0.02
+Ps: 122202 ScoreTest: 0.71711154644, k: 4, gamma: 0.03
+Ps: 122108 ScoreTest: 0.519936925473, k: 3, gamma: 0.02
+Ps: 122201 ScoreTest: 0.58188482469, k: 4, gamma: 0.02
+Ps: 122105 ScoreTest: 0.569859037879, k: 5, gamma: 0.03
+Ps: 122202 ScoreTest: 0.733694488303, k: 5, gamma: 0.03
+Ps: 122102 ScoreTest: 0.564990344669, k: 4, gamma: 0.03
+Ps: 122110 ScoreTest: 0.5629414468, k: 4, gamma: 0.02
+Ps: 122101 ScoreTest: 0.524760562735, k: 5, gamma: 0.03Ps: 122201 ScoreTest: 0.597572507525, k: 5, gamma: 0.02
+Ps: 122106 ScoreTest: 0.515476926506, k: 5, gamma: 0.02
+
+Ps: 122108 ScoreTest: 0.526432946368, k: 4, gamma: 0.02
+Ps: 122203 ScoreTest: 0.745017686974, k: 4, gamma: 0.03
+Ps: 122102 ScoreTest: 0.577798668321, k: 5, gamma: 0.03
+Ps: 122110 ScoreTest: 0.569741810812, k: 5, gamma: 0.02
+Ps: 122203 ScoreTest: 0.763400748914, k: 5, gamma: 0.03
+Ps: 122107 ScoreTest: 0.679644205517, k: 5, gamma: 0.04
+Ps: 122108 ScoreTest: 0.532822955222, k: 5, gamma: 0.02
+Ps: 122202 ScoreTest: 0.748356618455, k: 5, gamma: 0.04
+Ps: 122203 ScoreTest: 0.781704148687, k: 5, gamma: 0.04
+Ps: 122201 ScoreTest: 0.60155675349, k: 4, gamma: 0.03
+Ps: 122201 ScoreTest: 0.618381110915, k: 5, gamma: 0.03
+Ps: 122202 ScoreTest: 0.758957779788, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122202.
+Ps: 122110 ScoreTest: 0.570486599447, k: 3, gamma: 0.03
+Ps: 122105 ScoreTest: 0.577991425789, k: 5, gamma: 0.04
+Ps: 122204 ScoreTest: 0.53368540667, k: 1, gamma: 0.01
+Ps: 122107 ScoreTest: 0.690836543557, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122107.
+Ps: 122204 ScoreTest: 0.563704586265, k: 2, gamma: 0.01
+Ps: 122203 ScoreTest: 0.794496488242, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122203.
+Ps: 122101 ScoreTest: 0.528077877535, k: 4, gamma: 0.04
+Ps: 122110 ScoreTest: 0.578076265389, k: 4, gamma: 0.03
+Ps: 122205 ScoreTest: 0.581835319212, k: 1, gamma: 0.01
+Ps: 122204 ScoreTest: 0.588956636373, k: 3, gamma: 0.01
+Ps: 122206 ScoreTest: 0.569669747447, k: 1, gamma: 0.01
+Ps: 122205 ScoreTest: 0.637716481793, k: 2, gamma: 0.01
+Ps: 122204 ScoreTest: 0.609967904504, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.516665322933, k: 4, gamma: 0.03
+Ps: 122206 ScoreTest: 0.609373563936, k: 2, gamma: 0.01
+Ps: 122205 ScoreTest: 0.672883402107, k: 3, gamma: 0.01
+Ps: 122102 ScoreTest: 0.581447640736, k: 4, gamma: 0.04
+Ps: 122108 ScoreTest: 0.535138608695, k: 4, gamma: 0.03
+Ps: 122205 ScoreTest: 0.697009356004, k: 4, gamma: 0.01Ps: 122110 ScoreTest: 0.583811033135, k: 5, gamma: 0.03
+
+Ps: 122204 ScoreTest: 0.62758103159, k: 5, gamma: 0.01
+Ps: 122206 ScoreTest: 0.636222956187, k: 3, gamma: 0.01
+Ps: 122101 ScoreTest: 0.53220240023, k: 5, gamma: 0.04
+Ps: 122205 ScoreTest: 0.715261365083, k: 5, gamma: 0.01
+Ps: 122206 ScoreTest: 0.657629516152, k: 4, gamma: 0.01
+Ps: 122104 ScoreTest: 0.517537294262, k: 5, gamma: 0.03
+Ps: 122206 ScoreTest: 0.67585116625, k: 5, gamma: 0.01
+Ps: 122108 ScoreTest: 0.543466033859, k: 5, gamma: 0.03
+Ps: 122102 ScoreTest: 0.595432295352, k: 5, gamma: 0.04
+Ps: 122106 ScoreTest: 0.520702240878, k: 5, gamma: 0.03
+Ps: 122201 ScoreTest: 0.631495615093, k: 5, gamma: 0.04
+Ps: 122205 ScoreTest: 0.742790927146, k: 3, gamma: 0.02
+Ps: 122204 ScoreTest: 0.648453111191, k: 3, gamma: 0.02
+Ps: 122205 ScoreTest: 0.763521316193, k: 4, gamma: 0.02
+Ps: 122204 ScoreTest: 0.669595049386, k: 4, gamma: 0.02
+Ps: 122206 ScoreTest: 0.695561800627, k: 3, gamma: 0.02
+Ps: 122205 ScoreTest: 0.779292345638, k: 5, gamma: 0.02
+Ps: 122204 ScoreTest: 0.686123358482, k: 5, gamma: 0.02
+Ps: 122206 ScoreTest: 0.719315719257, k: 4, gamma: 0.02
+Ps: 122206 ScoreTest: 0.738797009512, k: 5, gamma: 0.02
+Ps: 122205 ScoreTest: 0.791402332427, k: 4, gamma: 0.03
+Ps: 122105 ScoreTest: 0.584952116524, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122105.
+Ps: 122205 ScoreTest: 0.806962795198, k: 5, gamma: 0.03
+Ps: 122204 ScoreTest: 0.694825564356, k: 4, gamma: 0.03
+Ps: 122207 ScoreTest: 0.533296737275, k: 1, gamma: 0.01
+Ps: 122206 ScoreTest: 0.74879739567, k: 4, gamma: 0.03
+Ps: 122204 ScoreTest: 0.710628712671, k: 5, gamma: 0.03
+Ps: 122110 ScoreTest: 0.586248552595, k: 4, gamma: 0.04
+Ps: 122206 ScoreTest: 0.769034830891, k: 5, gamma: 0.03
+Ps: 122207 ScoreTest: 0.562043677365, k: 2, gamma: 0.01
+Ps: 122205 ScoreTest: 0.808412451343, k: 4, gamma: 0.04
+Ps: 122205 ScoreTest: 0.824089562176, k: 5, gamma: 0.04
+Ps: 122207 ScoreTest: 0.585352799284, k: 3, gamma: 0.01
+Ps: 122201 ScoreTest: 0.640772493483, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122201.
+Ps: 122101 ScoreTest: 0.532841862285, k: 4, gamma: 0.05
+Ps: 122110 ScoreTest: 0.591247864891, k: 5, gamma: 0.04
+Ps: 122207 ScoreTest: 0.604386552445, k: 4, gamma: 0.01
+Ps: 122208 ScoreTest: 0.543249520226, k: 1, gamma: 0.01
+Ps: 122207 ScoreTest: 0.620397590827, k: 5, gamma: 0.01
+Ps: 122208 ScoreTest: 0.580880316807, k: 2, gamma: 0.01
+Ps: 122206 ScoreTest: 0.789793304448, k: 5, gamma: 0.04
+Ps: 122204 ScoreTest: 0.725083302245, k: 5, gamma: 0.04
+Ps: 122108 ScoreTest: 0.551312782109, k: 5, gamma: 0.04
+Ps: 122101 ScoreTest: 0.537470183498, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122101.
+Ps: 122205 ScoreTest: 0.835757758966, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122205.
+Ps: 122208 ScoreTest: 0.611341106461, k: 3, gamma: 0.01
+Ps: 122208 ScoreTest: 0.635728546347, k: 4, gamma: 0.01
+Ps: 122210 ScoreTest: 0.571218554253, k: 1, gamma: 0.01
+Ps: 122209 ScoreTest: 0.528572338124, k: 1, gamma: 0.01
+Ps: 122208 ScoreTest: 0.655567258784, k: 5, gamma: 0.01
+Ps: 122102 ScoreTest: 0.606035450967, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122102.
+Ps: 122210 ScoreTest: 0.617079386763, k: 2, gamma: 0.01
+Ps: 122207 ScoreTest: 0.632582783598, k: 3, gamma: 0.02
+Ps: 122209 ScoreTest: 0.555791758295, k: 2, gamma: 0.01
+Ps: 122210 ScoreTest: 0.648555200982, k: 3, gamma: 0.01
+Ps: 122206 ScoreTest: 0.80408377006, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122206.
+Ps: 122209 ScoreTest: 0.580765153353, k: 3, gamma: 0.01
+Ps: 122207 ScoreTest: 0.654155924125, k: 4, gamma: 0.02
+Ps: 122204 ScoreTest: 0.735712470485, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122204.
+Ps: 122210 ScoreTest: 0.672383476729, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.525055588557, k: 5, gamma: 0.04
+Ps: 122209 ScoreTest: 0.603139593138, k: 4, gamma: 0.01
+Ps: 122207 ScoreTest: 0.672110049218, k: 5, gamma: 0.02
+Ps: 122210 ScoreTest: 0.691251097953, k: 5, gamma: 0.01
+Ps: 122208 ScoreTest: 0.674206426818, k: 3, gamma: 0.02
+Ps: 122209 ScoreTest: 0.62293308395, k: 5, gamma: 0.01
+Ps: 122208 ScoreTest: 0.700257973474, k: 4, gamma: 0.02
+Ps: 122210 ScoreTest: 0.720743011008, k: 3, gamma: 0.02
+Ps: 122210 ScoreTest: 0.745673654434, k: 4, gamma: 0.02
+Ps: 122110 ScoreTest: 0.592771544024, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122110.
+Ps: 122208 ScoreTest: 0.720632121301, k: 5, gamma: 0.02
+Ps: 122210 ScoreTest: 0.763837290813, k: 5, gamma: 0.02
+Ps: 122209 ScoreTest: 0.631909953881, k: 3, gamma: 0.02
+Ps: 122209 ScoreTest: 0.659909476793, k: 4, gamma: 0.02
+Ps: 122210 ScoreTest: 0.777036721995, k: 4, gamma: 0.03
+Ps: 122208 ScoreTest: 0.726754561745, k: 4, gamma: 0.03
+Ps: 122210 ScoreTest: 0.794581308402, k: 5, gamma: 0.03
+Ps: 122207 ScoreTest: 0.677169955677, k: 4, gamma: 0.03
+Ps: 122209 ScoreTest: 0.682918512557, k: 5, gamma: 0.02
+Ps: 122208 ScoreTest: 0.747350493006, k: 5, gamma: 0.03
+Ps: 122207 ScoreTest: 0.696179604846, k: 5, gamma: 0.03
+Ps: 122210 ScoreTest: 0.795108829457, k: 4, gamma: 0.04
+Ps: 122210 ScoreTest: 0.812232782869, k: 5, gamma: 0.04
+Ps: 122108 ScoreTest: 0.557325533029, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122108.
+Ps: 122208 ScoreTest: 0.763848958613, k: 5, gamma: 0.04
+Ps: 122209 ScoreTest: 0.688985379767, k: 4, gamma: 0.03
+Ps: 122209 ScoreTest: 0.713510984494, k: 5, gamma: 0.03
+Ps: 122210 ScoreTest: 0.824346420878, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122210.
+Ps: 122106 ScoreTest: 0.528764472429, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122106.
+Ps: 122207 ScoreTest: 0.710645383725, k: 5, gamma: 0.04
+Writing to disk. Predictions for Ps 122103.
+Ps: 122208 ScoreTest: 0.77611170695, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122208.
+Ps: 122209 ScoreTest: 0.732102234186, k: 5, gamma: 0.04
+Writing to disk. Predictions for Ps 122104.
+Ps: 122207 ScoreTest: 0.721529379877, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122207.
+Ps: 122209 ScoreTest: 0.745289205794, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122209.
+
+Fitting SVM to last training session...
+
+Ps: 112102 ScoreTest: 0.675212302131, kNN: 3, forgetting rate: 1e-06
+Ps: 112106 ScoreTest: 0.734977105629, kNN: 3, forgetting rate: 1e-06
+Ps: 112103 ScoreTest: 0.696836777238, kNN: 3, forgetting rate: 1e-06
+Ps: 112101 ScoreTest: 0.513608975226, kNN: 3, forgetting rate: 1e-06
+Ps: 112202 ScoreTest: 0.77970967015, kNN: 3, forgetting rate: 1e-06
+Ps: 112105 ScoreTest: 0.50340366127, kNN: 3, forgetting rate: 1e-06
+Ps: 112104 ScoreTest: 0.585552493957, kNN: 3, forgetting rate: 1e-06
+Ps: 112203 ScoreTest: 0.726138746508, kNN: 3, forgetting rate: 1e-06
+Ps: 112110 ScoreTest: 0.667698718224, kNN: 3, forgetting rate: 1e-06
+Ps: 112107 ScoreTest: 0.593710033514, kNN: 3, forgetting rate: 1e-06
+Ps: 112109 ScoreTest: 0.637798719721, kNN: 3, forgetting rate: 1e-06
+Ps: 112108 ScoreTest: 0.515055892135, kNN: 3, forgetting rate: 1e-06
+Ps: 112106 ScoreTest: 0.735019823408, kNN: 3, forgetting rate: 5e-05
+Ps: 112109 ScoreTest: 0.637867093272, kNN: 3, forgetting rate: 5e-05
+Ps: 112106 ScoreTest: 0.751398809663, kNN: 3, forgetting rate: 0.001
+Ps: 112102 ScoreTest: 0.675933308217, kNN: 3, forgetting rate: 0.0001
+Ps: 112202 ScoreTest: 0.795774802103, kNN: 3, forgetting rate: 0.005
+Ps: 112203 ScoreTest: 0.73454616304, kNN: 3, forgetting rate: 0.0001
+Ps: 112106 ScoreTest: 0.760970638292, kNN: 3, forgetting rate: 0.005
+Ps: 112103 ScoreTest: 0.701494488746, kNN: 3, forgetting rate: 0.001Ps: 112202 ScoreTest: 0.79925288484, kNN: 3, forgetting rate: 0.01
+
+Ps: 112108 ScoreTest: 0.515229607278, kNN: 3, forgetting rate: 5e-05
+Ps: 112101 ScoreTest: 0.515327660897, kNN: 3, forgetting rate: 0.0001
+Ps: 112103 ScoreTest: 0.702518488109, kNN: 3, forgetting rate: 0.005
+Ps: 112202 ScoreTest: 0.838103618725, kNN: 3, forgetting rate: 0.05
+Ps: 112108 ScoreTest: 0.515545145015, kNN: 3, forgetting rate: 0.0001
+Ps: 112109 ScoreTest: 0.650918294092, kNN: 3, forgetting rate: 0.005
+Ps: 112103 ScoreTest: 0.707248645382, kNN: 3, forgetting rate: 0.01
+Ps: 112102 ScoreTest: 0.687804690619, kNN: 3, forgetting rate: 0.01
+Ps: 112106 ScoreTest: 0.826211524146, kNN: 3, forgetting rate: 0.05
+Ps: 112104 ScoreTest: 0.585652216847, kNN: 3, forgetting rate: 0.005
+Ps: 112109 ScoreTest: 0.658864642458, kNN: 3, forgetting rate: 0.01
+Ps: 112108 ScoreTest: 0.516001854502, kNN: 3, forgetting rate: 0.001
+Ps: 112110 ScoreTest: 0.672565259378, kNN: 3, forgetting rate: 0.01
+Ps: 112103 ScoreTest: 0.71676181644, kNN: 3, forgetting rate: 0.05Ps: 112104 ScoreTest: 0.595656342697, kNN: 3, forgetting rate: 0.01
+
+Ps: 112203 ScoreTest: 0.797865184265, kNN: 3, forgetting rate: 0.05
+Ps: 112102 ScoreTest: 0.726679218679, kNN: 3, forgetting rate: 0.05
+Ps: 112107 ScoreTest: 0.623465100502, kNN: 3, forgetting rate: 0.01
+Ps: 112109 ScoreTest: 0.749603475114, kNN: 3, forgetting rate: 0.05
+Ps: 112202 ScoreTest: 0.857341026101, kNN: 3, forgetting rate: 0.1
+Ps: 112105 ScoreTest: 0.504572313334, kNN: 3, forgetting rate: 0.01
+Ps: 112110 ScoreTest: 0.728649755629, kNN: 3, forgetting rate: 0.05
+Ps: 112104 ScoreTest: 0.667121979962, kNN: 3, forgetting rate: 0.05
+Ps: 112106 ScoreTest: 0.838083257464, kNN: 3, forgetting rate: 0.1
+Ps: 112107 ScoreTest: 0.657530139546, kNN: 3, forgetting rate: 0.05
+Ps: 112105 ScoreTest: 0.512093091911, kNN: 3, forgetting rate: 0.05
+Ps: 112203 ScoreTest: 0.822504160625, kNN: 3, forgetting rate: 0.1
+Ps: 112109 ScoreTest: 0.75706025856, kNN: 3, forgetting rate: 0.1
+Ps: 112110 ScoreTest: 0.744216968636, kNN: 3, forgetting rate: 0.1
+Ps: 112105 ScoreTest: 0.512819189404, kNN: 9, forgetting rate: 0.005
+Ps: 112109 ScoreTest: 0.760440367107, kNN: 9, forgetting rate: 0.005
+Ps: 112105 ScoreTest: 0.513133159072, kNN: 9, forgetting rate: 0.01
+Ps: 112109 ScoreTest: 0.762443318932, kNN: 9, forgetting rate: 0.01
+Ps: 112109 ScoreTest: 0.776990915324, kNN: 9, forgetting rate: 0.05
+Ps: 112105 ScoreTest: 0.558728617529, kNN: 9, forgetting rate: 0.1
+Instance 112101. Skipped kNN 9 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 13 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 13 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 13 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 17 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 17 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112101. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 112105. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 112204 ScoreTest: 0.870716992749, kNN: 3, forgetting rate: 1e-06
+Instance 112101. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 112206 ScoreTest: 0.887017073714, kNN: 3, forgetting rate: 1e-06
+Ps: 112205 ScoreTest: 0.823287889526, kNN: 3, forgetting rate: 1e-06
+Ps: 112205 ScoreTest: 0.823486637766, kNN: 3, forgetting rate: 5e-05
+Ps: 112206 ScoreTest: 0.893562816248, kNN: 3, forgetting rate: 0.005
+Ps: 112204 ScoreTest: 0.893594877116, kNN: 3, forgetting rate: 0.01
+Ps: 112205 ScoreTest: 0.825347273975, kNN: 3, forgetting rate: 0.001
+Ps: 112206 ScoreTest: 0.906741120158, kNN: 3, forgetting rate: 0.01
+Ps: 112205 ScoreTest: 0.829979677926, kNN: 3, forgetting rate: 0.005
+Ps: 112205 ScoreTest: 0.846546954957, kNN: 3, forgetting rate: 0.01
+Ps: 112206 ScoreTest: 0.941453532472, kNN: 3, forgetting rate: 0.05
+Ps: 112205 ScoreTest: 0.924964183187, kNN: 3, forgetting rate: 0.05
+Ps: 112207 ScoreTest: 0.826796818849, kNN: 3, forgetting rate: 1e-06
+Ps: 112204 ScoreTest: 0.932076408195, kNN: 3, forgetting rate: 0.05
+Ps: 112207 ScoreTest: 0.826888444894, kNN: 3, forgetting rate: 0.0001
+Ps: 112207 ScoreTest: 0.831958903666, kNN: 3, forgetting rate: 0.001Ps: 112206 ScoreTest: 0.942668153187, kNN: 3, forgetting rate: 0.1
+
+Ps: 112208 ScoreTest: 0.863210022821, kNN: 3, forgetting rate: 1e-06
+Ps: 112205 ScoreTest: 0.926061053241, kNN: 3, forgetting rate: 0.1
+Ps: 112207 ScoreTest: 0.835407277323, kNN: 3, forgetting rate: 0.01
+Ps: 112208 ScoreTest: 0.865878604493, kNN: 3, forgetting rate: 0.005
+Ps: 112204 ScoreTest: 0.934787458892, kNN: 3, forgetting rate: 0.1
+Ps: 112207 ScoreTest: 0.866973855395, kNN: 3, forgetting rate: 0.05
+Ps: 112208 ScoreTest: 0.866054452461, kNN: 3, forgetting rate: 0.05
+Ps: 112209 ScoreTest: 0.863714100986, kNN: 3, forgetting rate: 1e-06
+Ps: 112209 ScoreTest: 0.865206616359, kNN: 3, forgetting rate: 5e-05
+Ps: 112210 ScoreTest: 0.759532572016, kNN: 3, forgetting rate: 1e-06
+Ps: 112209 ScoreTest: 0.865255092258, kNN: 3, forgetting rate: 0.0001
+Ps: 112207 ScoreTest: 0.884528460434, kNN: 3, forgetting rate: 0.1
+Ps: 112211 ScoreTest: 0.778179784722, kNN: 3, forgetting rate: 1e-06
+Ps: 112209 ScoreTest: 0.87079316774, kNN: 3, forgetting rate: 0.005
+Ps: 112209 ScoreTest: 0.882630785847, kNN: 3, forgetting rate: 0.01
+Ps: 112210 ScoreTest: 0.762439497198, kNN: 3, forgetting rate: 0.001
+Ps: 112211 ScoreTest: 0.780276542498, kNN: 3, forgetting rate: 0.001
+Ps: 112210 ScoreTest: 0.765970688683, kNN: 3, forgetting rate: 0.005
+Ps: 112211 ScoreTest: 0.793971781629, kNN: 3, forgetting rate: 0.005
+Ps: 112210 ScoreTest: 0.801182007519, kNN: 3, forgetting rate: 0.01
+Ps: 112209 ScoreTest: 0.916233142046, kNN: 3, forgetting rate: 0.05
+Ps: 112211 ScoreTest: 0.80427690351, kNN: 3, forgetting rate: 0.01
+Ps: 122101 ScoreTest: 0.592752096239, kNN: 3, forgetting rate: 1e-06
+Ps: 112210 ScoreTest: 0.882698973767, kNN: 3, forgetting rate: 0.05
+Ps: 122102 ScoreTest: 0.576699360708, kNN: 3, forgetting rate: 1e-06
+Ps: 112211 ScoreTest: 0.858823439694, kNN: 3, forgetting rate: 0.05
+Ps: 122103 ScoreTest: 0.500603983512, kNN: 3, forgetting rate: 1e-06
+Ps: 112209 ScoreTest: 0.922893938993, kNN: 3, forgetting rate: 0.1
+Ps: 122101 ScoreTest: 0.592864470284, kNN: 3, forgetting rate: 0.0001
+Ps: 112210 ScoreTest: 0.902056534951, kNN: 3, forgetting rate: 0.1
+Ps: 122101 ScoreTest: 0.593626184388, kNN: 3, forgetting rate: 0.001
+Ps: 112211 ScoreTest: 0.861642776089, kNN: 3, forgetting rate: 0.1
+Ps: 122102 ScoreTest: 0.576714587065, kNN: 3, forgetting rate: 5e-05
+Ps: 122101 ScoreTest: 0.618105356648, kNN: 3, forgetting rate: 0.005
+Ps: 122101 ScoreTest: 0.644096562577, kNN: 3, forgetting rate: 0.01
+Ps: 122102 ScoreTest: 0.576734939524, kNN: 3, forgetting rate: 0.0001
+Ps: 122101 ScoreTest: 0.685038772434, kNN: 3, forgetting rate: 0.05
+Ps: 122104 ScoreTest: 0.511840157714, kNN: 3, forgetting rate: 1e-06
+Ps: 122102 ScoreTest: 0.594110489731, kNN: 3, forgetting rate: 0.01
+Ps: 122101 ScoreTest: 0.702161463004, kNN: 3, forgetting rate: 0.1
+Ps: 122102 ScoreTest: 0.622893707931, kNN: 3, forgetting rate: 0.05
+Ps: 122102 ScoreTest: 0.642724302434, kNN: 3, forgetting rate: 0.1
+Ps: 122104 ScoreTest: 0.578808118327, kNN: 3, forgetting rate: 0.05
+Ps: 122104 ScoreTest: 0.611516950901, kNN: 3, forgetting rate: 0.1
+Ps: 122105 ScoreTest: 0.598920637729, kNN: 3, forgetting rate: 1e-06
+Ps: 122106 ScoreTest: 0.540916894263, kNN: 3, forgetting rate: 1e-06
+Ps: 122107 ScoreTest: 0.692568881529, kNN: 3, forgetting rate: 1e-06
+Ps: 122107 ScoreTest: 0.692762267459, kNN: 3, forgetting rate: 0.0001
+Ps: 122105 ScoreTest: 0.607698842941, kNN: 3, forgetting rate: 0.005
+Ps: 122104 ScoreTest: 0.612436921372, kNN: 9, forgetting rate: 0.001
+Ps: 122107 ScoreTest: 0.705127697627, kNN: 3, forgetting rate: 0.01
+Ps: 122106 ScoreTest: 0.54289566127, kNN: 3, forgetting rate: 0.001
+Ps: 122104 ScoreTest: 0.613776019571, kNN: 9, forgetting rate: 0.005
+Ps: 122105 ScoreTest: 0.629768872633, kNN: 3, forgetting rate: 0.01
+Instance 122103. Skipped kNN 13 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 13 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Ps: 122107 ScoreTest: 0.769306209812, kNN: 3, forgetting rate: 0.05
+Ps: 122105 ScoreTest: 0.684290058773, kNN: 3, forgetting rate: 0.05
+Instance 122103. Skipped kNN 13 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122108 ScoreTest: 0.609853238179, kNN: 3, forgetting rate: 1e-06
+Ps: 122110 ScoreTest: 0.660812897202, kNN: 3, forgetting rate: 1e-06
+Instance 122104. Skipped kNN 9 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122110 ScoreTest: 0.660836877484, kNN: 3, forgetting rate: 1e-05
+Instance 122104. Skipped kNN 13 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Ps: 122201 ScoreTest: 0.637021556192, kNN: 3, forgetting rate: 1e-06
+Instance 122103. Skipped kNN 13 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122108 ScoreTest: 0.6101096086, kNN: 3, forgetting rate: 5e-05
+Ps: 122202 ScoreTest: 0.758078403801, kNN: 3, forgetting rate: 1e-06
+Instance 122103. Skipped kNN 17 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 13 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 17 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122201 ScoreTest: 0.647710995149, kNN: 3, forgetting rate: 0.001
+Ps: 122201 ScoreTest: 0.662380722443, kNN: 3, forgetting rate: 0.005
+Instance 122104. Skipped kNN 13 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 17 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122201 ScoreTest: 0.681689180518, kNN: 3, forgetting rate: 0.01
+Instance 122104. Skipped kNN 17 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Ps: 122108 ScoreTest: 0.624182501465, kNN: 3, forgetting rate: 0.01
+Instance 122103. Skipped kNN 17 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122103. Skipped kNN 20 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122202 ScoreTest: 0.783940998072, kNN: 3, forgetting rate: 0.05
+Instance 122103. Skipped kNN 20 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Ps: 122110 ScoreTest: 0.676154974094, kNN: 3, forgetting rate: 0.05
+Instance 122104. Skipped kNN 17 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122201 ScoreTest: 0.745186112549, kNN: 3, forgetting rate: 0.05
+Ps: 122108 ScoreTest: 0.719301753892, kNN: 3, forgetting rate: 0.05
+Instance 122103. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122110 ScoreTest: 0.690039659859, kNN: 3, forgetting rate: 0.1
+Instance 122104. Skipped kNN 17 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122104. Skipped kNN 20 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122201 ScoreTest: 0.761968331184, kNN: 3, forgetting rate: 0.1
+Instance 122104. Skipped kNN 20 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Ps: 122108 ScoreTest: 0.732911721521, kNN: 3, forgetting rate: 0.1
+Instance 122103. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 122203 ScoreTest: 0.793979576899, kNN: 3, forgetting rate: 1e-06
+Ps: 122204 ScoreTest: 0.768045724656, kNN: 3, forgetting rate: 1e-06
+Instance 122104. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122205 ScoreTest: 0.821211833023, kNN: 3, forgetting rate: 1e-06
+Ps: 122108 ScoreTest: 0.733310626561, kNN: 5, forgetting rate: 0.01
+Ps: 122203 ScoreTest: 0.794169524211, kNN: 3, forgetting rate: 0.001
+Ps: 122206 ScoreTest: 0.789133958851, kNN: 3, forgetting rate: 1e-06
+Ps: 122203 ScoreTest: 0.798751220663, kNN: 3, forgetting rate: 0.005
+Ps: 122206 ScoreTest: 0.789932875846, kNN: 3, forgetting rate: 5e-05
+Ps: 122204 ScoreTest: 0.774607933116, kNN: 3, forgetting rate: 0.005
+Ps: 122203 ScoreTest: 0.820342890061, kNN: 3, forgetting rate: 0.01
+Ps: 122205 ScoreTest: 0.831767492594, kNN: 3, forgetting rate: 0.005
+Ps: 122204 ScoreTest: 0.792775530584, kNN: 3, forgetting rate: 0.01
+Instance 122104. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 122206 ScoreTest: 0.791300800283, kNN: 3, forgetting rate: 0.005
+Ps: 122205 ScoreTest: 0.860251239964, kNN: 3, forgetting rate: 0.01
+Ps: 122206 ScoreTest: 0.833912644574, kNN: 3, forgetting rate: 0.01
+Ps: 122207 ScoreTest: 0.673563657774, kNN: 3, forgetting rate: 1e-06
+Ps: 122203 ScoreTest: 0.879289042364, kNN: 3, forgetting rate: 0.05
+Ps: 122204 ScoreTest: 0.892286219316, kNN: 3, forgetting rate: 0.05
+Ps: 122207 ScoreTest: 0.673978268602, kNN: 3, forgetting rate: 5e-05
+Ps: 122205 ScoreTest: 0.895977053002, kNN: 3, forgetting rate: 0.05
+Ps: 122207 ScoreTest: 0.676595300006, kNN: 3, forgetting rate: 0.0001
+Ps: 122206 ScoreTest: 0.909799448479, kNN: 3, forgetting rate: 0.05
+Ps: 122207 ScoreTest: 0.683955589602, kNN: 3, forgetting rate: 0.001
+Ps: 122207 ScoreTest: 0.69170950644, kNN: 3, forgetting rate: 0.005
+Ps: 122207 ScoreTest: 0.706582467286, kNN: 3, forgetting rate: 0.01
+Ps: 122204 ScoreTest: 0.900717958525, kNN: 3, forgetting rate: 0.1
+Ps: 122205 ScoreTest: 0.903646534993, kNN: 3, forgetting rate: 0.1
+Ps: 122206 ScoreTest: 0.921299981408, kNN: 3, forgetting rate: 0.1
+Instance 122106. Skipped kNN 9 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Ps: 122207 ScoreTest: 0.738812883186, kNN: 3, forgetting rate: 0.05
+Instance 122106. Skipped kNN 13 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 13 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122207 ScoreTest: 0.739135881022, kNN: 3, forgetting rate: 0.1
+Instance 122106. Skipped kNN 13 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 17 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 1e-06 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 1e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 5e-05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.0001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.001 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.005 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.01 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Instance 122106. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 122208 ScoreTest: 0.780602312027, kNN: 3, forgetting rate: 1e-06
+Ps: 122208 ScoreTest: 0.780753911815, kNN: 3, forgetting rate: 5e-05
+Ps: 122208 ScoreTest: 0.795938016994, kNN: 3, forgetting rate: 0.005
+Ps: 122208 ScoreTest: 0.841839822538, kNN: 3, forgetting rate: 0.01
+Ps: 122208 ScoreTest: 0.889674877913, kNN: 3, forgetting rate: 0.05
+Instance 122110. Skipped kNN 20 and forget rate 0.05 because all labels were the same.
+All labels equal to -1
+Ps: 122209 ScoreTest: 0.75529503528, kNN: 3, forgetting rate: 1e-06
+Ps: 122210 ScoreTest: 0.779687562774, kNN: 3, forgetting rate: 1e-06
+Ps: 122208 ScoreTest: 0.890638528122, kNN: 3, forgetting rate: 0.1
+Ps: 122209 ScoreTest: 0.782559484316, kNN: 3, forgetting rate: 0.005
+Instance 122110. Skipped kNN 20 and forget rate 0.1 because all labels were the same.
+All labels equal to -1
+Ps: 122210 ScoreTest: 0.779858024349, kNN: 3, forgetting rate: 0.005
+Ps: 122209 ScoreTest: 0.792755698441, kNN: 3, forgetting rate: 0.01
+Ps: 122210 ScoreTest: 0.793540095653, kNN: 3, forgetting rate: 0.01
+Ps: 122209 ScoreTest: 0.820898304265, kNN: 3, forgetting rate: 0.05
+Ps: 122210 ScoreTest: 0.841245545446, kNN: 3, forgetting rate: 0.05

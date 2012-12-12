@@ -1,0 +1,2572 @@
+
+Reading data...
+
+Read Participant training data for Ps ID: 112101
+Read Participant training data for Ps ID: 112102
+Read Participant training data for Ps ID: 112103
+Read Participant training data for Ps ID: 112104
+Read Participant training data for Ps ID: 112105
+Read Participant training data for Ps ID: 112106
+Read Participant training data for Ps ID: 112107
+Read Participant training data for Ps ID: 112108
+Read Participant training data for Ps ID: 112109
+Read Participant training data for Ps ID: 112110
+Read Participant training data for Ps ID: 112202
+Read Participant training data for Ps ID: 112203
+Read Participant training data for Ps ID: 112204
+Read Participant training data for Ps ID: 112205
+Read Participant training data for Ps ID: 112206
+Read Participant training data for Ps ID: 112207
+Read Participant training data for Ps ID: 112208
+Read Participant training data for Ps ID: 112209
+Read Participant training data for Ps ID: 112210
+Read Participant training data for Ps ID: 112211
+Read Participant training data for Ps ID: 122101
+Read Participant training data for Ps ID: 122102
+Read Participant training data for Ps ID: 122103
+Read Participant training data for Ps ID: 122104
+Read Participant training data for Ps ID: 122105
+Read Participant training data for Ps ID: 122106
+Read Participant training data for Ps ID: 122107
+Read Participant training data for Ps ID: 122108
+Read Participant training data for Ps ID: 122110
+Read Participant training data for Ps ID: 122201
+Read Participant training data for Ps ID: 122202
+Read Participant training data for Ps ID: 122203
+Read Participant training data for Ps ID: 122204
+Read Participant training data for Ps ID: 122205
+Read Participant training data for Ps ID: 122206
+Read Participant training data for Ps ID: 122207
+Read Participant training data for Ps ID: 122208
+Read Participant training data for Ps ID: 122209
+Read Participant training data for Ps ID: 122210
+Read Participant test data for Ps ID: 112101
+Read Participant test data for Ps ID: 112102
+Read Participant test data for Ps ID: 112103
+Read Participant test data for Ps ID: 112104
+Read Participant test data for Ps ID: 112105
+Read Participant test data for Ps ID: 112106
+Read Participant test data for Ps ID: 112107
+Read Participant test data for Ps ID: 112108
+Read Participant test data for Ps ID: 112109
+Read Participant test data for Ps ID: 112110
+Read Participant test data for Ps ID: 112202
+Read Participant test data for Ps ID: 112203
+Read Participant test data for Ps ID: 112204
+Read Participant test data for Ps ID: 112205
+Read Participant test data for Ps ID: 112206
+Read Participant test data for Ps ID: 112207
+Read Participant test data for Ps ID: 112208
+Read Participant test data for Ps ID: 112209
+Read Participant test data for Ps ID: 112210
+Read Participant test data for Ps ID: 112211
+Read Participant test data for Ps ID: 122101
+Read Participant test data for Ps ID: 122102
+Read Participant test data for Ps ID: 122103
+Read Participant test data for Ps ID: 122104
+Read Participant test data for Ps ID: 122105
+Read Participant test data for Ps ID: 122106
+Read Participant test data for Ps ID: 122107
+Read Participant test data for Ps ID: 122108
+Read Participant test data for Ps ID: 122110
+Read Participant test data for Ps ID: 122201
+Read Participant test data for Ps ID: 122202
+Read Participant test data for Ps ID: 122203
+Read Participant test data for Ps ID: 122204
+Read Participant test data for Ps ID: 122205
+Read Participant test data for Ps ID: 122206
+Read Participant test data for Ps ID: 122207
+Read Participant test data for Ps ID: 122208
+Read Participant test data for Ps ID: 122209
+Read Participant test data for Ps ID: 122210
+
+Fitting SVM to first training session...
+
+Fitting SVM for Ps 112101 with gamma 0.01
+Fitting SVM for Ps 112104 with gamma 0.01
+Fitting SVM for Ps 112107 with gamma 0.01
+Fitting SVM for Ps 112110 with gamma 0.01
+Ps: 112101 ScoreTest: 0.503168933739, k: 1, gamma: 0.01
+Ps: 112104 ScoreTest: 0.508154263608, k: 1, gamma: 0.01
+Ps: 112107 ScoreTest: 0.503451516755, k: 1, gamma: 0.01
+Ps: 112110 ScoreTest: 0.509388742011, k: 1, gamma: 0.01
+Ps: 112101 ScoreTest: 0.506275544924, k: 2, gamma: 0.01
+Ps: 112104 ScoreTest: 0.516231713457, k: 2, gamma: 0.01
+Ps: 112107 ScoreTest: 0.506883322008, k: 2, gamma: 0.01
+Ps: 112110 ScoreTest: 0.518700323524, k: 2, gamma: 0.01
+Ps: 112101 ScoreTest: 0.509261941008, k: 3, gamma: 0.01
+Ps: 112104 ScoreTest: 0.524160224474, k: 3, gamma: 0.01
+Ps: 112107 ScoreTest: 0.510276748437, k: 3, gamma: 0.01
+Ps: 112110 ScoreTest: 0.527862272, k: 3, gamma: 0.01
+Ps: 112101 ScoreTest: 0.512078410956, k: 4, gamma: 0.01
+Ps: 112104 ScoreTest: 0.531876360567, k: 4, gamma: 0.01
+Ps: 112107 ScoreTest: 0.51361509744, k: 4, gamma: 0.01
+Ps: 112110 ScoreTest: 0.536810802749, k: 4, gamma: 0.01
+Ps: 112101 ScoreTest: 0.514685998614, k: 5, gamma: 0.01
+Fitting SVM for Ps 112101 with gamma 0.02
+Ps: 112104 ScoreTest: 0.539328177293, k: 5, gamma: 0.01
+Fitting SVM for Ps 112104 with gamma 0.02
+Ps: 112107 ScoreTest: 0.516884346982, k: 5, gamma: 0.01
+Fitting SVM for Ps 112107 with gamma 0.02
+Ps: 112110 ScoreTest: 0.545493621703, k: 5, gamma: 0.01
+Fitting SVM for Ps 112110 with gamma 0.02
+Ps: 112101 ScoreTest: 0.523108556581, k: 2, gamma: 0.02
+Ps: 112104 ScoreTest: 0.551757817246, k: 2, gamma: 0.02
+Ps: 112107 ScoreTest: 0.518501864104, k: 2, gamma: 0.02
+Ps: 112110 ScoreTest: 0.556249713961, k: 2, gamma: 0.02
+Ps: 112101 ScoreTest: 0.528676064259, k: 3, gamma: 0.02
+Ps: 112104 ScoreTest: 0.570337261653, k: 3, gamma: 0.02
+Ps: 112107 ScoreTest: 0.525795498303, k: 3, gamma: 0.02
+Ps: 112110 ScoreTest: 0.577063264783, k: 3, gamma: 0.02
+Ps: 112101 ScoreTest: 0.531136289809, k: 4, gamma: 0.02
+Ps: 112104 ScoreTest: 0.584550913046, k: 4, gamma: 0.02
+Ps: 112107 ScoreTest: 0.531928909797, k: 4, gamma: 0.02
+Ps: 112110 ScoreTest: 0.593498613674, k: 4, gamma: 0.02
+Ps: 112101 ScoreTest: 0.531768831105, k: 5, gamma: 0.02
+Fitting SVM for Ps 112101 with gamma 0.03
+Ps: 112104 ScoreTest: 0.595627399612, k: 5, gamma: 0.02
+Fitting SVM for Ps 112104 with gamma 0.03
+Ps: 112107 ScoreTest: 0.537312133182, k: 5, gamma: 0.02
+Fitting SVM for Ps 112107 with gamma 0.03
+Ps: 112110 ScoreTest: 0.606781289465, k: 5, gamma: 0.02
+Fitting SVM for Ps 112110 with gamma 0.03
+Ps: 112101 ScoreTest: 0.533118917943, k: 2, gamma: 0.03
+Ps: 112107 ScoreTest: 0.537593167127, k: 3, gamma: 0.03
+Ps: 112104 ScoreTest: 0.605207323474, k: 3, gamma: 0.03
+Ps: 112110 ScoreTest: 0.614874980359, k: 3, gamma: 0.03
+Ps: 112107 ScoreTest: 0.54535397804, k: 4, gamma: 0.03
+Ps: 112104 ScoreTest: 0.616330407649, k: 4, gamma: 0.03
+Ps: 112110 ScoreTest: 0.629147382878, k: 4, gamma: 0.03
+Fitting SVM for Ps 112101 with gamma 0.04
+Ps: 112107 ScoreTest: 0.552655341592, k: 5, gamma: 0.03
+Fitting SVM for Ps 112107 with gamma 0.04
+Ps: 112104 ScoreTest: 0.624440210333, k: 5, gamma: 0.03
+Fitting SVM for Ps 112104 with gamma 0.04
+Ps: 112110 ScoreTest: 0.64034623006, k: 5, gamma: 0.03
+Fitting SVM for Ps 112110 with gamma 0.04
+Ps: 112107 ScoreTest: 0.558534940601, k: 4, gamma: 0.04
+Ps: 112104 ScoreTest: 0.63121410181, k: 4, gamma: 0.04
+Ps: 112110 ScoreTest: 0.647793713146, k: 4, gamma: 0.04
+Fitting SVM for Ps 112101 with gamma 0.05
+Ps: 112107 ScoreTest: 0.566609689069, k: 5, gamma: 0.04
+Fitting SVM for Ps 112107 with gamma 0.05
+Ps: 112104 ScoreTest: 0.637326156625, k: 5, gamma: 0.04
+Fitting SVM for Ps 112104 with gamma 0.05
+Ps: 112110 ScoreTest: 0.657748947949, k: 5, gamma: 0.04
+Fitting SVM for Ps 112110 with gamma 0.05
+Ps: 112107 ScoreTest: 0.569980861416, k: 4, gamma: 0.05
+Ps: 112104 ScoreTest: 0.639428658217, k: 4, gamma: 0.05
+Ps: 112110 ScoreTest: 0.660314748708, k: 4, gamma: 0.05
+Ps: 112107 ScoreTest: 0.577569838274, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112107.
+Writing to disk. Predictions for Ps 112101.
+Fitting SVM for Ps 112108 with gamma 0.01
+Fitting SVM for Ps 112102 with gamma 0.01
+Ps: 112104 ScoreTest: 0.644301410697, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112104.
+Fitting SVM for Ps 112105 with gamma 0.01
+Ps: 112110 ScoreTest: 0.669679347375, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112110.
+Fitting SVM for Ps 112202 with gamma 0.01
+Ps: 112202 ScoreTest: 0.693153269936, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.754818140732, k: 2, gamma: 0.01
+Ps: 112202 ScoreTest: 0.791875673843, k: 3, gamma: 0.01
+Ps: 112202 ScoreTest: 0.818985886224, k: 4, gamma: 0.01
+Ps: 112108 ScoreTest: 0.501643658616, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.840212918428, k: 5, gamma: 0.01
+Fitting SVM for Ps 112202 with gamma 0.02
+Ps: 112102 ScoreTest: 0.507958432566, k: 1, gamma: 0.01
+Ps: 112105 ScoreTest: 0.498375687926, k: 1, gamma: 0.01
+Ps: 112202 ScoreTest: 0.867578745298, k: 3, gamma: 0.02
+Ps: 112202 ScoreTest: 0.887950360507, k: 4, gamma: 0.02
+Ps: 112202 ScoreTest: 0.903368782742, k: 5, gamma: 0.02
+Fitting SVM for Ps 112202 with gamma 0.03
+Ps: 112102 ScoreTest: 0.515859113761, k: 2, gamma: 0.01
+Ps: 112108 ScoreTest: 0.503288013176, k: 2, gamma: 0.01
+Ps: 112202 ScoreTest: 0.918393070309, k: 4, gamma: 0.03
+Ps: 112202 ScoreTest: 0.930916057306, k: 5, gamma: 0.03
+Fitting SVM for Ps 112202 with gamma 0.04
+Ps: 112202 ScoreTest: 0.936389812982, k: 4, gamma: 0.04
+Ps: 112202 ScoreTest: 0.946750435804, k: 5, gamma: 0.04
+Fitting SVM for Ps 112202 with gamma 0.05
+Ps: 112102 ScoreTest: 0.523647916506, k: 3, gamma: 0.01
+Ps: 112108 ScoreTest: 0.504933683095, k: 3, gamma: 0.01
+Ps: 112202 ScoreTest: 0.948056369894, k: 4, gamma: 0.05
+Ps: 112202 ScoreTest: 0.956833197101, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112202.
+Fitting SVM for Ps 112203 with gamma 0.01
+Ps: 112203 ScoreTest: 0.564523847912, k: 1, gamma: 0.01
+Ps: 112203 ScoreTest: 0.590114952668, k: 2, gamma: 0.01
+Ps: 112203 ScoreTest: 0.605834379902, k: 3, gamma: 0.01
+Ps: 112203 ScoreTest: 0.617392460238, k: 4, gamma: 0.01
+Ps: 112203 ScoreTest: 0.626379203623, k: 5, gamma: 0.01
+Fitting SVM for Ps 112203 with gamma 0.02
+Ps: 112102 ScoreTest: 0.531277395447, k: 4, gamma: 0.01
+Ps: 112108 ScoreTest: 0.50658114137, k: 4, gamma: 0.01
+Ps: 112203 ScoreTest: 0.629919562563, k: 2, gamma: 0.02
+Ps: 112203 ScoreTest: 0.641423812357, k: 3, gamma: 0.02
+Ps: 112203 ScoreTest: 0.64804693782, k: 4, gamma: 0.02
+Ps: 112203 ScoreTest: 0.652208667862, k: 5, gamma: 0.02
+Fitting SVM for Ps 112203 with gamma 0.03
+Ps: 112203 ScoreTest: 0.653172611631, k: 3, gamma: 0.03
+Ps: 112203 ScoreTest: 0.656572712996, k: 4, gamma: 0.03
+Ps: 112102 ScoreTest: 0.538708866702, k: 5, gamma: 0.01
+Fitting SVM for Ps 112102 with gamma 0.02
+Ps: 112203 ScoreTest: 0.658538882447, k: 5, gamma: 0.03
+Fitting SVM for Ps 112203 with gamma 0.04
+Ps: 112108 ScoreTest: 0.508230656783, k: 5, gamma: 0.01
+Fitting SVM for Ps 112108 with gamma 0.02
+Fitting SVM for Ps 112105 with gamma 0.02
+Ps: 112203 ScoreTest: 0.659830588907, k: 4, gamma: 0.04
+Ps: 112203 ScoreTest: 0.660901548929, k: 5, gamma: 0.04
+Fitting SVM for Ps 112203 with gamma 0.05
+Ps: 112203 ScoreTest: 0.660902256075, k: 4, gamma: 0.05
+Ps: 112203 ScoreTest: 0.662126065612, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112203.
+Fitting SVM for Ps 112204 with gamma 0.01
+Ps: 112204 ScoreTest: 0.69241899701, k: 1, gamma: 0.01
+Ps: 112204 ScoreTest: 0.753365098401, k: 2, gamma: 0.01
+Ps: 112204 ScoreTest: 0.789700727842, k: 3, gamma: 0.01
+Ps: 112204 ScoreTest: 0.816090484014, k: 4, gamma: 0.01
+Ps: 112204 ScoreTest: 0.836599745951, k: 5, gamma: 0.01
+Fitting SVM for Ps 112204 with gamma 0.02
+Ps: 112102 ScoreTest: 0.546174956258, k: 2, gamma: 0.02
+Ps: 112204 ScoreTest: 0.863579220647, k: 3, gamma: 0.02
+Ps: 112204 ScoreTest: 0.882640525778, k: 4, gamma: 0.02
+Ps: 112204 ScoreTest: 0.896768455362, k: 5, gamma: 0.02
+Fitting SVM for Ps 112204 with gamma 0.03
+Ps: 112204 ScoreTest: 0.91055024406, k: 4, gamma: 0.03
+Ps: 112102 ScoreTest: 0.563981029878, k: 3, gamma: 0.02
+Ps: 112204 ScoreTest: 0.921227660135, k: 5, gamma: 0.03
+Fitting SVM for Ps 112204 with gamma 0.04
+Ps: 112108 ScoreTest: 0.51072234254, k: 3, gamma: 0.02
+Ps: 112204 ScoreTest: 0.926089604514, k: 4, gamma: 0.04
+Ps: 112204 ScoreTest: 0.934142623416, k: 5, gamma: 0.04
+Fitting SVM for Ps 112204 with gamma 0.05
+Ps: 112204 ScoreTest: 0.935431628776, k: 4, gamma: 0.05
+Ps: 112102 ScoreTest: 0.578627324586, k: 4, gamma: 0.02
+Ps: 112204 ScoreTest: 0.94154169875, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112204.
+Fitting SVM for Ps 112205 with gamma 0.01
+Ps: 112108 ScoreTest: 0.514529975486, k: 4, gamma: 0.02
+Ps: 112205 ScoreTest: 0.692789975874, k: 1, gamma: 0.01
+Ps: 112205 ScoreTest: 0.754091703625, k: 2, gamma: 0.01
+Ps: 112205 ScoreTest: 0.790786395413, k: 3, gamma: 0.01
+Ps: 112205 ScoreTest: 0.817534218275, k: 4, gamma: 0.01
+Ps: 112205 ScoreTest: 0.838399461913, k: 5, gamma: 0.01
+Fitting SVM for Ps 112205 with gamma 0.02
+Ps: 112102 ScoreTest: 0.59091394102, k: 5, gamma: 0.02
+Fitting SVM for Ps 112102 with gamma 0.03
+Ps: 112205 ScoreTest: 0.865573109473, k: 3, gamma: 0.02
+Ps: 112108 ScoreTest: 0.518394645259, k: 5, gamma: 0.02
+Fitting SVM for Ps 112108 with gamma 0.03
+Ps: 112205 ScoreTest: 0.885280562749, k: 4, gamma: 0.02
+Ps: 112205 ScoreTest: 0.900038540885, k: 5, gamma: 0.02
+Fitting SVM for Ps 112205 with gamma 0.03
+Fitting SVM for Ps 112105 with gamma 0.03
+Ps: 112205 ScoreTest: 0.914415109402, k: 4, gamma: 0.03
+Ps: 112205 ScoreTest: 0.925966693158, k: 5, gamma: 0.03
+Fitting SVM for Ps 112205 with gamma 0.04
+Ps: 112205 ScoreTest: 0.931112214948, k: 4, gamma: 0.04
+Ps: 112205 ScoreTest: 0.940209894625, k: 5, gamma: 0.04
+Fitting SVM for Ps 112205 with gamma 0.05
+Ps: 112205 ScoreTest: 0.941514365296, k: 4, gamma: 0.05
+Ps: 112205 ScoreTest: 0.94875799238, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112205.
+Fitting SVM for Ps 112206 with gamma 0.01
+Ps: 112206 ScoreTest: 0.692971454212, k: 1, gamma: 0.01
+Ps: 112206 ScoreTest: 0.754454490526, k: 2, gamma: 0.01
+Ps: 112206 ScoreTest: 0.791330286028, k: 3, gamma: 0.01
+Ps: 112206 ScoreTest: 0.818258848637, k: 4, gamma: 0.01
+Ps: 112206 ScoreTest: 0.83930431426, k: 5, gamma: 0.01
+Fitting SVM for Ps 112206 with gamma 0.02
+Ps: 112206 ScoreTest: 0.86657246147, k: 3, gamma: 0.02
+Ps: 112206 ScoreTest: 0.886609718893, k: 4, gamma: 0.02
+Ps: 112206 ScoreTest: 0.901694238004, k: 5, gamma: 0.02
+Fitting SVM for Ps 112206 with gamma 0.03
+Ps: 112102 ScoreTest: 0.598261314133, k: 3, gamma: 0.03
+Ps: 112108 ScoreTest: 0.519697892092, k: 3, gamma: 0.03
+Ps: 112206 ScoreTest: 0.916403151536, k: 4, gamma: 0.03
+Ps: 112206 ScoreTest: 0.928424336298, k: 5, gamma: 0.03
+Fitting SVM for Ps 112206 with gamma 0.04
+Ps: 112102 ScoreTest: 0.612315503154, k: 4, gamma: 0.03
+Ps: 112206 ScoreTest: 0.933728336259, k: 4, gamma: 0.04
+Ps: 112206 ScoreTest: 0.943423907611, k: 5, gamma: 0.04
+Fitting SVM for Ps 112206 with gamma 0.05
+Ps: 112108 ScoreTest: 0.526232118186, k: 4, gamma: 0.03
+Ps: 112206 ScoreTest: 0.944722351627, k: 4, gamma: 0.05
+Ps: 112206 ScoreTest: 0.952674360737, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112206.
+Fitting SVM for Ps 112207 with gamma 0.01
+Ps: 112207 ScoreTest: 0.691954151268, k: 1, gamma: 0.01
+Ps: 112102 ScoreTest: 0.623434093537, k: 5, gamma: 0.03
+Fitting SVM for Ps 112102 with gamma 0.04
+Ps: 112207 ScoreTest: 0.752448696887, k: 2, gamma: 0.01
+Ps: 112207 ScoreTest: 0.78833233714, k: 3, gamma: 0.01
+Ps: 112108 ScoreTest: 0.531859392409, k: 5, gamma: 0.03
+Fitting SVM for Ps 112108 with gamma 0.04
+Ps: 112207 ScoreTest: 0.814272070397, k: 4, gamma: 0.01
+Ps: 112207 ScoreTest: 0.834334011984, k: 5, gamma: 0.01
+Fitting SVM for Ps 112207 with gamma 0.02
+Fitting SVM for Ps 112105 with gamma 0.04
+Ps: 112207 ScoreTest: 0.834648623491, k: 2, gamma: 0.02
+Ps: 112207 ScoreTest: 0.861087409687, k: 3, gamma: 0.02
+Ps: 112207 ScoreTest: 0.879334730865, k: 4, gamma: 0.02
+Ps: 112207 ScoreTest: 0.89266483165, k: 5, gamma: 0.02
+Fitting SVM for Ps 112207 with gamma 0.03
+Ps: 112207 ScoreTest: 0.905667187814, k: 4, gamma: 0.03
+Ps: 112207 ScoreTest: 0.915225235194, k: 5, gamma: 0.03
+Fitting SVM for Ps 112207 with gamma 0.04
+Ps: 112207 ScoreTest: 0.919723783728, k: 4, gamma: 0.04
+Ps: 112207 ScoreTest: 0.926403514441, k: 5, gamma: 0.04
+Fitting SVM for Ps 112207 with gamma 0.05
+Ps: 112207 ScoreTest: 0.927682051147, k: 4, gamma: 0.05
+Ps: 112207 ScoreTest: 0.932246189461, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112207.
+Fitting SVM for Ps 112208 with gamma 0.01
+Ps: 112208 ScoreTest: 0.693062263772, k: 1, gamma: 0.01
+Ps: 112208 ScoreTest: 0.754636104254, k: 2, gamma: 0.01
+Ps: 112208 ScoreTest: 0.791602693142, k: 3, gamma: 0.01
+Ps: 112208 ScoreTest: 0.818622032967, k: 4, gamma: 0.01
+Ps: 112208 ScoreTest: 0.839758254253, k: 5, gamma: 0.01
+Fitting SVM for Ps 112208 with gamma 0.02
+Ps: 112208 ScoreTest: 0.867074544433, k: 3, gamma: 0.02
+Ps: 112208 ScoreTest: 0.887279005352, k: 4, gamma: 0.02
+Ps: 112208 ScoreTest: 0.902530593129, k: 5, gamma: 0.02
+Fitting SVM for Ps 112208 with gamma 0.03
+Ps: 112102 ScoreTest: 0.630982080576, k: 4, gamma: 0.04
+Ps: 112208 ScoreTest: 0.91740429732, k: 4, gamma: 0.03
+Ps: 112108 ScoreTest: 0.536169693667, k: 4, gamma: 0.04
+Ps: 112208 ScoreTest: 0.92967492195, k: 5, gamma: 0.03
+Fitting SVM for Ps 112208 with gamma 0.04
+Ps: 112208 ScoreTest: 0.93505293854, k: 4, gamma: 0.04
+Ps: 112208 ScoreTest: 0.945082586561, k: 5, gamma: 0.04
+Fitting SVM for Ps 112208 with gamma 0.05
+Ps: 112102 ScoreTest: 0.640900878908, k: 5, gamma: 0.04
+Fitting SVM for Ps 112102 with gamma 0.05
+Ps: 112208 ScoreTest: 0.946389929127, k: 4, gamma: 0.05
+Ps: 112108 ScoreTest: 0.541205500635, k: 5, gamma: 0.04
+Fitting SVM for Ps 112108 with gamma 0.05
+Ps: 112208 ScoreTest: 0.954754410494, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112208.
+Fitting SVM for Ps 112209 with gamma 0.01
+Ps: 112209 ScoreTest: 0.692789534491, k: 1, gamma: 0.01
+Ps: 112209 ScoreTest: 0.754090753333, k: 2, gamma: 0.01
+Ps: 112209 ScoreTest: 0.790785108312, k: 3, gamma: 0.01
+Fitting SVM for Ps 112105 with gamma 0.05
+Ps: 112209 ScoreTest: 0.817532721176, k: 4, gamma: 0.01
+Ps: 112209 ScoreTest: 0.838397846392, k: 5, gamma: 0.01
+Fitting SVM for Ps 112209 with gamma 0.02
+Ps: 112209 ScoreTest: 0.865602882669, k: 3, gamma: 0.02
+Ps: 112209 ScoreTest: 0.885307411361, k: 4, gamma: 0.02
+Ps: 112209 ScoreTest: 0.900061416221, k: 5, gamma: 0.02
+Fitting SVM for Ps 112209 with gamma 0.03
+Ps: 112209 ScoreTest: 0.914424445386, k: 4, gamma: 0.03
+Ps: 112209 ScoreTest: 0.925973665434, k: 5, gamma: 0.03
+Fitting SVM for Ps 112209 with gamma 0.04
+Ps: 112209 ScoreTest: 0.931116113687, k: 4, gamma: 0.04
+Ps: 112209 ScoreTest: 0.940212545396, k: 5, gamma: 0.04
+Fitting SVM for Ps 112209 with gamma 0.05
+Ps: 112209 ScoreTest: 0.941513763973, k: 4, gamma: 0.05
+Ps: 112209 ScoreTest: 0.948757463551, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112209.
+Fitting SVM for Ps 112210 with gamma 0.01
+Ps: 112210 ScoreTest: 0.692061255135, k: 1, gamma: 0.01
+Ps: 112210 ScoreTest: 0.752638177894, k: 2, gamma: 0.01
+Ps: 112210 ScoreTest: 0.788615954741, k: 3, gamma: 0.01
+Ps: 112210 ScoreTest: 0.814658453771, k: 4, gamma: 0.01
+Ps: 112210 ScoreTest: 0.834833454724, k: 5, gamma: 0.01
+Fitting SVM for Ps 112210 with gamma 0.02
+Ps: 112102 ScoreTest: 0.643501809666, k: 4, gamma: 0.05
+Ps: 112210 ScoreTest: 0.834978169258, k: 2, gamma: 0.02
+Ps: 112210 ScoreTest: 0.861626441001, k: 3, gamma: 0.02
+Ps: 112210 ScoreTest: 0.880127512467, k: 4, gamma: 0.02
+Ps: 112108 ScoreTest: 0.542838948414, k: 4, gamma: 0.05
+Ps: 112210 ScoreTest: 0.893763675881, k: 5, gamma: 0.02
+Fitting SVM for Ps 112210 with gamma 0.03
+Ps: 112210 ScoreTest: 0.907133884579, k: 4, gamma: 0.03
+Ps: 112210 ScoreTest: 0.917336424508, k: 5, gamma: 0.03
+Fitting SVM for Ps 112210 with gamma 0.04
+Ps: 112102 ScoreTest: 0.652829595264, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112102.
+Fitting SVM for Ps 112103 with gamma 0.01
+Ps: 112108 ScoreTest: 0.54756578096, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112108.
+Ps: 112210 ScoreTest: 0.922041604261, k: 4, gamma: 0.04
+Fitting SVM for Ps 112109 with gamma 0.01
+Ps: 112210 ScoreTest: 0.929812754728, k: 5, gamma: 0.04
+Fitting SVM for Ps 112210 with gamma 0.05
+Writing to disk. Predictions for Ps 112105.
+Fitting SVM for Ps 112106 with gamma 0.01
+Ps: 112210 ScoreTest: 0.931030067709, k: 4, gamma: 0.05
+Ps: 112210 ScoreTest: 0.937161377918, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112210.
+Fitting SVM for Ps 112211 with gamma 0.01
+Ps: 112211 ScoreTest: 0.689308234031, k: 1, gamma: 0.01
+Ps: 112103 ScoreTest: 0.508957676758, k: 1, gamma: 0.01
+Ps: 112211 ScoreTest: 0.74716235979, k: 2, gamma: 0.01
+Ps: 112211 ScoreTest: 0.780475844345, k: 3, gamma: 0.01
+Ps: 112211 ScoreTest: 0.803937225533, k: 4, gamma: 0.01
+Ps: 112109 ScoreTest: 0.508183852927, k: 1, gamma: 0.01
+Ps: 112211 ScoreTest: 0.821634160978, k: 5, gamma: 0.01
+Fitting SVM for Ps 112211 with gamma 0.02
+Ps: 112211 ScoreTest: 0.824779429638, k: 2, gamma: 0.02
+Ps: 112106 ScoreTest: 0.509208470078, k: 1, gamma: 0.01
+Ps: 112211 ScoreTest: 0.846801930893, k: 3, gamma: 0.02
+Ps: 112211 ScoreTest: 0.861137946847, k: 4, gamma: 0.02
+Ps: 112211 ScoreTest: 0.871090975885, k: 5, gamma: 0.02
+Fitting SVM for Ps 112211 with gamma 0.03
+Ps: 112103 ScoreTest: 0.517838133392, k: 2, gamma: 0.01
+Ps: 112211 ScoreTest: 0.871307203402, k: 3, gamma: 0.03
+Ps: 112109 ScoreTest: 0.516295834493, k: 2, gamma: 0.01
+Ps: 112211 ScoreTest: 0.880857015745, k: 4, gamma: 0.03
+Ps: 112211 ScoreTest: 0.887042886397, k: 5, gamma: 0.03
+Fitting SVM for Ps 112211 with gamma 0.04
+Ps: 112106 ScoreTest: 0.51833973384, k: 2, gamma: 0.01
+Ps: 112211 ScoreTest: 0.889998538012, k: 4, gamma: 0.04
+Ps: 112103 ScoreTest: 0.526568852342, k: 3, gamma: 0.01
+Ps: 112211 ScoreTest: 0.89394718973, k: 5, gamma: 0.04
+Fitting SVM for Ps 112211 with gamma 0.05
+Ps: 112109 ScoreTest: 0.524268630832, k: 3, gamma: 0.01
+Ps: 112211 ScoreTest: 0.894878310454, k: 4, gamma: 0.05
+Ps: 112211 ScoreTest: 0.897311622137, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112211.
+Fitting SVM for Ps 122101 with gamma 0.01
+Ps: 112106 ScoreTest: 0.527321278419, k: 3, gamma: 0.01
+Ps: 112103 ScoreTest: 0.535086030088, k: 4, gamma: 0.01
+Ps: 112109 ScoreTest: 0.532043363289, k: 4, gamma: 0.01
+Ps: 122101 ScoreTest: 0.500741582009, k: 1, gamma: 0.01
+Ps: 112106 ScoreTest: 0.536089288604, k: 4, gamma: 0.01
+Ps: 112103 ScoreTest: 0.543337386524, k: 5, gamma: 0.01
+Fitting SVM for Ps 112103 with gamma 0.02
+Ps: 112109 ScoreTest: 0.539572284281, k: 5, gamma: 0.01
+Fitting SVM for Ps 112109 with gamma 0.02
+Ps: 122101 ScoreTest: 0.5014916631, k: 2, gamma: 0.01
+Ps: 112106 ScoreTest: 0.544591452009, k: 5, gamma: 0.01
+Fitting SVM for Ps 112106 with gamma 0.02
+Ps: 122101 ScoreTest: 0.502258403003, k: 3, gamma: 0.01
+Ps: 112103 ScoreTest: 0.55479758928, k: 2, gamma: 0.02
+Ps: 112109 ScoreTest: 0.549142853104, k: 2, gamma: 0.02
+Ps: 122101 ScoreTest: 0.503049307594, k: 4, gamma: 0.01
+Ps: 112106 ScoreTest: 0.555729913319, k: 2, gamma: 0.02
+Ps: 112103 ScoreTest: 0.574890498013, k: 3, gamma: 0.02
+Ps: 112109 ScoreTest: 0.566924305802, k: 3, gamma: 0.02
+Ps: 122101 ScoreTest: 0.503870961339, k: 5, gamma: 0.01
+Fitting SVM for Ps 122101 with gamma 0.02
+Ps: 112106 ScoreTest: 0.576285322253, k: 3, gamma: 0.02
+Ps: 112103 ScoreTest: 0.590608399363, k: 4, gamma: 0.02
+Ps: 112109 ScoreTest: 0.580811090431, k: 4, gamma: 0.02
+Ps: 112106 ScoreTest: 0.592463241005, k: 4, gamma: 0.02
+Ps: 112103 ScoreTest: 0.60317655865, k: 5, gamma: 0.02
+Fitting SVM for Ps 112103 with gamma 0.03
+Ps: 112109 ScoreTest: 0.592022639285, k: 5, gamma: 0.02
+Fitting SVM for Ps 112109 with gamma 0.03
+Ps: 112106 ScoreTest: 0.605488878686, k: 5, gamma: 0.02
+Fitting SVM for Ps 112106 with gamma 0.03
+Ps: 112103 ScoreTest: 0.612025705704, k: 3, gamma: 0.03
+Ps: 112109 ScoreTest: 0.59837472808, k: 3, gamma: 0.03
+Ps: 122101 ScoreTest: 0.504157437896, k: 5, gamma: 0.02
+Fitting SVM for Ps 122101 with gamma 0.03
+Ps: 112106 ScoreTest: 0.613941006289, k: 3, gamma: 0.03
+Ps: 112103 ScoreTest: 0.625354348733, k: 4, gamma: 0.03
+Ps: 112109 ScoreTest: 0.611037716511, k: 4, gamma: 0.03
+Ps: 112106 ScoreTest: 0.627907128037, k: 4, gamma: 0.03
+Ps: 112103 ScoreTest: 0.635615211546, k: 5, gamma: 0.03
+Fitting SVM for Ps 112103 with gamma 0.04
+Ps: 112109 ScoreTest: 0.621269305415, k: 5, gamma: 0.03
+Fitting SVM for Ps 112109 with gamma 0.04
+Ps: 112106 ScoreTest: 0.638798262543, k: 5, gamma: 0.03
+Fitting SVM for Ps 112106 with gamma 0.04
+Ps: 122101 ScoreTest: 0.506661805931, k: 4, gamma: 0.03
+Ps: 122101 ScoreTest: 0.510761179785, k: 5, gamma: 0.03
+Fitting SVM for Ps 122101 with gamma 0.04
+Ps: 112103 ScoreTest: 0.643176779394, k: 4, gamma: 0.04
+Ps: 112109 ScoreTest: 0.628689560316, k: 4, gamma: 0.04
+Ps: 112106 ScoreTest: 0.646321313347, k: 4, gamma: 0.04
+Ps: 112103 ScoreTest: 0.652000561594, k: 5, gamma: 0.04
+Fitting SVM for Ps 112103 with gamma 0.05
+Ps: 112109 ScoreTest: 0.638008159508, k: 5, gamma: 0.04
+Fitting SVM for Ps 112109 with gamma 0.05
+Ps: 112106 ScoreTest: 0.655910662283, k: 5, gamma: 0.04
+Fitting SVM for Ps 112106 with gamma 0.05
+Ps: 122101 ScoreTest: 0.512070417507, k: 4, gamma: 0.04
+Ps: 122101 ScoreTest: 0.515905331562, k: 5, gamma: 0.04
+Fitting SVM for Ps 122101 with gamma 0.05
+Ps: 112103 ScoreTest: 0.654842207548, k: 4, gamma: 0.05
+Ps: 112109 ScoreTest: 0.640924441021, k: 4, gamma: 0.05
+Ps: 112106 ScoreTest: 0.658689685289, k: 4, gamma: 0.05
+Ps: 112103 ScoreTest: 0.662875540483, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112103.
+Fitting SVM for Ps 122102 with gamma 0.01
+Ps: 112109 ScoreTest: 0.649601974062, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112109.
+Fitting SVM for Ps 122105 with gamma 0.01
+Ps: 112106 ScoreTest: 0.667646749324, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 112106.
+Fitting SVM for Ps 122108 with gamma 0.01
+Ps: 122102 ScoreTest: 0.508453614258, k: 1, gamma: 0.01
+Ps: 122105 ScoreTest: 0.507817742519, k: 1, gamma: 0.01
+Ps: 122102 ScoreTest: 0.516830069029, k: 2, gamma: 0.01
+Ps: 122108 ScoreTest: 0.504925560213, k: 1, gamma: 0.01
+Ps: 122105 ScoreTest: 0.515558864714, k: 2, gamma: 0.01
+Ps: 122102 ScoreTest: 0.525056899863, k: 3, gamma: 0.01
+Ps: 122108 ScoreTest: 0.509809083688, k: 2, gamma: 0.01
+Ps: 122101 ScoreTest: 0.518874670478, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122101.
+Ps: 122105 ScoreTest: 0.523151426762, k: 3, gamma: 0.01
+Fitting SVM for Ps 122202 with gamma 0.01
+Ps: 122202 ScoreTest: 0.688129090712, k: 1, gamma: 0.01
+Ps: 122202 ScoreTest: 0.744810414679, k: 2, gamma: 0.01
+Ps: 122102 ScoreTest: 0.533070342784, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.776964082217, k: 3, gamma: 0.01
+Ps: 122108 ScoreTest: 0.514611664595, k: 3, gamma: 0.01
+Ps: 122202 ScoreTest: 0.799285764204, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.815870739994, k: 5, gamma: 0.01
+Fitting SVM for Ps 122202 with gamma 0.02
+Ps: 122202 ScoreTest: 0.820525039079, k: 2, gamma: 0.02
+Ps: 122105 ScoreTest: 0.530532162983, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.840504937386, k: 3, gamma: 0.02
+Ps: 122202 ScoreTest: 0.852917837393, k: 4, gamma: 0.02
+Ps: 122202 ScoreTest: 0.861118861875, k: 5, gamma: 0.02
+Fitting SVM for Ps 122202 with gamma 0.03
+Ps: 122102 ScoreTest: 0.540818140071, k: 5, gamma: 0.01
+Fitting SVM for Ps 122102 with gamma 0.02
+Ps: 122108 ScoreTest: 0.519300127652, k: 4, gamma: 0.01
+Ps: 122202 ScoreTest: 0.86234632812, k: 3, gamma: 0.03
+Ps: 122202 ScoreTest: 0.869445947811, k: 4, gamma: 0.03
+Ps: 122202 ScoreTest: 0.873699706386, k: 5, gamma: 0.03
+Fitting SVM for Ps 122202 with gamma 0.04
+Ps: 122105 ScoreTest: 0.53764928044, k: 5, gamma: 0.01
+Fitting SVM for Ps 122105 with gamma 0.02
+Ps: 122202 ScoreTest: 0.875987331618, k: 4, gamma: 0.04
+Ps: 122202 ScoreTest: 0.878322404528, k: 5, gamma: 0.04
+Fitting SVM for Ps 122202 with gamma 0.05
+Ps: 122108 ScoreTest: 0.523848716417, k: 5, gamma: 0.01
+Fitting SVM for Ps 122108 with gamma 0.02
+Ps: 122202 ScoreTest: 0.87870301989, k: 4, gamma: 0.05
+Ps: 122202 ScoreTest: 0.880315975871, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122202.
+Fitting SVM for Ps 122203 with gamma 0.01
+Ps: 122203 ScoreTest: 0.675798111785, k: 1, gamma: 0.01
+Ps: 122203 ScoreTest: 0.734559786488, k: 2, gamma: 0.01
+Ps: 122203 ScoreTest: 0.769789054468, k: 3, gamma: 0.01
+Ps: 122203 ScoreTest: 0.795141606835, k: 4, gamma: 0.01
+Ps: 122203 ScoreTest: 0.814654119153, k: 5, gamma: 0.01
+Fitting SVM for Ps 122203 with gamma 0.02
+Ps: 122102 ScoreTest: 0.553458097695, k: 2, gamma: 0.02
+Ps: 122203 ScoreTest: 0.815636908124, k: 2, gamma: 0.02
+Ps: 122203 ScoreTest: 0.841059215606, k: 3, gamma: 0.02
+Ps: 122203 ScoreTest: 0.858450889817, k: 4, gamma: 0.02
+Ps: 122105 ScoreTest: 0.550691988325, k: 2, gamma: 0.02
+Ps: 122203 ScoreTest: 0.87111792259, k: 5, gamma: 0.02
+Fitting SVM for Ps 122203 with gamma 0.03
+Ps: 122102 ScoreTest: 0.572879838359, k: 3, gamma: 0.02
+Ps: 122108 ScoreTest: 0.528122093547, k: 2, gamma: 0.02
+Ps: 122203 ScoreTest: 0.88362704945, k: 4, gamma: 0.03
+Ps: 122203 ScoreTest: 0.892897301974, k: 5, gamma: 0.03
+Fitting SVM for Ps 122203 with gamma 0.04
+Ps: 122105 ScoreTest: 0.568746082888, k: 3, gamma: 0.02
+Ps: 122203 ScoreTest: 0.897263794087, k: 4, gamma: 0.04
+Ps: 122203 ScoreTest: 0.904432649283, k: 5, gamma: 0.04
+Fitting SVM for Ps 122203 with gamma 0.05
+Ps: 122102 ScoreTest: 0.587925204826, k: 4, gamma: 0.02
+Ps: 122108 ScoreTest: 0.53852888815, k: 3, gamma: 0.02
+Ps: 122203 ScoreTest: 0.905484977097, k: 4, gamma: 0.05
+Ps: 122203 ScoreTest: 0.911509884787, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122203.
+Fitting SVM for Ps 122204 with gamma 0.01
+Ps: 122204 ScoreTest: 0.655574160164, k: 1, gamma: 0.01
+Ps: 122204 ScoreTest: 0.711350772041, k: 2, gamma: 0.01
+Ps: 122105 ScoreTest: 0.582442493538, k: 4, gamma: 0.02
+Ps: 122204 ScoreTest: 0.743607626565, k: 3, gamma: 0.01
+Ps: 122204 ScoreTest: 0.766224330069, k: 4, gamma: 0.01
+Ps: 122204 ScoreTest: 0.783290493485, k: 5, gamma: 0.01
+Fitting SVM for Ps 122204 with gamma 0.02
+Ps: 122102 ScoreTest: 0.599819238589, k: 5, gamma: 0.02
+Fitting SVM for Ps 122102 with gamma 0.03
+Ps: 122204 ScoreTest: 0.784921302679, k: 2, gamma: 0.02
+Ps: 122108 ScoreTest: 0.547116976237, k: 4, gamma: 0.02
+Ps: 122204 ScoreTest: 0.806017497339, k: 3, gamma: 0.02
+Ps: 122204 ScoreTest: 0.820457136105, k: 4, gamma: 0.02
+Ps: 122204 ScoreTest: 0.830954646483, k: 5, gamma: 0.02
+Fitting SVM for Ps 122204 with gamma 0.03
+Ps: 122105 ScoreTest: 0.593011975493, k: 5, gamma: 0.02
+Fitting SVM for Ps 122105 with gamma 0.03
+Ps: 122204 ScoreTest: 0.841473819115, k: 4, gamma: 0.03
+Ps: 122204 ScoreTest: 0.848631453327, k: 5, gamma: 0.03
+Fitting SVM for Ps 122204 with gamma 0.04
+Ps: 122108 ScoreTest: 0.554532884197, k: 5, gamma: 0.02
+Fitting SVM for Ps 122108 with gamma 0.03
+Ps: 122204 ScoreTest: 0.852300075183, k: 4, gamma: 0.04
+Ps: 122204 ScoreTest: 0.856828550458, k: 5, gamma: 0.04
+Fitting SVM for Ps 122204 with gamma 0.05
+Ps: 122204 ScoreTest: 0.857862807119, k: 4, gamma: 0.05
+Ps: 122204 ScoreTest: 0.860807480991, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122204.
+Fitting SVM for Ps 122205 with gamma 0.01
+Ps: 122205 ScoreTest: 0.692335645509, k: 1, gamma: 0.01
+Ps: 122205 ScoreTest: 0.753183717617, k: 2, gamma: 0.01
+Ps: 122205 ScoreTest: 0.789426099205, k: 3, gamma: 0.01
+Ps: 122205 ScoreTest: 0.815723620076, k: 4, gamma: 0.01
+Ps: 122205 ScoreTest: 0.836141220893, k: 5, gamma: 0.01
+Fitting SVM for Ps 122205 with gamma 0.02
+Ps: 122102 ScoreTest: 0.609643581189, k: 3, gamma: 0.03
+Ps: 122205 ScoreTest: 0.863076172478, k: 3, gamma: 0.02
+Ps: 122205 ScoreTest: 0.881970639991, k: 4, gamma: 0.02
+Ps: 122205 ScoreTest: 0.895931707388, k: 5, gamma: 0.02
+Fitting SVM for Ps 122205 with gamma 0.03
+Ps: 122105 ScoreTest: 0.602888602604, k: 3, gamma: 0.03
+Ps: 122205 ScoreTest: 0.909539442703, k: 4, gamma: 0.03
+Ps: 122205 ScoreTest: 0.919969696156, k: 5, gamma: 0.03
+Fitting SVM for Ps 122205 with gamma 0.04
+Ps: 122102 ScoreTest: 0.622163236922, k: 4, gamma: 0.03
+Ps: 122108 ScoreTest: 0.559019274326, k: 3, gamma: 0.03
+Ps: 122205 ScoreTest: 0.924753882023, k: 4, gamma: 0.04
+Ps: 122205 ScoreTest: 0.932475816019, k: 5, gamma: 0.04
+Fitting SVM for Ps 122205 with gamma 0.05
+Ps: 122105 ScoreTest: 0.613334539763, k: 4, gamma: 0.03
+Ps: 122205 ScoreTest: 0.933767424415, k: 4, gamma: 0.05
+Ps: 122102 ScoreTest: 0.631617713727, k: 5, gamma: 0.03
+Fitting SVM for Ps 122102 with gamma 0.04
+Ps: 122205 ScoreTest: 0.939464135113, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122205.
+Fitting SVM for Ps 122206 with gamma 0.01
+Ps: 122206 ScoreTest: 0.692243114514, k: 1, gamma: 0.01
+Ps: 122108 ScoreTest: 0.56882266027, k: 4, gamma: 0.03
+Ps: 122206 ScoreTest: 0.753001786074, k: 2, gamma: 0.01
+Ps: 122206 ScoreTest: 0.789160956488, k: 3, gamma: 0.01
+Ps: 122206 ScoreTest: 0.815384374459, k: 4, gamma: 0.01
+Ps: 122206 ScoreTest: 0.835739696857, k: 5, gamma: 0.01
+Fitting SVM for Ps 122206 with gamma 0.02
+Ps: 122105 ScoreTest: 0.620833409001, k: 5, gamma: 0.03
+Fitting SVM for Ps 122105 with gamma 0.04
+Ps: 122206 ScoreTest: 0.862599619971, k: 3, gamma: 0.02
+Ps: 122206 ScoreTest: 0.881434317618, k: 4, gamma: 0.02
+Ps: 122206 ScoreTest: 0.895400471173, k: 5, gamma: 0.02
+Fitting SVM for Ps 122206 with gamma 0.03
+Ps: 122108 ScoreTest: 0.576732536585, k: 5, gamma: 0.03
+Fitting SVM for Ps 122108 with gamma 0.04
+Ps: 122206 ScoreTest: 0.909098975086, k: 4, gamma: 0.03
+Ps: 122206 ScoreTest: 0.919777596128, k: 5, gamma: 0.03
+Fitting SVM for Ps 122206 with gamma 0.04
+Ps: 122206 ScoreTest: 0.924638818316, k: 4, gamma: 0.04
+Ps: 122206 ScoreTest: 0.933013999829, k: 5, gamma: 0.04
+Fitting SVM for Ps 122206 with gamma 0.05
+Ps: 122206 ScoreTest: 0.934236730821, k: 4, gamma: 0.05
+Ps: 122206 ScoreTest: 0.941077613235, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122206.
+Fitting SVM for Ps 122207 with gamma 0.01
+Ps: 122207 ScoreTest: 0.669024681377, k: 1, gamma: 0.01
+Ps: 122207 ScoreTest: 0.723111088811, k: 2, gamma: 0.01
+Ps: 122207 ScoreTest: 0.753581273484, k: 3, gamma: 0.01
+Ps: 122207 ScoreTest: 0.774944411483, k: 4, gamma: 0.01
+Ps: 122207 ScoreTest: 0.791236385051, k: 5, gamma: 0.01
+Fitting SVM for Ps 122207 with gamma 0.02
+Ps: 122207 ScoreTest: 0.812740841985, k: 3, gamma: 0.02
+Ps: 122207 ScoreTest: 0.827635826216, k: 4, gamma: 0.02
+Ps: 122207 ScoreTest: 0.838581211129, k: 5, gamma: 0.02
+Fitting SVM for Ps 122207 with gamma 0.03
+Ps: 122102 ScoreTest: 0.639691257892, k: 4, gamma: 0.04
+Ps: 122207 ScoreTest: 0.849081221543, k: 4, gamma: 0.03
+Ps: 122207 ScoreTest: 0.85745931424, k: 5, gamma: 0.03
+Fitting SVM for Ps 122207 with gamma 0.04
+Ps: 122105 ScoreTest: 0.627319097256, k: 4, gamma: 0.04
+Ps: 122207 ScoreTest: 0.861321065395, k: 4, gamma: 0.04
+Ps: 122207 ScoreTest: 0.867726412206, k: 5, gamma: 0.04
+Fitting SVM for Ps 122207 with gamma 0.05
+Ps: 122102 ScoreTest: 0.647628718877, k: 5, gamma: 0.04
+Fitting SVM for Ps 122102 with gamma 0.05
+Ps: 122108 ScoreTest: 0.583068445577, k: 4, gamma: 0.04
+Ps: 122207 ScoreTest: 0.868696151291, k: 4, gamma: 0.05
+Ps: 122207 ScoreTest: 0.873572137604, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122207.
+Ps: 122105 ScoreTest: 0.632937189158, k: 5, gamma: 0.04
+Fitting SVM for Ps 122105 with gamma 0.05
+Fitting SVM for Ps 122208 with gamma 0.01
+Ps: 122208 ScoreTest: 0.689840744259, k: 1, gamma: 0.01
+Ps: 122108 ScoreTest: 0.589617614198, k: 5, gamma: 0.04
+Fitting SVM for Ps 122108 with gamma 0.05
+Ps: 122208 ScoreTest: 0.748239599513, k: 2, gamma: 0.01
+Ps: 122208 ScoreTest: 0.782121351893, k: 3, gamma: 0.01
+Ps: 122208 ScoreTest: 0.80618416613, k: 4, gamma: 0.01
+Ps: 122208 ScoreTest: 0.824523038357, k: 5, gamma: 0.01
+Fitting SVM for Ps 122208 with gamma 0.02
+Ps: 122208 ScoreTest: 0.826714243299, k: 2, gamma: 0.02
+Ps: 122208 ScoreTest: 0.849892773032, k: 3, gamma: 0.02
+Ps: 122208 ScoreTest: 0.865560548363, k: 4, gamma: 0.02
+Ps: 122208 ScoreTest: 0.877016706179, k: 5, gamma: 0.02
+Fitting SVM for Ps 122208 with gamma 0.03
+Ps: 122208 ScoreTest: 0.888204568524, k: 4, gamma: 0.03
+Ps: 122208 ScoreTest: 0.897045201347, k: 5, gamma: 0.03
+Fitting SVM for Ps 122208 with gamma 0.04
+Ps: 122208 ScoreTest: 0.900588786228, k: 4, gamma: 0.04
+Ps: 122208 ScoreTest: 0.90823322286, k: 5, gamma: 0.04
+Fitting SVM for Ps 122208 with gamma 0.05
+Ps: 122208 ScoreTest: 0.908895349408, k: 4, gamma: 0.05
+Ps: 122208 ScoreTest: 0.915677787424, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122208.
+Fitting SVM for Ps 122209 with gamma 0.01
+Ps: 122209 ScoreTest: 0.676208720648, k: 1, gamma: 0.01
+Ps: 122209 ScoreTest: 0.737063973326, k: 2, gamma: 0.01
+Ps: 122209 ScoreTest: 0.773578590791, k: 3, gamma: 0.01
+Ps: 122102 ScoreTest: 0.651275793422, k: 4, gamma: 0.05
+Ps: 122209 ScoreTest: 0.800149179471, k: 4, gamma: 0.01
+Ps: 122209 ScoreTest: 0.820838735682, k: 5, gamma: 0.01
+Fitting SVM for Ps 122209 with gamma 0.02
+Ps: 122209 ScoreTest: 0.847913959818, k: 3, gamma: 0.02
+Ps: 122209 ScoreTest: 0.86730499803, k: 4, gamma: 0.02
+Ps: 122209 ScoreTest: 0.881759212123, k: 5, gamma: 0.02
+Fitting SVM for Ps 122209 with gamma 0.03
+Ps: 122105 ScoreTest: 0.635341528863, k: 4, gamma: 0.05
+Ps: 122102 ScoreTest: 0.658382369292, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122102.
+Fitting SVM for Ps 122103 with gamma 0.01
+Ps: 122108 ScoreTest: 0.59149351382, k: 4, gamma: 0.05
+Ps: 122209 ScoreTest: 0.895859219264, k: 4, gamma: 0.03
+Ps: 122209 ScoreTest: 0.907009174323, k: 5, gamma: 0.03
+Fitting SVM for Ps 122209 with gamma 0.04
+Ps: 122209 ScoreTest: 0.912026883046, k: 4, gamma: 0.04
+Ps: 122105 ScoreTest: 0.640249185508, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122105.
+Fitting SVM for Ps 122106 with gamma 0.01
+Ps: 122209 ScoreTest: 0.920681455279, k: 5, gamma: 0.04
+Fitting SVM for Ps 122209 with gamma 0.05
+Ps: 122103 ScoreTest: 0.500043531856, k: 1, gamma: 0.01
+Ps: 122108 ScoreTest: 0.596874465399, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122108.
+Fitting SVM for Ps 122110 with gamma 0.01
+Ps: 122209 ScoreTest: 0.921970832966, k: 4, gamma: 0.05
+Ps: 122209 ScoreTest: 0.928790047883, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122209.
+Fitting SVM for Ps 122210 with gamma 0.01
+Ps: 122210 ScoreTest: 0.69240238435, k: 1, gamma: 0.01
+Ps: 122210 ScoreTest: 0.753361198088, k: 2, gamma: 0.01
+Ps: 122210 ScoreTest: 0.789696001714, k: 3, gamma: 0.01
+Ps: 122210 ScoreTest: 0.816082600755, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.503628001147, k: 1, gamma: 0.01
+Ps: 122210 ScoreTest: 0.836586692122, k: 5, gamma: 0.01
+Fitting SVM for Ps 122210 with gamma 0.02
+Ps: 122103 ScoreTest: 0.500087038271, k: 2, gamma: 0.01
+Ps: 122110 ScoreTest: 0.505722899784, k: 1, gamma: 0.01
+Ps: 122210 ScoreTest: 0.863572878203, k: 3, gamma: 0.02
+Ps: 122210 ScoreTest: 0.882615371679, k: 4, gamma: 0.02
+Ps: 122210 ScoreTest: 0.896712124437, k: 5, gamma: 0.02
+Fitting SVM for Ps 122210 with gamma 0.03
+Ps: 122106 ScoreTest: 0.507236488222, k: 2, gamma: 0.01
+Ps: 122103 ScoreTest: 0.500130505023, k: 3, gamma: 0.01
+Ps: 122210 ScoreTest: 0.91044439526, k: 4, gamma: 0.03
+Ps: 122110 ScoreTest: 0.511381885111, k: 2, gamma: 0.01
+Ps: 122210 ScoreTest: 0.921022640846, k: 5, gamma: 0.03
+Fitting SVM for Ps 122210 with gamma 0.04
+Ps: 122210 ScoreTest: 0.925855840748, k: 4, gamma: 0.04
+Ps: 122210 ScoreTest: 0.933684543515, k: 5, gamma: 0.04
+Fitting SVM for Ps 122210 with gamma 0.05
+Ps: 122106 ScoreTest: 0.510806939206, k: 3, gamma: 0.01
+Ps: 122103 ScoreTest: 0.500173937801, k: 4, gamma: 0.01
+Ps: 122210 ScoreTest: 0.934973004358, k: 4, gamma: 0.05
+Ps: 122110 ScoreTest: 0.516917329693, k: 3, gamma: 0.01
+Ps: 122210 ScoreTest: 0.940682923853, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122210.
+Ps: 122106 ScoreTest: 0.514322701626, k: 4, gamma: 0.01
+Ps: 122103 ScoreTest: 0.500217366687, k: 5, gamma: 0.01
+Fitting SVM for Ps 122103 with gamma 0.02
+Ps: 122110 ScoreTest: 0.522277523831, k: 4, gamma: 0.01
+Ps: 122106 ScoreTest: 0.517769662705, k: 5, gamma: 0.01
+Fitting SVM for Ps 122106 with gamma 0.02
+Ps: 122110 ScoreTest: 0.527421158823, k: 5, gamma: 0.01
+Fitting SVM for Ps 122110 with gamma 0.02
+Ps: 122106 ScoreTest: 0.520176903375, k: 2, gamma: 0.02
+Ps: 122110 ScoreTest: 0.536814043263, k: 2, gamma: 0.02
+Ps: 122106 ScoreTest: 0.528383258792, k: 3, gamma: 0.02
+Ps: 122110 ScoreTest: 0.549248020306, k: 3, gamma: 0.02
+Ps: 122106 ScoreTest: 0.535445305077, k: 4, gamma: 0.02
+Fitting SVM for Ps 122103 with gamma 0.03
+Ps: 122110 ScoreTest: 0.558403330215, k: 4, gamma: 0.02
+Ps: 122106 ScoreTest: 0.541711115988, k: 5, gamma: 0.02
+Fitting SVM for Ps 122106 with gamma 0.03
+Ps: 122110 ScoreTest: 0.565387501704, k: 5, gamma: 0.02
+Fitting SVM for Ps 122110 with gamma 0.03
+Ps: 122106 ScoreTest: 0.545058714592, k: 3, gamma: 0.03
+Ps: 122110 ScoreTest: 0.57172097618, k: 3, gamma: 0.03
+Ps: 122106 ScoreTest: 0.554215322917, k: 4, gamma: 0.03
+Fitting SVM for Ps 122103 with gamma 0.04
+Ps: 122110 ScoreTest: 0.579066634103, k: 4, gamma: 0.03
+Ps: 122106 ScoreTest: 0.561988399499, k: 5, gamma: 0.03
+Fitting SVM for Ps 122106 with gamma 0.04
+Ps: 122110 ScoreTest: 0.584550498267, k: 5, gamma: 0.03
+Fitting SVM for Ps 122110 with gamma 0.04
+Ps: 122106 ScoreTest: 0.569109627934, k: 4, gamma: 0.04
+Fitting SVM for Ps 122103 with gamma 0.05
+Ps: 122110 ScoreTest: 0.590241232523, k: 4, gamma: 0.04
+Ps: 122106 ScoreTest: 0.576086664559, k: 5, gamma: 0.04
+Fitting SVM for Ps 122106 with gamma 0.05
+Ps: 122110 ScoreTest: 0.594330016738, k: 5, gamma: 0.04
+Fitting SVM for Ps 122110 with gamma 0.05
+Ps: 122106 ScoreTest: 0.57927493231, k: 4, gamma: 0.05
+Writing to disk. Predictions for Ps 122103.
+Fitting SVM for Ps 122104 with gamma 0.01
+Ps: 122110 ScoreTest: 0.596435922537, k: 4, gamma: 0.05
+Ps: 122106 ScoreTest: 0.585204967609, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122106.
+Fitting SVM for Ps 122107 with gamma 0.01
+Ps: 122104 ScoreTest: 0.493155281122, k: 1, gamma: 0.01
+Ps: 122110 ScoreTest: 0.599047549939, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122110.
+Fitting SVM for Ps 122201 with gamma 0.01
+Ps: 122201 ScoreTest: 0.661941258248, k: 1, gamma: 0.01
+Ps: 122201 ScoreTest: 0.705268990801, k: 2, gamma: 0.01
+Ps: 122201 ScoreTest: 0.730284150516, k: 3, gamma: 0.01
+Ps: 122201 ScoreTest: 0.748043023914, k: 4, gamma: 0.01
+Ps: 122201 ScoreTest: 0.761396738089, k: 5, gamma: 0.01
+Fitting SVM for Ps 122201 with gamma 0.02
+Ps: 122107 ScoreTest: 0.509147158387, k: 1, gamma: 0.01
+Ps: 122201 ScoreTest: 0.764866030957, k: 2, gamma: 0.02
+Ps: 122201 ScoreTest: 0.781608743818, k: 3, gamma: 0.02
+Ps: 122201 ScoreTest: 0.791854906628, k: 4, gamma: 0.02
+Ps: 122201 ScoreTest: 0.798461704319, k: 5, gamma: 0.02
+Fitting SVM for Ps 122201 with gamma 0.03
+Ps: 122201 ScoreTest: 0.799586876093, k: 3, gamma: 0.03
+Ps: 122201 ScoreTest: 0.804982109716, k: 4, gamma: 0.03
+Ps: 122201 ScoreTest: 0.808190151297, k: 5, gamma: 0.03
+Fitting SVM for Ps 122201 with gamma 0.04
+Ps: 122107 ScoreTest: 0.518217148753, k: 2, gamma: 0.01
+Ps: 122201 ScoreTest: 0.809819917954, k: 4, gamma: 0.04
+Ps: 122201 ScoreTest: 0.811555286921, k: 5, gamma: 0.04
+Fitting SVM for Ps 122201 with gamma 0.05
+Ps: 122201 ScoreTest: 0.811977857781, k: 4, gamma: 0.05
+Ps: 122201 ScoreTest: 0.812874889207, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122201.
+Ps: 122107 ScoreTest: 0.527137492354, k: 3, gamma: 0.01
+Ps: 122107 ScoreTest: 0.535844400674, k: 4, gamma: 0.01
+Fitting SVM for Ps 122104 with gamma 0.02
+Ps: 122107 ScoreTest: 0.544285578822, k: 5, gamma: 0.01
+Fitting SVM for Ps 122107 with gamma 0.02
+Ps: 122107 ScoreTest: 0.555550185558, k: 2, gamma: 0.02
+Ps: 122107 ScoreTest: 0.576012743874, k: 3, gamma: 0.02
+Ps: 122107 ScoreTest: 0.592097267458, k: 4, gamma: 0.02
+Fitting SVM for Ps 122104 with gamma 0.03
+Ps: 122107 ScoreTest: 0.605029686758, k: 5, gamma: 0.02
+Fitting SVM for Ps 122107 with gamma 0.03
+Ps: 122107 ScoreTest: 0.613598706371, k: 3, gamma: 0.03
+Ps: 122107 ScoreTest: 0.627439441166, k: 4, gamma: 0.03
+Fitting SVM for Ps 122104 with gamma 0.04
+Ps: 122107 ScoreTest: 0.638209688424, k: 5, gamma: 0.03
+Fitting SVM for Ps 122107 with gamma 0.04
+Fitting SVM for Ps 122104 with gamma 0.05
+Ps: 122107 ScoreTest: 0.645824198916, k: 4, gamma: 0.04
+Ps: 122107 ScoreTest: 0.655289341254, k: 5, gamma: 0.04
+Fitting SVM for Ps 122107 with gamma 0.05
+Ps: 122107 ScoreTest: 0.658167653924, k: 4, gamma: 0.05
+Writing to disk. Predictions for Ps 122104.
+Ps: 122107 ScoreTest: 0.666985990966, k: 5, gamma: 0.05
+Writing to disk. Predictions for Ps 122107.
+39 39
+
+Fitting SVM to last training session...
+
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 3
+Ps: 112101 ScoreTest: 0.592806615744, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 3
+Ps: 112104 ScoreTest: 0.631846380931, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 3
+Ps: 112107 ScoreTest: 0.653231833104, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 3
+Ps: 112110 ScoreTest: 0.670062188616, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 3
+Ps: 112101 ScoreTest: 0.595255075272, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 3
+Ps: 112110 ScoreTest: 0.72312797287, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112101 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112101 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112101 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112101 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112101 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112101 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112110 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112104 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112107 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 3
+Ps: 112202 ScoreTest: 0.887385429157, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 3
+Ps: 112102 ScoreTest: 0.666397569028, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 3
+Ps: 112105 ScoreTest: 0.507449612421, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 3
+Ps: 112108 ScoreTest: 0.581680664681, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 3
+Ps: 112108 ScoreTest: 0.581803872598, kNN: 3, forgetting rate: 0.001
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 3
+Ps: 112105 ScoreTest: 0.508535592746, kNN: 3, forgetting rate: 0.005
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 3
+Ps: 112105 ScoreTest: 0.51288550754, kNN: 3, forgetting rate: 0.01
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 3
+Ps: 112102 ScoreTest: 0.669289489156, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 3
+Ps: 112105 ScoreTest: 0.556759137914, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 3
+Ps: 112108 ScoreTest: 0.582091782963, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 5
+Ps: 112105 ScoreTest: 0.650953348406, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112102 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112102 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112202 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112105 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112108 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 3
+Ps: 112103 ScoreTest: 0.6508754825, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 3
+Ps: 112203 ScoreTest: 0.925189187733, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 3
+Ps: 112106 ScoreTest: 0.668398853528, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 3
+Ps: 112109 ScoreTest: 0.669772092338, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 3
+Ps: 112106 ScoreTest: 0.66899299833, kNN: 3, forgetting rate: 0.001
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 3
+Ps: 112106 ScoreTest: 0.685908257576, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 5
+Ps: 112109 ScoreTest: 0.669889906357, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 5
+Ps: 112106 ScoreTest: 0.718089224456, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 5
+Ps: 112109 ScoreTest: 0.684750608058, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112203 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112203 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112203 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112203 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112203 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112203 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112103 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112106 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112109 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 3
+Ps: 112204 ScoreTest: 0.947537030636, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 3
+Ps: 112207 ScoreTest: 0.954753292922, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 3
+Ps: 112210 ScoreTest: 0.917505075333, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 3
+Ps: 122102 ScoreTest: 0.601663456559, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 5
+Ps: 122102 ScoreTest: 0.62889540956, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 5
+Ps: 122102 ScoreTest: 0.645646959907, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112204 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112204 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112207 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112210 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122102 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 3
+Ps: 112205 ScoreTest: 0.956832083585, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 3
+Ps: 112208 ScoreTest: 0.927629277565, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 3
+Ps: 112211 ScoreTest: 0.859200612152, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 3
+Ps: 122103 ScoreTest: 0.490647249095, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112205 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112205 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112205 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112205 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112205 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112208 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112211 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122103 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 3
+Ps: 112206 ScoreTest: 0.945458210141, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122103 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 3
+Ps: 112209 ScoreTest: 0.948757463551, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 3
+Ps: 122101 ScoreTest: 0.659323336511, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 3
+Ps: 122104 ScoreTest: 0.499135423988, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 5
+Ps: 122101 ScoreTest: 0.681447943472, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 5
+Ps: 122101 ScoreTest: 0.697425889079, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 5
+Ps: 122104 ScoreTest: 0.501075782636, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 13
+Ps: 122104 ScoreTest: 0.504233857226, kNN: 13, forgetting rate: 0.005
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 13
+Ps: 122104 ScoreTest: 0.51106803895, kNN: 13, forgetting rate: 0.01
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 112206 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 112206 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 112209 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122104 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122104 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122104 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122104 with forgetting rate= 0.01 and k= 20
+Ps: 122104 ScoreTest: 0.512606858233, kNN: 20, forgetting rate: 0.01
+Re-sampling participant ID 122104 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122101 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 3
+Ps: 122104 ScoreTest: 0.520139052608, kNN: 20, forgetting rate: 0.05
+Re-sampling participant ID 122104 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 3
+Ps: 122105 ScoreTest: 0.652104390588, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 3
+Ps: 122108 ScoreTest: 0.666892162231, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 3
+Ps: 122202 ScoreTest: 0.895998083572, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 3
+Ps: 122104 ScoreTest: 0.544161540368, kNN: 20, forgetting rate: 0.1
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 3
+Ps: 122205 ScoreTest: 0.924174420541, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 3
+Ps: 122105 ScoreTest: 0.665719772378, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 3
+Ps: 122108 ScoreTest: 0.70026197216, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 5
+Ps: 122108 ScoreTest: 0.701179340583, kNN: 3, forgetting rate: 0.1
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122105 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122105 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122108 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122202 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122205 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 3
+Ps: 122106 ScoreTest: 0.616153634529, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 3
+Ps: 122110 ScoreTest: 0.665065123376, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 3
+Ps: 122203 ScoreTest: 0.90328151998, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 3
+Ps: 122206 ScoreTest: 0.938086458296, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 3
+Ps: 122110 ScoreTest: 0.699436770945, kNN: 3, forgetting rate: 0.05
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122106 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122106 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122110 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122203 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122206 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 3
+Ps: 122201 ScoreTest: 0.902673668893, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 3
+Ps: 122107 ScoreTest: 0.669508535078, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 3
+Ps: 122204 ScoreTest: 0.901961230489, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 3
+Ps: 122107 ScoreTest: 0.670516713577, kNN: 3, forgetting rate: 0.001
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 3
+Ps: 122207 ScoreTest: 0.820255049228, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122107 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122107 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122201 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122204 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122207 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 3
+Ps: 122208 ScoreTest: 0.917970985701, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122208 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122208 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 3
+Ps: 122209 ScoreTest: 0.877086473451, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122209 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122209 with forgetting rate= 0.1 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 3
+Ps: 122210 ScoreTest: 0.867337200443, kNN: 3, forgetting rate: 0.0001
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 3
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 3
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 3
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 3
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 3
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 5
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 7
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 9
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 13
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 17
+Re-sampling participant ID 122210 with forgetting rate= 0.0001 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.001 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.005 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.01 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.05 and k= 20
+Re-sampling participant ID 122210 with forgetting rate= 0.1 and k= 20

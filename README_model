@@ -1,0 +1,12 @@
+README file to the model and how it behaves. There is some more of theoretical divagation in the Python code itself, probably not the best thing to put it there...
+
+by Lukasz Kopec
+
+31/10/12
+The model is meant to be forgetting instances from memory.
+One question is: which instances?
+- Is it uniformly sampled from current instances?
+- Is it sampled following, say, normal distribution (forget most from the 'centre', and less from the tails.
+- Maybe something like (1/normal) - tall at the edges and low in the centre. That way the instances from the boundary would be forgotten most often.
+
+I guess however, that just a uniform forgetting mechanism would mean that the actual data will speak for itself.

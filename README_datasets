@@ -1,0 +1,5 @@
+README by Lukasz Kopec
+30/10/12
+The datasets are from Gyslain's experiment with extended training. What I am interested for this project is the sequence of training datapoints and the distributions they are from.
+
+The line lengths are in column 9, i.e. tokens[8]. I _think_ that the distribution is in variance, i.e. tokens[2]. The number of session is in tokens[2], and the (unique I hope) participant ID is in tokens[0].
