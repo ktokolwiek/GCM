@@ -15,8 +15,7 @@ from sklearn.svm import SVC
 #from scikits.learn.svm import SVC
 
 #edit by Lukasz 30/10/12
-#how to select the instance to be forgotten - uniformly or normally?
-#according to which normal distribution?
+#Select the instance following normal distribution
 def select_uniformly(from_list_instances, from_list_labels):
     """ Here we sample uniformly from from_list_instances, and we then
     re-sample it using the `resample` function. Then we return the new
