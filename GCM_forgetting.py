@@ -9,36 +9,47 @@
 # this should be by unique instance number or by length or whatever. Porbably
 # should then generate unique instance numbers. Should have a list of Ps which
 # will contain all instance numbers for that participant.
+
+# 1 February
+# I just need to implement data output nd incrementality in the model, so that
+# category labels re-estimate based on the current model.
+
 from random import random, gauss
 from os import path
 import math
 
 class ps_data():
 
-    def __init__(self,fname,verbose):
+    def __init__(self, fname, verbose,\
+            gamma, forget_rate, choice_parameter, noise_mu, noise_sigma):
         self.verbosity=verbose
+        self.SetParameters(gamma, forget_rate, choice_parameter, noise_mu, noise_sigma)
         self.ReadData(fname)
 
     # DATA INPUT:
     def ReadData(self, fname):
         """ Here we read in the data from file fname and will save it in the
         class instance's data structure."""
-        self.data={}
-        self.catA=[]
-        self.catB=[]
+        self.data={} # The actual data structure
+        self.catA=[] # A list of members of category A
+        self.catB=[] # A list of members of category B
+        self.changedCats=0 # how many instances changed categories
         if path.exists(fname):
             with open(fname) as f:
                 for line in f:
                     try:
                         a=line.split(',')
-                        if a[5]=='D':
+                        instNo=self.GetInstNo(a[0],a[3],a[1],a[2])
+                        if a[5]=='D': # this is how it is represented in the
+                            # data from Texas
                             actualcat=1
-                            self.catB.append(int(a[4]))
+                            self.catB.append(instNo)
                         else:
                             actualcat=-1
-                            celf.catA.append(int(a[4]))
+                            self.catA.append(instNo)
                         # ^ this is the category which is given to the Ps as
-                        # feedback.
+                        # feedback. This is what we model as what they
+                        # remember / forget / use for category inference.
                         pscat=-1
                         if a[6]=='D':
                             pscat=1
@@ -49,7 +60,7 @@ class ps_data():
                             idealcat=1
                         # ^ this is the category which the ideal classifier
                         # would put the stimulus in.
-                        self.AddPs(int(a[0]),int(a[0]+a[3]),int(a[1]),int(a[2]),int(a[4]),\
+                        self.AddPs(int(a[0]),int(a[3]),int(a[1]),int(a[2]),int(a[4]),\
                                 actualcat, idealcat, pscat)
                     except:
                         continue # say, if first line or something wrong
@@ -58,36 +69,49 @@ class ps_data():
                 print "The filename "+fname+" is invalid!"
         pass
 
+    def GetInstNo(self, ps_id, trial_no, session, condition):
+        """Gets a supposedly unique number of a training instance"""
+        return int(str(ps_id)+str(trial_no)+str(session)+str(condition))
+
     def AddPs(self, ps_id, trial_no, session, condition, length, actualCat,\
             idealCat, responseCat):
-        """ Here we add in a datapoint for a participant """
+        """ Here we add in a datapoint for a participant. Can also use that for
+        updating the Ps's data. """
+        self.data[self.GetInstNo(ps_id,trial_no,session,condition)]={'ps_id':ps_id,\
+                'trial_no': trial_no,\
+                'session': session,\
+                'condition': condition,\
+                'length': self.AddNoise(length),\
+                'actualCat': actualCat,\
+                'idealCat': idealCat,\
+                'responseCat': responseCat}
+
+    def GetInstancesForPs(self, **kwargs):
+        """Returns all instance ids for which the kwargs are matching with the
+        instance."""
+        result=[]
         try:
-            self.data[ps_id][trial_no]={'session': session,\
-                    'condition': condition,\
-                    'length': length,\
-                    'actualcat': actualCat,\
-                    'idealcat': idealCat,\
-                    'reponsecat': responseCat}
-        except:
-            self.data[ps_id]={trial_no:\
-                    {'session': session,\
-                    'condition': condition,\
-                    'length': length,\
-                    'actualcat': actualCat,\
-                    'idealcat': idealCat,\
-                    'reponsecat': responseCat}}
+            for inst_id in self.data.keys():
+                if all([self.data[inst_id][key]==kwargs[key]\
+                        for key in kwargs.keys()]):
+                    result.append(inst_id)
+        except KeyError, e:
+            if self.verbose > 0:
+                print 'Error: keyword '+ e.message+' does not exist'
+
+        return result
 
     # DATA OUTPUT:
-    def GetPsData(self,ps_data):
+    def GetPsData(self,inst_no):
         """Return the data for this participant"""
         try:
-            return self.data[ps_data]
+            return self.data[inst_no]
         except:
             if verbose > 100:
-                print "No data for participant %d and trial %d !" % \
-                {ps_id,trial_no}
-            return {1:{'session': 1, 'condition': 1, 'length': 1, 'actualcat':-1,\
-                    'idealcat': -1, 'responsecat': -1}}
+                print "No data for trial %d !" % \
+                {inst_no}
+            return {'ps_id': 1, 'trial_no': 1, 'session': 1, 'condition': 1,\
+                    'length': 1, 'actualCat':-1, 'idealCat': -1, 'responseCat': -1}
 
     def WriteOut(self,fname):
         """Writes out the data to the file fname"""
@@ -110,10 +134,22 @@ class ps_data():
         self.noise_sigma=noise_sigma
 
     # FORGETTING
-    def ReEstimateCategory(self,ps_id,trial_no):
+    def ReEstimateCategory(self,instance_no):
         """Re-estimate the category membership of the instance."""
-        self.data[ps_id][trial_no]
-        pass
+        inst=self.GetPsData[instance_no]
+        # delete number from catA and catB
+        cat_old=inst['actualCat']
+        inst['actualCat']=self.PredictCategory(inst['length'])
+        if cat_old!=inst['actualCat']:
+            if cat_old=='-1':
+                self.catA.remove(instance_no)
+                self.catB.append(instance_no)
+            else:
+                self.catB.remove(instance_no)
+                self.catA.append(instance_no)
+            self.changedCats = self.changedCats+1 # Add one instance to the
+            # number of instances which changed category
+            self.AddPs(**inst)
 
     # PERCEPTUAL NOISE
     def AddNoise(self, length):
@@ -130,7 +166,7 @@ class ps_data():
         similarity measure is the exponential decay similarity function (cf.
         Maddox, 1999). We also use Euclidean distance as the measure of
         distance."""
-        return math.exp(-self.choice_parameter*sqrt((length1-length2)**2))
+        return math.exp(-self.choice_parameter*math.sqrt((length1-length2)**2))
 
     def PredictCategory(self, length):
         """Return the category membership of the instance.
@@ -138,12 +174,12 @@ class ps_data():
         from the model parameter initialisation.
         Category A == -1
         Category B == 1"""
-        sum_cat_A=sum([self.Similarity(length,lengthj) for lengthj in \
-            self.catA])
-        sum_cat_B=sum([self.Similarity(length,lengthj) for lengthj in \
-            self.catB])
-        prob_a=sum_cat_A**gamma/(sum_cat_A**gamma+sum_cat_B**gamma)
-        prob_b=sum_cat_B**gamma/(sum_cat_A**gamma+sum_cat_B**gamma)
+        sum_cat_A=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
+            inst in self.catA])
+        sum_cat_B=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
+            inst in self.catB])
+        prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
+        prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
         if prob_a>=prob_b:
             return -1
         else:
