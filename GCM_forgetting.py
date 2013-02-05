@@ -42,9 +42,9 @@ class ps_data():
             result += 'Unparametrised GCM.\n'
         try:
             result += ('Re-estimated %(reEstimated)d instances. '+\
-                    '%(changedCats)d instances changed class.') %self.__dict__
+                    '%(changedCats)d instances changed class.\n') %self.__dict__
         except:
-            result += 'No instances re-estimated.'
+            result += 'No instances re-estimated.\n'
         return result
 
     # DATA INPUT:
@@ -100,8 +100,8 @@ class ps_data():
 
     def GetInstNo(self, ps_id, trial_no, session, condition):
         """Gets a supposedly unique number of a training instance"""
-        return int('%09d%03d%02d%02d' % \
-                (int(ps_id),int(trial_no),int(session),int(condition)))
+        return '%09d%02d%04d%02d' % \
+                (int(ps_id),int(session),int(trial_no),int(condition))
 
     def AddPs(self, **kwargs):
         """ Here we add in a datapoint for a participant. Can also use that for
@@ -144,13 +144,16 @@ class ps_data():
                     'modelledCat\n')
             for key in sorted(self.data.keys()):
                 try:
-                    f.write(('(ps_id)\t(trial_no)\t(session)\t(condition)\t'+\
-                        '(length)\t(actualCat)\t(idealCat)\t(responseCat)\t'+\
-                        '(modelledCat)\n') % self.GetPsData(key))
+                    f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
+                            '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
+                            '%(idealCat)s\t%(responseCat)s\t%(modelledCat)s\n')\
+                            % self.GetPsData(key))
                 except:
-                    f.write(('(ps_id)\t(trial_no)\t(session)\t(condition)\t'+\
-                        '(length)\t(actualCat)\t(idealCat)\t(responseCat)\t')\
-                        %self.GetPsData(key) + self.PredictCategory(key)+'\n')
+                    f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
+                            '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
+                            '%(idealCat)s\t%(responseCat)s\t')\
+                            %self.GetPsData(key) +\
+                            str(self.PredictCategory(key))+'\n')
 
     # MODEL
     def SetParameters(self, gamma, forget_rate, choice_parameter,\
@@ -213,7 +216,7 @@ class ps_data():
                 if (i % (len(self.data.keys())/20)) == 0:
                     sys.stdout.write("-")
                     sys.stdout.flush()
-        if verbose > 10:
+        if self.verbose > 10:
             sys.stdout.write("\n")
 
     # PERCEPTUAL NOISE
