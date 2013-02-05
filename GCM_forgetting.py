@@ -10,13 +10,21 @@
 # should then generate unique instance numbers. Should have a list of Ps which
 # will contain all instance numbers for that participant.
 
-# 1 February
+# 1 February 2013
 # I just need to implement data output and incrementality in the model, so that
 # category labels re-estimate based on the current model.
 
-# 4 February
+# 4 February 2013
 # Write to disk is ready-ish. Need a way to test and something to do with
-# incrementality of the model. Precition of length from category label.
+# incrementality of the model. Prediction of length from category label.
+
+# 5 February 2013
+# Write to disk now preserves the order of presentation. The ForgetLoop()
+# function now incrementally presents the data.
+# Possibly this is not a good idea, because then instances presented early get
+# forgotten a few times...
+# I also need to add a fit metric which will measure the fit of the model to
+# the data with current parameters.
 
 from random import random, gauss
 from os import path
@@ -53,8 +61,8 @@ class ps_data():
         class instance's data structure."""
         self.datafile=path.join(path.realpath('.'),fname)
         self.data={} # The actual data structure
-        #self.catA=[] # A list of members of category A
-        #self.catB=[] # A list of members of category B
+        self.catA=[] # A list of members of category A
+        self.catB=[] # A list of members of category B
         # We don't put the data in categories yet - we do that in the modelling
         # phase, where we build the model incrementally.
         if path.exists(fname):
@@ -87,7 +95,8 @@ class ps_data():
                                 'trial_no': int(a[3]),\
                                 'session': int(a[1]),\
                                 'condition': int(a[2]),\
-                                'length': int(a[4]),\
+                                'length': self.AddNoise(int(a[4])),\
+                                #Adds noise only once
                                 'actualCat': actualcat,\
                                 'idealCat': idealcat,\
                                 'responseCat': pscat})
@@ -113,15 +122,14 @@ class ps_data():
         """Returns all instance ids for which the kwargs are matching with the
         instance."""
         result=[]
-        try:
-            for inst_id in self.data.keys():
+        for inst_id in self.data.keys():
+            try:
                 if all([self.data[inst_id][key]==kwargs[key]\
                         for key in kwargs.keys()]):
                     result.append(inst_id)
-        except KeyError, e:
-            if self.verbose > 0:
-                print 'Error: keyword '+ e.message+' does not exist'
-
+            except KeyError, e:
+                if self.verbose > 0:
+                    print 'Error: keyword '+ e.message+' does not exist.'
         return result
 
     # DATA OUTPUT:
@@ -155,6 +163,68 @@ class ps_data():
                             %self.GetPsData(key) +\
                             str(self.PredictCategory(key))+'\n')
 
+    def GraphCategories(self):
+        """ Makes a graph of category distribution.
+        """
+        from matplotlib import pyplot
+        import numpy as np
+        # Presented distribution
+        pyplot.subplot(411)
+        As=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'actualCat': -1})]
+        Bs=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'actualCat': 1})]
+        n, bins, patches = pyplot.hist([As,Bs], bins=60)
+        mean_a=np.mean(As)
+        sd_a=np.std(As)
+        mean_b=np.mean(Bs)
+        sd_b=np.std(Bs)
+        pyplot.title(('Presented distribution. A: mean %.2f sd %.2f; B: mean'+\
+                ' %.2f sd %.2f.')%(mean_a,sd_a,mean_b,sd_b))
+        # Initial responses
+        pyplot.subplot(412)
+        As=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'session': 1,\
+                'responseCat': -1})]
+        Bs=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'session': 1,\
+                'responseCat': 1})]
+        n, bins, patches = pyplot.hist([As,Bs], bins=60)
+        mean_a=np.mean(As)
+        sd_a=np.std(As)
+        mean_b=np.mean(Bs)
+        sd_b=np.std(Bs)
+        pyplot.title(('Initial responses. A: mean %.2f sd %.2f; B: mean'+\
+                ' %.2f sd %.2f.')%(mean_a,sd_a,mean_b,sd_b))
+        # Post - forgetting
+        pyplot.subplot(413)
+        As = [self.GetPsData(i)['length'] for i in self.catA]
+        Bs = [self.GetPsData(i)['length'] for i in self.catB]
+        n, bins, patches = pyplot.hist([As,Bs], bins=60)
+        mean_a=np.mean(As)
+        sd_a=np.std(As)
+        mean_b=np.mean(Bs)
+        sd_b=np.std(Bs)
+        pyplot.title(('Post-forgetting. A: mean %.2f sd %.2f; B: mean'+\
+                ' %.2f sd %.2f.')%(mean_a,sd_a,mean_b,sd_b))
+        # Responses in test session
+        # FIXME: use actual test session data
+        pyplot.subplot(414)
+        As=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'session': 5,\
+                'responseCat': -1})]
+        Bs=[self.GetPsData(i)['length'] for i in \
+                self.GetInstancesForPs(**{'session': 5,\
+                'responseCat': 1})]
+        n, bins, patches = pyplot.hist([As,Bs], bins=60)
+        mean_a=np.mean(As)
+        sd_a=np.std(As)
+        mean_b=np.mean(Bs)
+        sd_b=np.std(Bs)
+        pyplot.title(('Test session. A: mean %.2f sd %.2f; B: mean'+\
+                ' %.2f sd %.2f.')%(mean_a,sd_a,mean_b,sd_b))
+        pyplot.show()
+
     # MODEL
     def SetParameters(self, gamma, forget_rate, choice_parameter,\
             noise_mu, noise_sigma):
@@ -180,9 +250,9 @@ class ps_data():
     def ForgetOnce(self):
         """Selects instances which are to be forgotten, following an
         exponential distribution, based on recency of presentation."""
-        forgetCatA=[(math.exp(-(1.0/self.forget_rate)*(len(self.catA)-i)), no) \
+        forgetCatA=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
                 for (i,no) in enumerate(self.catA)]
-        forgetCatB=[(math.exp(-(1.0/self.forget_rate)*(len(self.catB)-i)), no) \
+        forgetCatB=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
                 for (i,no) in enumerate(self.catB)]
         for (prob, instNo) in forgetCatA:
             if random() < prob:
@@ -191,17 +261,18 @@ class ps_data():
             if random() < prob:
                 self.ReEstimateCategory(instNo)
 
-    def ForgetLoop(self):
-        """ Loops through the whole dataset and after presenting every
-        instance goes through the cycle of forgetting."""
-        self.catA=[]
-        self.catB=[]
+    def ForgetLoop(self, instances):
+        """ Loops through the instances in the list and after presenting every
+        instance goes through the cycle of forgetting.
+        If the list is None, then defaults to presenting all instances."""
+        if not instances:
+            instances = sorted(self.data.keys())
         if self.verbose > 10:
             print "Forgetting loop"
             sys.stdout.write("[%s]" % (" " * 20))
             sys.stdout.flush()
             sys.stdout.write("\b" * (20+1))
-        for (i,instId) in enumerate(sorted(self.data.keys())):
+        for (i,instId) in enumerate(instances):
             inst=self.GetPsData(instId)
             try:
                 cat=inst['modelledCat']
@@ -281,14 +352,6 @@ class ps_data():
         from the model parameter initialisation.
         Category A == -1
         Category B == 1"""
-        try:
-            self.catA
-        except:
-            self.catA=[]
-        try:
-            self.catB
-        except:
-            self.catB=[]
         if (len(self.catA)<=1 and len(self.catB)<=1):
             if self.verbose>0:
                 print "Warning, trying to predict category on an "+\
