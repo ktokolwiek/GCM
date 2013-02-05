@@ -1,4 +1,0 @@
-GCM
-===
-
-Generalized Context Model
