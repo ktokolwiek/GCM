@@ -26,6 +26,11 @@
 # I also need to add a fit metric which will measure the fit of the model to
 # the data with current parameters.
 
+# 6 February 2013
+# Should maybe add an extra argument to the functions, being a list of
+# instances which are used for, say, evaluation of the model, or prediction of
+# categories.
+
 from random import random, gauss
 from os import path
 import sys,math
@@ -261,7 +266,7 @@ class ps_data():
             if random() < prob:
                 self.ReEstimateCategory(instNo)
 
-    def ForgetLoop(self, instances):
+    def ForgetLoop(self, instances=None):
         """ Loops through the instances in the list and after presenting every
         instance goes through the cycle of forgetting.
         If the list is None, then defaults to presenting all instances."""
@@ -379,6 +384,12 @@ class ps_data():
                 return -1
             else:
                 return 1
+
+    def ScoreModelFit(self):
+        """ This returns a score of how well the model fits the data, by
+        evaluating the predictions of the model.
+        """
+        pass
 
     def TrainGCM(self):
         """Train the GCM incrementally using all instances."""
