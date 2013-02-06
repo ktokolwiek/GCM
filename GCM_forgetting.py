@@ -30,10 +30,11 @@
 # Should maybe add an extra argument to the functions, being a list of
 # instances which are used for, say, evaluation of the model, or prediction of
 # categories.
+# Also - WriteOut() is terribly slow. Maybe just use pickle?
 
 from random import random, gauss
 from os import path
-import sys,math
+import sys, math, time
 
 class ps_data():
 
@@ -68,6 +69,8 @@ class ps_data():
         self.data={} # The actual data structure
         self.catA=[] # A list of members of category A
         self.catB=[] # A list of members of category B
+        self.presentedOrder=[] # This will remember the order of presentation
+        # of stimuli, for modelling of recency and forgetting. 
         # We don't put the data in categories yet - we do that in the modelling
         # phase, where we build the model incrementally.
         if path.exists(fname):
@@ -123,11 +126,13 @@ class ps_data():
         self.data[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
                 kwargs['session'],kwargs['condition'])]=kwargs
 
-    def GetInstancesForPs(self, **kwargs):
+    def GetInstancesForPs(self, instances=None, **kwargs):
         """Returns all instance ids for which the kwargs are matching with the
         instance."""
+        if not instances:
+            instances=self.data.keys()
         result=[]
-        for inst_id in self.data.keys():
+        for inst_id in instances:
             try:
                 if all([self.data[inst_id][key]==kwargs[key]\
                         for key in kwargs.keys()]):
@@ -148,37 +153,48 @@ class ps_data():
             return {'ps_id': 1, 'trial_no': 1, 'session': 1, 'condition': 1,\
                     'length': 1, 'actualCat':-1, 'idealCat': -1, 'responseCat': -1}
 
-    def WriteOut(self,fname):
-        """Writes out the data to the file fname"""
+    def WriteOut(self,fname, instances=None, pickle=False):
+        """Writes out the data to the file fname. It used Python's Pickle if
+        pickle==True.
+        """
+        if not instances:
+            instances=sorted(self.data.keys())
+        if pickle:
+            import pickle
         with open(fname,'w') as f:
-            f.write(self.__repr__())
-            f.write('ps_id\ttrial_no\tsession\tcondition\t'+\
-                    'length\tactualCat\tidealCat\tresponseCat\t'+\
-                    'modelledCat\n')
-            for key in sorted(self.data.keys()):
-                try:
-                    f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
-                            '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
-                            '%(idealCat)s\t%(responseCat)s\t%(modelledCat)s\n')\
-                            % self.GetPsData(key))
-                except:
-                    f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
-                            '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
-                            '%(idealCat)s\t%(responseCat)s\t')\
-                            %self.GetPsData(key) +\
-                            str(self.PredictCategory(key))+'\n')
+            if pickle:
+                pickle.dump(self, f)
+            else:
+                f.write(self.__repr__())
+                f.write('ps_id\ttrial_no\tsession\tcondition\t'+\
+                        'length\tactualCat\tidealCat\tresponseCat\t'+\
+                        'modelledCat\n')
+                for key in instances:
+                    try:
+                        f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
+                                '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
+                                '%(idealCat)s\t%(responseCat)s\t%(modelledCat)s\n')\
+                                % self.GetPsData(key))
+                    except:
+                        f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
+                                '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
+                                '%(idealCat)s\t%(responseCat)s\t')\
+                                %self.GetPsData(key) +\
+                                str(self.PredictCategory(key))+'\n')
 
-    def GraphCategories(self):
+    def GraphCategories(self, instances=None):
         """ Makes a graph of category distribution.
         """
         from matplotlib import pyplot
         import numpy as np
+        if not instances:
+            instances=sorted(self.data.keys())
         # Presented distribution
         pyplot.subplot(411)
         As=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'actualCat': -1})]
+                self.GetInstancesForPs(instances, **{'actualCat': -1})]
         Bs=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'actualCat': 1})]
+                self.GetInstancesForPs(instances, **{'actualCat': 1})]
         n, bins, patches = pyplot.hist([As,Bs], bins=60)
         mean_a=np.mean(As)
         sd_a=np.std(As)
@@ -189,10 +205,10 @@ class ps_data():
         # Initial responses
         pyplot.subplot(412)
         As=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'session': 1,\
+                self.GetInstancesForPs(instances, **{'session': 1,\
                 'responseCat': -1})]
         Bs=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'session': 1,\
+                self.GetInstancesForPs(instances, **{'session': 1,\
                 'responseCat': 1})]
         n, bins, patches = pyplot.hist([As,Bs], bins=60)
         mean_a=np.mean(As)
@@ -203,8 +219,8 @@ class ps_data():
                 ' %.2f sd %.2f.')%(mean_a,sd_a,mean_b,sd_b))
         # Post - forgetting
         pyplot.subplot(413)
-        As = [self.GetPsData(i)['length'] for i in self.catA]
-        Bs = [self.GetPsData(i)['length'] for i in self.catB]
+        As = [self.GetPsData(i)['length'] for i in self.catA if i in instances]
+        Bs = [self.GetPsData(i)['length'] for i in self.catB if i in instances]
         n, bins, patches = pyplot.hist([As,Bs], bins=60)
         mean_a=np.mean(As)
         sd_a=np.std(As)
@@ -216,10 +232,10 @@ class ps_data():
         # FIXME: use actual test session data
         pyplot.subplot(414)
         As=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'session': 5,\
+                self.GetInstancesForPs(instances, **{'session': 5,\
                 'responseCat': -1})]
         Bs=[self.GetPsData(i)['length'] for i in \
-                self.GetInstancesForPs(**{'session': 5,\
+                self.GetInstancesForPs(instances, **{'session': 5,\
                 'responseCat': 1})]
         n, bins, patches = pyplot.hist([As,Bs], bins=60)
         mean_a=np.mean(As)
@@ -241,39 +257,35 @@ class ps_data():
         noise ~ Gaussian(mean,sd).
         """
         self.gamma=gamma
-        if forget_rate==0.0:
-            self.forget_rate=1e-50
-            # so that we don't get division by zero, but still (virtually) no
-            # forgetting
-        else:
-            self.forget_rate=forget_rate
+        self.forget_rate=forget_rate
         self.choice_parameter=choice_parameter
         self.noise_mu=noise_mu
         self.noise_sigma=noise_sigma
 
     # FORGETTING
-    def ForgetOnce(self):
+    def ForgetOnce(self, instances=None):
         """Selects instances which are to be forgotten, following an
         exponential distribution, based on recency of presentation."""
-        forgetCatA=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
-                for (i,no) in enumerate(self.catA)]
-        forgetCatB=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
-                for (i,no) in enumerate(self.catB)]
-        for (prob, instNo) in forgetCatA:
+        if not instances:
+            instances=sorted(self.data.keys())
+        forgetInsts=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
+                for (i,no) in enumerate(self.presentedOrder) \
+                if no in instances]
+        for (prob, instNo) in forgetInsts:
             if random() < prob:
-                self.ReEstimateCategory(instNo)
-        for (prob, instNo) in forgetCatB:
-            if random() < prob:
-                self.ReEstimateCategory(instNo)
+                self.ReEstimateCategory(instNo, instances)
+                self.presentedOrder.remove(instNo)
+                self.presentedOrder.append(instNo) # saves the presentation order
 
-    def ForgetLoop(self, instances=None):
+    def PresentLoop(self, instances=None):
         """ Loops through the instances in the list and after presenting every
         instance goes through the cycle of forgetting.
         If the list is None, then defaults to presenting all instances."""
         if not instances:
             instances = sorted(self.data.keys())
         if self.verbose > 10:
-            print "Forgetting loop"
+            print "Presenting loop"
+            t=time.clock()
             sys.stdout.write("[%s]" % (" " * 20))
             sys.stdout.flush()
             sys.stdout.write("\b" * (20+1))
@@ -283,17 +295,32 @@ class ps_data():
                 cat=inst['modelledCat']
             except:
                 cat=inst['actualCat']
+            try:
+                # Say, if we are presenting the data again
+                self.presentedOrder.remove(instId)
+                # Will only get here if the instance was already presented
+                if cat==-1:
+                    self.catA.remove(instId)
+                else:
+                    self.catB.remove(instId)
+            except ValueError, e:
+                # Means we haven't presented the instance yet.
+                pass
+            self.presentedOrder.append(instId) # saves the presentation order
             if cat==-1:
                 self.catA.append(instId)
             else:
                 self.catB.append(instId)
-            self.ForgetOnce()
+            if self.forget_rate!=0:
+                self.ForgetOnce()
             if self.verbose > 10:
-                if (i % (len(self.data.keys())/20)) == 0:
+                if (i % (len(instances)/20)) == 0:
                     sys.stdout.write("-")
                     sys.stdout.flush()
         if self.verbose > 10:
             sys.stdout.write("\n")
+            t=time.clock()-t
+            print 'Time elapsed: %.2f seconds' % (t,)
 
     # PERCEPTUAL NOISE
     def AddNoise(self, length):
@@ -312,8 +339,10 @@ class ps_data():
         distance."""
         return math.exp(-self.choice_parameter*math.sqrt((length1-length2)**2))
 
-    def ReEstimateCategory(self,instance_no):
+    def ReEstimateCategory(self,instance_no, instances=None):
         """Re-estimate the category membership of the instance."""
+        if not instances:
+            instances = self.data.keys()
         inst=self.GetPsData(instance_no)
         # delete number from its category - need to do that because else you
         # would use the category information of current instance to re-estimate
@@ -323,7 +352,7 @@ class ps_data():
             # re-estimated using the GCM.
         except:
             cat_old=inst['actualCat'] # If it has not been modelled before
-        inst['modelledCat']=self.PredictCategory(instance_no)
+        inst['modelledCat']=self.PredictCategory(instance_no, instances)
         try:
             self.reEstimated += 1 # Add one to the number of re-estimated
         except:
@@ -351,12 +380,14 @@ class ps_data():
 
         pass
 
-    def PredictCategory(self, instanceId):
+    def PredictCategory(self, instanceId, instances=None):
         """Return the category membership of the instance.
         Assume categories are weighted equally. The gamma parameter is taken
         from the model parameter initialisation.
         Category A == -1
         Category B == 1"""
+        if not instances:
+            instances=self.data.keys()
         if (len(self.catA)<=1 and len(self.catB)<=1):
             if self.verbose>0:
                 print "Warning, trying to predict category on an "+\
@@ -375,9 +406,11 @@ class ps_data():
                 cat=psData['actualCat'] # If the instance has not been
                 # re-estimated
             sum_cat_A=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
-                inst in self.catA if inst != instanceId])
+                inst in self.catA if (inst != instanceId) and \
+                (inst in instances)])
             sum_cat_B=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
-                inst in self.catB if inst != instanceId])
+                inst in self.catB if (inst != instanceId) and \
+                (inst in instances)])
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             if prob_a>=prob_b:
@@ -385,13 +418,14 @@ class ps_data():
             else:
                 return 1
 
-    def ScoreModelFit(self):
+    def ScoreModelFit(self, instances=None):
         """ This returns a score of how well the model fits the data, by
         evaluating the predictions of the model.
         """
+        sameCategories=[]
         pass
 
-    def TrainGCM(self):
+    def TrainGCM(self, instances=None):
         """Train the GCM incrementally using all instances."""
         # First, present the instances to the model one by one.
         # Next, estimate the model response.
