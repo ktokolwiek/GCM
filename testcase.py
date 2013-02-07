@@ -23,7 +23,7 @@ def testOneModel((gamma, forget_rate, choice_parameter, noise_mu,\
 def writeout(logLikelihoods, parameters, fname):
     """ Writes out the parameters and associated log likelihoods to file fname
     """
-    with open(fname) as f:
+    with open(fname,'w') as f:
         f.write('log_likelihood,gamma,forget_rate,choice_parameter,noise_mu,noise_sigma')
         for (ll, params) in zip(logLikelihoods, parameters):
             f.write('%.5f,%.5f,%.5f,%.5f,%.5f,%.5f' % ((ll,)+params))
