@@ -127,6 +127,20 @@ class ps_data():
         self.data[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
                 kwargs['session'],kwargs['condition'])]=kwargs
 
+    def ReprPs(self, inst):
+        """ Return the string representation of an instance with the following
+        instance Id.
+        """
+        return str(inst['ps_id'])+'\t'+\
+                str(inst['trial_no'])+'\t'+\
+                str(inst['session'])+'\t'+\
+                str(inst['condition'])+'\t'+\
+                str(inst['length'])+'\t'+\
+                str(inst['actualCat'])+'\t'+\
+                str(inst['idealCat'])+'\t'+\
+                str(inst['responseCat'])+'\t'+\
+                str(inst['modelledCat'])+'\n'
+
     def GetInstancesForPs(self, instances=None, **kwargs):
         """Returns all instance ids for which the kwargs are matching with the
         instance."""
@@ -172,25 +186,22 @@ class ps_data():
             if pickle:
                 pickle.dump(self, f)
             else:
-                import csv
                 f.write(self.__repr__())
                 f.write('ps_id,trial_no,session,condition,'+\
                         'length,actualCat,idealCat,responseCat,'+\
                         'modelledCat\n')
-                writer = csv.DictWriter(f,['ps_id','trial_no','session',\
-                        'condition','length','actualCat','idealCat',\
-                        'responseCat','modelledCat'],restval='')
+                lines=''
                 for (i, key) in enumerate(instances):
                     if self.verbose > 10:
                         if (i % (len(instances)/20)) == 0:
                             sys.stdout.write("-")
                             sys.stdout.flush()
-                    inst = self.GetPsData(key)
+                    inst = dict(self.GetPsData(key))
                     try:
                         inst['modelledCat']
                     except:
                         inst['modelledCat']=self.PredictCategory(key)
-                    writer.writerow(inst)
+                    f.write(self.ReprPs(inst))
             if self.verbose > 10:
                 sys.stdout.write("\n")
                 t=time.clock()-t
@@ -419,11 +430,11 @@ class ps_data():
                 cat=psData['actualCat'] # If the instance has not been
                 # re-estimated
             sum_cat_A=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
-                inst in self.catA if (inst != instanceId) and \
-                (inst in instances)])
+                inst in \
+                set(self.catA).difference({instanceId}).intersection(set(instances))])
             sum_cat_B=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
-                inst in self.catB if (inst != instanceId) and \
-                (inst in instances)])
+                inst in \
+                set(self.catB).difference({instanceId}).intersection(set(instances))])
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             if prob_a>=prob_b:
