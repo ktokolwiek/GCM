@@ -35,12 +35,13 @@
 from random import random, gauss
 from os import path
 import sys, math, time
+import numpy as np
 
 class ps_data():
 
     def __init__(self, fname, verbose,\
             gamma, forget_rate, choice_parameter, noise_mu, noise_sigma):
-        self.verbosity=verbose
+        self.verbose=verbose
         self.SetParameters(gamma, forget_rate, choice_parameter, noise_mu, noise_sigma)
         self.ReadData(fname)
 
@@ -55,7 +56,8 @@ class ps_data():
         except:
             result += '#Unparametrised GCM.\n'
         try:
-            result += ('#Re-estimated %(reEstimated)d instances. '+\
+            result += '#Log-likelihood: %.5f\n' % (self.logLikelihood)+\
+                    ('#Re-estimated %(reEstimated)d instances. '+\
                     '%(changedCats)d instances changed class.\n') %self.__dict__
         except:
             result += '#No instances re-estimated.\n'
@@ -293,9 +295,7 @@ class ps_data():
         exponential distribution, based on recency of presentation."""
         for (i, instNo) in enumerate(self.presentedOrder):
             if random() < math.exp(-(1.0/self.forget_rate)*(i+1)):
-                t2=time.clock()
                 self.ReEstimateCategory(instNo, instances)
-                self.removetime+=time.clock()-t2
                 self.presentedOrder.remove(instNo)
                 self.presentedOrder.append(instNo) # saves the presentation order
 
@@ -306,12 +306,11 @@ class ps_data():
         if not instances:
             instances = sorted(self.data.keys())
         if self.verbose > 10:
-            print "Presenting loop"
+            print "Presenting loop..."
             t=time.clock()
             sys.stdout.write("[%s]" % (" " * 20))
             sys.stdout.flush()
             sys.stdout.write("\b" * (20+1))
-        self.removetime=0
         for (i,instId) in enumerate(instances):
             inst=self.GetPsData(instId)
             try:
@@ -344,7 +343,23 @@ class ps_data():
             sys.stdout.write("\n")
             t=time.clock()-t
             print 'Time elapsed: %.2f seconds' % (t,)
-            print '%.2f' % (self.removetime)
+        # Now calculate log-likelihood
+        if self.verbose > 10:
+            print "Calculating log-likelihood..."
+            t=time.clock()
+            sys.stdout.write("[%s]" % (" " * 20))
+            sys.stdout.flush()
+            sys.stdout.write("\b" * (20+1))
+        for (i, instId) in enumerate(instances):
+            self.data[instId]['modelledCat']=self.PredictCategory(instId, instances, True)
+            if self.verbose > 10:
+                if (i % (len(instances)/20)) == 0:
+                    sys.stdout.write("-")
+                    sys.stdout.flush()
+        if self.verbose > 10:
+            sys.stdout.write("\n")
+            t=time.clock()-t
+            print 'Time elapsed: %.2f seconds' % (t,)
 
     # PERCEPTUAL NOISE
     def AddNoise(self, length):
@@ -404,7 +419,8 @@ class ps_data():
 
         pass
 
-    def PredictCategory(self, instanceId, instances=None):
+    def PredictCategory(self, instanceId, instances=None, \
+            calculateLikelihood=False):
         """Return the category membership of the instance.
         Assume categories are weighted equally. The gamma parameter is taken
         from the model parameter initialisation.
@@ -438,10 +454,12 @@ class ps_data():
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             if prob_a>=prob_b:
-                self.logLikelihood+=math.log(prob_a)
+                if calculateLikelihood:
+                    self.logLikelihood+=math.log(prob_a)
                 return -1
             else:
-                self.logLikelihood+=math.log(prob_b)
+                if calculateLikelihood:
+                    self.logLikelihood+=math.log(prob_b)
                 return 1
 
     def ScoreModelFit(self, instances=None):
@@ -458,9 +476,10 @@ class ps_data():
         # Then forget and re-estimate
         pass
 
-    def __init__(self):
-        """For testing. """
-        self.SetParameters(1,0.7,1,0,0.5)
-        self.verbose=100
-        # Add some instances.
-        pass
+#    def __init__(self):
+#        """For testing. """
+#        self.SetParameters(1,0.7,1,0,0.5)
+#        self.verbose=100
+#        # Add some instances.
+#        pass
+
