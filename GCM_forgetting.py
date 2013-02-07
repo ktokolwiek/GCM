@@ -162,25 +162,38 @@ class ps_data():
         if pickle:
             import pickle
         with open(fname,'w') as f:
+            if self.verbose > 10:
+                print "Saving data file %s" % fname
+                t=time.clock()
+                sys.stdout.write("[%s]" % (" " * 20))
+                sys.stdout.flush()
+                sys.stdout.write("\b" * (20+1))
             if pickle:
                 pickle.dump(self, f)
             else:
+                import csv
                 f.write(self.__repr__())
-                f.write('ps_id\ttrial_no\tsession\tcondition\t'+\
-                        'length\tactualCat\tidealCat\tresponseCat\t'+\
+                f.write('ps_id,trial_no,session,condition,'+\
+                        'length,actualCat,idealCat,responseCat,'+\
                         'modelledCat\n')
+                writer = csv.DictWriter(f,['ps_id','trial_no','session',\
+                        'condition','length','actualCat','idealCat',\
+                        'responseCat','modelledCat'],restval='')
                 for key in instances:
+                    if self.verbose > 10:
+                        if (i % (len(instances)/20)) == 0:
+                            sys.stdout.write("-")
+                            sys.stdout.flush()
+                    inst = self.GetPsData(key)
                     try:
-                        f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
-                                '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
-                                '%(idealCat)s\t%(responseCat)s\t%(modelledCat)s\n')\
-                                % self.GetPsData(key))
+                        inst['modelledCat']
                     except:
-                        f.write(('%(ps_id)s\t%(trial_no)s\t%(session)s\t'+\
-                                '%(condition)s\t%(length)s\t%(actualCat)s\t'+\
-                                '%(idealCat)s\t%(responseCat)s\t')\
-                                %self.GetPsData(key) +\
-                                str(self.PredictCategory(key))+'\n')
+                        inst['modelledCat']=self.PredictCategory(key)
+                    writer.writerow(inst)
+            if self.verbose > 10:
+                sys.stdout.write("\n")
+                t=time.clock()-t
+                print 'Time elapsed: %.2f seconds' % (t,)
 
     def GraphCategories(self, instances=None):
         """ Makes a graph of category distribution.
