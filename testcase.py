@@ -38,6 +38,6 @@ def test():
         noise_sigma) for gamma in gammas for forget_rate in forget_rates\
         for choice_parameter in choice_parameters for noise_sigma\
         in noise_sigmas]
-    pool=Pool(processes=8)
+    pool=Pool(processes=20)
     logLikelihoods=pool.map(testOneModel, parameters)
     writeout(logLikelihoods, parameters, 'loglikelihoods.txt')
