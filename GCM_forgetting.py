@@ -66,6 +66,7 @@ class ps_data():
         """ Here we read in the data from file fname and will save it in the
         class instance's data structure."""
         self.datafile=path.join(path.realpath('.'),fname)
+        self.logLikelihood=0
         self.data={} # The actual data structure
         self.catA=[] # A list of members of category A
         self.catB=[] # A list of members of category B
@@ -179,7 +180,7 @@ class ps_data():
                 writer = csv.DictWriter(f,['ps_id','trial_no','session',\
                         'condition','length','actualCat','idealCat',\
                         'responseCat','modelledCat'],restval='')
-                for key in instances:
+                for (i, key) in enumerate(instances):
                     if self.verbose > 10:
                         if (i % (len(instances)/20)) == 0:
                             sys.stdout.write("-")
@@ -281,7 +282,9 @@ class ps_data():
         exponential distribution, based on recency of presentation."""
         for (i, instNo) in enumerate(self.presentedOrder):
             if random() < math.exp(-(1.0/self.forget_rate)*(i+1)):
+                t2=time.clock()
                 self.ReEstimateCategory(instNo, instances)
+                self.removetime+=time.clock()-t2
                 self.presentedOrder.remove(instNo)
                 self.presentedOrder.append(instNo) # saves the presentation order
 
@@ -297,6 +300,7 @@ class ps_data():
             sys.stdout.write("[%s]" % (" " * 20))
             sys.stdout.flush()
             sys.stdout.write("\b" * (20+1))
+        self.removetime=0
         for (i,instId) in enumerate(instances):
             inst=self.GetPsData(instId)
             try:
@@ -329,6 +333,7 @@ class ps_data():
             sys.stdout.write("\n")
             t=time.clock()-t
             print 'Time elapsed: %.2f seconds' % (t,)
+            print '%.2f' % (self.removetime)
 
     # PERCEPTUAL NOISE
     def AddNoise(self, length):
@@ -422,8 +427,10 @@ class ps_data():
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             if prob_a>=prob_b:
+                self.logLikelihood+=math.log(prob_a)
                 return -1
             else:
+                self.logLikelihood+=math.log(prob_b)
                 return 1
 
     def ScoreModelFit(self, instances=None):
