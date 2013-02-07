@@ -47,18 +47,18 @@ class ps_data():
     def __repr__(self):
         result=''
         try:
-            result += ('Model with parameters: gamma: %(gamma)d, forget '+\
+            result += ('#Model with parameters: gamma: %(gamma)d, forget '+\
                     'rate: %(forget_rate).5f, choice parameter: '+\
                     '%(choice_parameter)d, noise mean: %(noise_mu).5f, '+\
                     'noise sd: %(noise_sigma).5f\n'+\
-                    'Data file used: %(datafile)s.\n') % self.__dict__
+                    '#Data file used: %(datafile)s.\n') % self.__dict__
         except:
-            result += 'Unparametrised GCM.\n'
+            result += '#Unparametrised GCM.\n'
         try:
-            result += ('Re-estimated %(reEstimated)d instances. '+\
+            result += ('#Re-estimated %(reEstimated)d instances. '+\
                     '%(changedCats)d instances changed class.\n') %self.__dict__
         except:
-            result += 'No instances re-estimated.\n'
+            result += '#No instances re-estimated.\n'
         return result
 
     # DATA INPUT:
@@ -276,16 +276,11 @@ class ps_data():
         self.noise_sigma=noise_sigma
 
     # FORGETTING
-    def ForgetOnce(self, instances=None):
+    def ForgetOnce(self, instances):
         """Selects instances which are to be forgotten, following an
         exponential distribution, based on recency of presentation."""
-        if not instances:
-            instances=sorted(self.data.keys())
-        forgetInsts=[(math.exp(-(1.0/self.forget_rate)*(i+1)), no) \
-                for (i,no) in enumerate(self.presentedOrder) \
-                if no in instances]
-        for (prob, instNo) in forgetInsts:
-            if random() < prob:
+        for (i, instNo) in enumerate(self.presentedOrder):
+            if random() < math.exp(-(1.0/self.forget_rate)*(i+1)):
                 self.ReEstimateCategory(instNo, instances)
                 self.presentedOrder.remove(instNo)
                 self.presentedOrder.append(instNo) # saves the presentation order
@@ -325,7 +320,7 @@ class ps_data():
             else:
                 self.catB.append(instId)
             if self.forget_rate!=0:
-                self.ForgetOnce()
+                self.ForgetOnce(instances)
             if self.verbose > 10:
                 if (i % (len(instances)/20)) == 0:
                     sys.stdout.write("-")
