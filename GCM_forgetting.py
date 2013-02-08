@@ -42,6 +42,7 @@
 # Added input of test data, and will be evaluating the model on test data. Also
 # analogous methods for obtaining an instance, updating etc. from the test
 # dataset.
+# I will now need to see how to evaluate the model before the forgetting loop.
 
 from random import random, gauss
 from os import path
@@ -145,7 +146,7 @@ class ps_data():
                             'trial_no': int(line['trial_no']),\
                             'session': int(line['session']),\
                             'condition': int(line['condition']),\
-                            'length': self.AddNoise(int(line['length']))
+                            'length': self.AddNoise(int(line['length'])),\
                             'responseCat': int(line['responseCat'])})
         else:
             if self.verbose > 0:
@@ -533,6 +534,8 @@ class ps_data():
                     categories.append(-1)
                 else:
                     categories.append(1)
+                if calculateLikelihood:
+                    likelihood+=math.log(0.5)
             else:
                 length=testInst['length']
                 sum_cat_A=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
