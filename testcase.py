@@ -26,7 +26,7 @@ def writeout(logLikelihoods, parameters, fname):
     with open(fname,'w') as f:
         f.write('log_likelihood,gamma,forget_rate,choice_parameter,noise_mu,noise_sigma')
         for (ll, params) in zip(logLikelihoods, parameters):
-            f.write('%.5f,%.5f,%.5f,%.5f,%.5f,%.5f' % ((ll,)+params))
+            f.write('%.5f,%.5f,%.5f,%.5f,%.5f,%.5f\n' % ((ll,)+params))
 
 def test():
     gammas=[0.5, 1, 2]
@@ -40,4 +40,4 @@ def test():
         in noise_sigmas]
     pool=Pool(processes=20)
     logLikelihoods=pool.map(testOneModel, parameters)
-    writeout(logLikelihoods, parameters, 'loglikelihoods.txt')
+    writeout(logLikelihoods, parameters, 'loglikelihoods.csv')
