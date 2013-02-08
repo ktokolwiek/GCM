@@ -24,7 +24,7 @@ def writeout(logLikelihoods, parameters, fname):
     """ Writes out the parameters and associated log likelihoods to file fname
     """
     with open(fname,'w') as f:
-        f.write('log_likelihood,gamma,forget_rate,choice_parameter,noise_mu,noise_sigma')
+        f.write('log_likelihood,gamma,forget_rate,choice_parameter,noise_mu,noise_sigma\n')
         for (ll, params) in zip(logLikelihoods, parameters):
             f.write('%.5f,%.5f,%.5f,%.5f,%.5f,%.5f\n' % ((ll,)+params))
 

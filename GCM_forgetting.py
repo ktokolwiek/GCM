@@ -32,15 +32,26 @@
 # categories.
 # Also - WriteOut() is terribly slow. Maybe just use pickle?
 
+# 7 February
+# Added log-likelihood estimation and a simple scratch of a test case in
+# testcase.py. Also, everything works faster becasue of pre-computing a set of
+# instances to be considered as opposed to matching every instance in the list
+# of instances.
+
+# 8 February
+# Added input of test data, and will be evaluating the model on test data. Also
+# analogous methods for obtaining an instance, updating etc. from the test
+# dataset.
+
 from random import random, gauss
 from os import path
-import sys, math, time
+import sys, math, time, csv
 import numpy as np
 
 class ps_data():
 
-    def __init__(self, fname, verbose,\
-            gamma, forget_rate, choice_parameter, noise_mu, noise_sigma):
+    def __init__(self, fname, verbose=15, gamma=1, forget_rate=0.7,\
+            choice_parameter=1, noise_mu=0, noise_sigma=0.5):
         self.verbose=verbose
         self.SetParameters(gamma, forget_rate, choice_parameter, noise_mu, noise_sigma)
         self.ReadData(fname)
@@ -70,6 +81,7 @@ class ps_data():
         self.datafile=path.join(path.realpath('.'),fname)
         self.logLikelihood=0
         self.data={} # The actual data structure
+        self.testData={}
         self.catA=[] # A list of members of category A
         self.catB=[] # A list of members of category B
         self.presentedOrder=[] # This will remember the order of presentation
@@ -116,12 +128,39 @@ class ps_data():
         else:
             if self.verbose > 0:
                 print "The filename "+fname+" is invalid!"
-        pass
+
+    def ReadTestData(self, fname):
+        """ We read in test data.
+        """
+        self.testData={}
+        if path.exists(fname):
+            with open(fname) as f:
+                reader=csv.DictReader(f)
+                for line in reader:
+                    if line['responseCat']=='A':
+                        line['responseCat']=-1
+                    else:
+                        line['responseCat']=1
+                    self.AddTestPs(**{'ps_id': int(line['ps_id']),\
+                            'trial_no': int(line['trial_no']),\
+                            'session': int(line['session']),\
+                            'condition': int(line['condition']),\
+                            'length': self.AddNoise(int(line['length']))
+                            'responseCat': int(line['responseCat'])})
+        else:
+            if self.verbose > 0:
+                print "The test file "+fname+" doesn't exist!"
 
     def GetInstNo(self, ps_id, trial_no, session, condition):
         """Gets a supposedly unique number of a training instance"""
         return '%09d%02d%04d%02d' % \
                 (int(ps_id),int(session),int(trial_no),int(condition))
+
+    def AddTestPs(self, **kwargs):
+        """ We add a participant's test datapoint, can also be used to update
+        the instance data."""
+        self.testData[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
+            kwargs['session'], kwargs['condition'])]=kwargs
 
     def AddPs(self, **kwargs):
         """ Here we add in a datapoint for a participant. Can also use that for
@@ -133,25 +172,34 @@ class ps_data():
         """ Return the string representation of an instance with the following
         instance Id.
         """
-        return str(inst['ps_id'])+'\t'+\
+        result = str(inst['ps_id'])+'\t'+\
                 str(inst['trial_no'])+'\t'+\
                 str(inst['session'])+'\t'+\
                 str(inst['condition'])+'\t'+\
                 str(inst['length'])+'\t'+\
                 str(inst['actualCat'])+'\t'+\
                 str(inst['idealCat'])+'\t'+\
-                str(inst['responseCat'])+'\t'+\
-                str(inst['modelledCat'])+'\n'
+                str(inst['responseCat'])
+        try:
+            result+='\t'+str(inst['modelledCat'])+'\n'
+        except:
+            result+='\n'
 
-    def GetInstancesForPs(self, instances=None, **kwargs):
+    def GetInstancesForPs(self, instances=None, sourceDataset='data' ,**kwargs):
         """Returns all instance ids for which the kwargs are matching with the
         instance."""
-        if not instances:
-            instances=self.data.keys()
         result=[]
+        if sourceDataset=='data':
+            dataset=self.data
+            if not instances:
+                instances=self.data.keys()
+        else:
+            dataset=self.testData
+            if not instances:
+                instances = self.testData.keys()
         for inst_id in instances:
             try:
-                if all([self.data[inst_id][key]==kwargs[key]\
+                if all([dataset[inst_id][key]==kwargs[key]\
                         for key in kwargs.keys()]):
                     result.append(inst_id)
             except KeyError, e:
@@ -160,10 +208,14 @@ class ps_data():
         return result
 
     # DATA OUTPUT:
-    def GetPsData(self,inst_no):
+    def GetPsData(self,inst_no, sourceDataset='data'):
         """Return the data for this trial"""
+        if sourceDataset=='data':
+            dataset=self.data
+        else:
+            dataset=self.testData
         try:
-            return self.data[inst_no]
+            return dataset[inst_no]
         except:
             if self.verbose > 10:
                 print "No data for trial %d !" % inst_no
@@ -429,7 +481,7 @@ class ps_data():
         if not instances:
             instances=self.data.keys()
         if (len(self.catA)<=1 and len(self.catB)<=1):
-            if self.verbose>0:
+            if self.verbose>100:
                 print "Warning, trying to predict category on an "+\
                         "un-initialised model. Defaulting to a random "+\
                         "category."
@@ -461,6 +513,46 @@ class ps_data():
                 if calculateLikelihood:
                     self.logLikelihood+=math.log(prob_b)
                 return 1
+
+    def PredictCategoryTest(self, testSet, trainingInstances=None,\
+            calculateLikelihood=True):
+        """ Predict category labels for all instances in testSet, and calculate
+        the log likelihood of the test set categories.
+        """
+        if not trainingInstances:
+            instances=self.data.keys()
+        categories = []
+        likelihood = 0
+        for testInst in testSet:
+            if (len(self.catA)<=1 and len(self.catB)<=1):
+                if self.verbose>100:
+                    print "Warning, trying to predict category on an "+\
+                            "un-initialised model. Defaulting to a random "+\
+                            "category."
+                if random() < 0.5:
+                    categories.append(-1)
+                else:
+                    categories.append(1)
+            else:
+                length=testInst['length']
+                sum_cat_A=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
+                    inst in \
+                    set(self.catA).intersection(set(trainingInstances))])
+                sum_cat_B=sum([self.Similarity(length, self.GetPsData(inst)['length']) for \
+                    inst in \
+                    set(self.catB).intersection(set(trainingInstances))])
+                prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
+                prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
+                if prob_a>=prob_b:
+                    categories.append(-1)
+                else:
+                    categories.append(1)
+                if calculateLikelihood:
+                    if testInst['responseCat']==-1:
+                        likelihood+=math.log(prob_a)
+                    else:
+                        likelihood+=math.log(prob_b)
+        return (categories, likelihood)
 
     def ScoreModelFit(self, instances=None):
         """ This returns a score of how well the model fits the data, by
