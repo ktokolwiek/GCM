@@ -15,7 +15,7 @@ def testOneModel((gamma, forget_rate, choice_parameter, noise_mu,\
     fname = 'Randall_learn_lean_dataset.csv'
     model = GCM.ps_data(fname, 15, gamma, forget_rate, choice_parameter, \
             noise_mu, noise_sigma)
-    instances = model.GetInstancesForPs(**{'condition': 1})
+    instances = model.GetInstancesForPs(**{'condition': 2})
     model.PresentLoop(instances)
     return model.logLikelihood
     pass
