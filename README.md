@@ -42,3 +42,9 @@
 # dataset.
 # I will now need to see how to evaluate the model before the forgetting loop.
 
+# 18 February
+# Had a break to program the experiment (canela.py). This is on the love01
+# server.
+# Now I am trying to optimise the code through profiling. I will need a way to
+# efficiently compute similarity measures, because that is what takes up most of
+# the time now, together with the overhead of PredictCategory.
