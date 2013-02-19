@@ -48,3 +48,8 @@
 # Now I am trying to optimise the code through profiling. I will need a way to
 # efficiently compute similarity measures, because that is what takes up most of
 # the time now, together with the overhead of PredictCategory.
+# A very simple solution would be to pre-compute the similarity measure and not
+# use noise so that we can address it by a small finite numebr of integers.
+
+# 19 Feb
+# Messing around with ndarrays

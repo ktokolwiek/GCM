@@ -35,10 +35,14 @@ class ps_data():
     def SetInstances(self, instances=None, dataset='training'):
         """ Sets the instances which we used in the current model.
         """
+        from sklearn.metrics.pairwise import euclidean_distances
         if not instances:
             if dataset == 'training':
-                self.trainingInstances = self.trainingData.keys()
+                self.trainingInstances = sorted(self.instanceMap.values())
                 self.usedTrainingData = self.trainingData.copy()
+                X=np.matrix(self.usedTrainingData['length']).transpose()
+                self.Similarities = \
+                        np.exp(-self.choice_parameter*euclidean_distances(X))
             else:
                 self.testInstances = self.testData.keys()
                 self.usedTestData = self.testData.copy()
@@ -58,14 +62,21 @@ class ps_data():
         class instance's data structure."""
         self.datafile=path.join(path.realpath('.'),fname)
         self.logLikelihood=0
-        self.trainingData={} # The actual data structure
-        self.usedTrainingData = {} # The data structure we actually use in the
-        # code - with selected instances only
-        self.testData={} # initialise it here
+        self.instanceMap = {}
+        datatype=np.dtype([('ps_id', int),('trial_no', int),\
+                ('session', int),('condition', int),('length',float),\
+                ('actualCat',int),('idealCat',int),('responseCat',int),\
+                ('modelledCat', int)])
+        data=[] # A temporary data structure which we are using before we
+        # transfer all to numpy.
+        self.testData = {} # initialise it here
         self.usedTestData = {} # The data structure we use in the code, with
         # selected instances
-        self.catA=[] # A list of members of category A
-        self.catB=[] # A list of members of category B
+        self.noCatA=True # Boolean saying that we don't have members in
+        # category A
+        self.noCatB=True # same for cat B
+        self.reEstimated=0
+        self.changedCats = 0
         self.presentedOrder=[] # This will remember the order of presentation
         # of stimuli, for modelling of recency and forgetting. 
         # We don't put the data in categories yet - we do that in the modelling
@@ -75,7 +86,6 @@ class ps_data():
                 for line in f:
                     try:
                         a=line.split(',')
-                        instNo=self.GetInstNo(a[0],a[3],a[1],a[2])
                         if a[5]=='D': # this is how it is represented in the
                             # data from Texas
                             actualcat=1
@@ -96,17 +106,21 @@ class ps_data():
                             idealcat=1
                         # ^ this is the category which the ideal classifier
                         # would put the stimulus in.
-                        self.AddPs(**{'ps_id': int(a[0]),\
-                                'trial_no': int(a[3]),\
-                                'session': int(a[1]),\
-                                'condition': int(a[2]),\
-                                'length': self.AddNoise(int(a[4])),\
-                                #Adds noise only once
-                                'actualCat': actualcat,\
-                                'idealCat': idealcat,\
-                                'responseCat': pscat})
-                    except:
+                        data.append((int(a[0]), int(a[3]), int(a[1]), int(a[2]),\
+                                self.AddNoise(int(a[4])), actualcat, idealcat,\
+                                pscat, actualcat))
+                        # Here we are using actualCat as if it was modelledCat,
+                        # to simplify choosing instances which are presented in
+                        # category A or B.
+                        # ps_id, trial_no, session, condition, length,
+                        # actualCat, idealCat, responseCat, modelledCat
+                    except Exception, e:
                         continue # say, if first line or something wrong
+            self.trainingData = np.array(data,dtype=datatype)
+            self.usedTrainingData = self.trainingData.copy()
+            # Populate instanceMap
+            for i, instance in enumerate(data):
+                self.instanceMap[instance[0:4]]=i
         else:
             if self.verbose > 0:
                 print "The filename "+fname+" is invalid!"
@@ -135,8 +149,15 @@ class ps_data():
 
     def GetInstNo(self, ps_id, trial_no, session, condition):
         """Gets a supposedly unique number of a training instance"""
-        return '%09d%02d%04d%02d' % \
-                (int(ps_id),int(session),int(trial_no),int(condition))
+        instanceTuple = (ps_id,session,trial_no,condition)
+        try:
+            # If the instance is in our mapping already
+            result = self.instanceMap[instanceTuple]
+        except KeyError:
+            # It is not, so we need to add it as the next number and also
+            # expand the data structure.
+            self.instanceMap[instanceTuple]=result
+        return result
 
     def AddTestPs(self, **kwargs):
         """ We add a participant's test datapoint, can also be used to update
@@ -146,30 +167,31 @@ class ps_data():
         self.usedTestData[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
             kwargs['session'], kwargs['condition'])]=kwargs
 
-    def AddPs(self, **kwargs):
+    def AddPs(self, ps_id, trial_no, session, condition, length, actualCat, \
+            idealCat, responseCat, modelledCat=0):
         """ Here we add in a datapoint for a participant. Can also use that for
         updating the Ps's data. """
-        self.trainingData[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
-                kwargs['session'],kwargs['condition'])]=kwargs
-        self.usedTrainingData[self.GetInstNo(kwargs['ps_id'],kwargs['trial_no'],\
-                kwargs['session'],kwargs['condition'])]=kwargs
+        self.trainingData[self.GetInstNo(ps_id,trial_no,session,condition)] = \
+                (ps_id, trial_no, session, condition, length, actualCat, \
+                idealCat, responseCat, modelledCat)
+        self.usedTrainingData[self.GetInstNo(ps_id,trial_no,session,\
+                condition)] = \
+                (ps_id, trial_no, session, condition, length, actualCat, \
+                idealCat, responseCat, modelledCat)
 
     def ReprPs(self, inst):
         """ Return the string representation of an instance with the following
         instance Id.
         """
-        result = str(inst['ps_id'])+'\t'+\
+        return str(inst['ps_id'])+'\t'+\
                 str(inst['trial_no'])+'\t'+\
                 str(inst['session'])+'\t'+\
                 str(inst['condition'])+'\t'+\
                 str(inst['length'])+'\t'+\
                 str(inst['actualCat'])+'\t'+\
                 str(inst['idealCat'])+'\t'+\
-                str(inst['responseCat'])
-        try:
-            result+='\t'+str(inst['modelledCat'])+'\n'
-        except:
-            result+='\n'
+                str(inst['responseCat'])+'\t'+\
+                str(inst['modelledCat'])+'\n'
 
     def GetInstancesForPs(self, sourceDataset='training' ,**kwargs):
         """Returns all instance ids for which the kwargs are matching with the
@@ -325,10 +347,11 @@ class ps_data():
 
     # FORGETTING
     def ForgetOnce(self):
-        """Selects instances which are to be forgotten, following an
-        exponential distribution, based on recency of presentation."""
+        """Selects instances which are to be forgotten, based on  recency of
+        presentation. The probability of an item being forgotten in the end
+        will be ~ exponential with ordr of presentation."""
         for (i, instNo) in enumerate(self.presentedOrder):
-            if random() < math.exp(-(1.0/self.forget_rate)*(i+1)):
+            if random() < self.forget_rate:
                 self.ReEstimateCategory(instNo)
                 self.presentedOrder.remove(instNo)
                 self.presentedOrder.append(instNo) # saves the presentation order
@@ -344,27 +367,15 @@ class ps_data():
             sys.stdout.flush()
             sys.stdout.write("\b" * (20+1))
         for (i,instId) in enumerate(self.trainingInstances):
-            inst=self.GetPsData(instId)
-            try:
-                cat=inst['modelledCat']
-            except:
-                cat=inst['actualCat']
+            inst=self.usedTrainingData[instId]
+            cat=inst['modelledCat']
             try:
                 # Say, if we are presenting the data again
                 self.presentedOrder.remove(instId)
-                # Will only get past here if the instance was already presented
-                if cat==-1:
-                    self.catA.remove(instId)
-                else:
-                    self.catB.remove(instId)
             except ValueError, e:
                 # Means we haven't presented the instance yet.
                 pass
             self.presentedOrder.append(instId) # saves the presentation order
-            if cat==-1:
-                self.catA.append(instId)
-            else:
-                self.catB.append(instId)
             if self.forget_rate!=0:
                 self.ForgetOnce()
             if self.verbose > 10:
@@ -412,34 +423,16 @@ class ps_data():
 
     def ReEstimateCategory(self,instance_no):
         """Re-estimate the category membership of the instance."""
-        inst=self.GetPsData(instance_no)
-        # delete number from its category - need to do that because else you
-        # would use the category information of current instance to re-estimate
-        # it.
-        try:
-            cat_old=inst['modelledCat'] # If the instance was already
-            # re-estimated using the GCM.
-        except:
-            cat_old=inst['actualCat'] # If it has not been modelled before
-        inst['modelledCat']=self.PredictCategory(instance_no)
-        try:
-            self.reEstimated += 1 # Add one to the number of re-estimated
-        except:
-            self.reEstimated = 1
+        inst=self.usedTrainingData[instance_no]
+        cat_old=inst['modelledCat'] # It defaults to actualCat in the beginning
+        # anyway.
+        newModelledCat = self.PredictCategory(instance_no)
+        self.reEstimated += 1 # Add one to the number of re-estimated
         # instances
-        if inst['modelledCat']!=cat_old:
-            try:
-                self.changedCats +=1 # Add one instance to the
-                # number of instances which changed category
-            except:
-                self.changedCats = 1
-            self.AddPs(**inst) # overwrites the datapoint
-            if cat_old==-1:
-                self.catA.remove(instance_no)
-                self.catB.append(instance_no)
-            else:
-                self.catB.remove(instance_no)
-                self.catA.append(instance_no)
+        if newModelledCat!=cat_old:
+            self.changedCats +=1 # Add one instance to the
+            # number of instances which changed category
+            self.usedTrainingData[instance_no]['modelledCat']=newModelledCat
 
     def ReEstimateLength(self, instance_no):
         """Re-estimate the length of an instance based on category
@@ -455,31 +448,31 @@ class ps_data():
         from the model parameter initialisation.
         Category A == -1
         Category B == 1"""
-        if (len(self.catA)<=1 and len(self.catB)<=1):
+        if self.noCatA or self.noCatB:
             if self.verbose>100:
                 print "Warning, trying to predict category on an "+\
                         "un-initialised model. Defaulting to a random "+\
                         "category."
             if random() < 0.5:
+                self.noCatA = False
                 return -1
             else:
+                self.noCatB = False
                 return 1
         else:
             psData=self.usedTrainingData[instanceId]
             length=psData['length']
-            try:
-                cat=psData['modelledCat']
-            except:
-                cat=psData['actualCat'] # If the instance has not been
-                # re-estimated
-            sum_cat_A=sum([self.Similarity(length,\
-                    self.usedTrainingData[inst]['length'])\
-                    for inst in \
-                    set(self.catA).difference({instanceId}).intersection(set(self.trainingInstances))])
-            sum_cat_B=sum([self.Similarity(length, \
-                    self.usedTrainingData[inst]['length']) \
-                    for inst in \
-                    set(self.catB).difference({instanceId}).intersection(set(self.trainingInstances))])
+            cat=psData['modelledCat']
+            presented = self.Similarities[instanceId,self.presentedOrder] #select the
+            # instances which were already presented
+            catA_lens = presented[presented['modelledCat']==-1]['length']
+            catB_lens = presented[presented['modelledCat']==1]['length']
+            sum_cat_A = -1.0 +\
+                    np.sum(np.exp(-self.choice_parameter*np.sqrt(np.square(length-catA_lens))))
+            sum_cat_B = -1.0 +\
+                    np.sum(np.exp(-self.choice_parameter*np.sqrt(np.square(length-catB_lens))))
+            # We subtract 1.0, because we are also adding the similarity to
+            # itself, and exp(0) = 1.
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             prob_b=sum_cat_B**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
             if prob_a>=prob_b:
