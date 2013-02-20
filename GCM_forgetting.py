@@ -72,9 +72,9 @@ class ps_data():
         self.testData = {} # initialise it here
         self.usedTestData = {} # The data structure we use in the code, with
         # selected instances
-        self.noCatA=True # Boolean saying that we don't have members in
+        self.catA=set() # Boolean saying that we don't have members in
         # category A
-        self.noCatB=True # same for cat B
+        self.catB=set() # same for cat B
         self.reEstimated=0
         self.changedCats = 0
         self.presentedOrder=[] # This will remember the order of presentation
@@ -432,6 +432,14 @@ class ps_data():
         if newModelledCat!=cat_old:
             self.changedCats +=1 # Add one instance to the
             # number of instances which changed category
+            if cat_old == -1:
+                self.catA.remove(instance_no)
+            elif cat_old == 1:
+                self.catB.remove(instance_no)
+            if newModelledCat == -1:
+                self.catA.add(instance_no)
+            else:
+                self.catB.add(instance_no)
             self.usedTrainingData[instance_no]['modelledCat']=newModelledCat
 
     def ReEstimateLength(self, instance_no):
@@ -448,16 +456,14 @@ class ps_data():
         from the model parameter initialisation.
         Category A == -1
         Category B == 1"""
-        if self.noCatA or self.noCatB:
+        if (not self.catA) or (not self.catB):
             if self.verbose>100:
                 print "Warning, trying to predict category on an "+\
                         "un-initialised model. Defaulting to a random "+\
                         "category."
             if random() < 0.5:
-                self.noCatA = False
                 return -1
             else:
-                self.noCatB = False
                 return 1
         else:
             psData=self.usedTrainingData[instanceId]
@@ -465,12 +471,14 @@ class ps_data():
             cat=psData['modelledCat']
             presented = self.Similarities[instanceId,self.presentedOrder] #select the
             # instances which were already presented
-            catA_lens = presented[presented['modelledCat']==-1]['length']
-            catB_lens = presented[presented['modelledCat']==1]['length']
-            sum_cat_A = -1.0 +\
-                    np.sum(np.exp(-self.choice_parameter*np.sqrt(np.square(length-catA_lens))))
-            sum_cat_B = -1.0 +\
-                    np.sum(np.exp(-self.choice_parameter*np.sqrt(np.square(length-catB_lens))))
+            catA_lens = presented[self.catA]
+            catB_lens = presented[self.catB]
+            sum_cat_A = np.sum(catA_lens)
+            sum_cat_B = np.sum(catB_lens)
+            if cat == -1:
+                sum_cat_A -= 1.0
+            elif cat == 1:
+                sum_cat_B -= 1.0
             # We subtract 1.0, because we are also adding the similarity to
             # itself, and exp(0) = 1.
             prob_a=sum_cat_A**self.gamma/(sum_cat_A**self.gamma+sum_cat_B**self.gamma)
