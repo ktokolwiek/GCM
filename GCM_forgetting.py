@@ -7,7 +7,7 @@ import numpy as np
 
 class ps_data():
 
-    def __init__(self, fname, verbose=15, gamma=1, forget_rate=0.7,\
+    def __init__(self, fname, verbose=15, gamma=1, forget_rate=0.0001,\
             choice_parameter=1, noise_mu=0, noise_sigma=0.5):
         self.verbose=verbose
         self.SetParameters(gamma, forget_rate, choice_parameter, noise_mu, noise_sigma)
@@ -54,6 +54,8 @@ class ps_data():
 
     def PrecomputeSimilarities(self):
         from sklearn.metrics.pairwise import euclidean_distances
+        if self.verbose > 10:
+            print 'Precomputing similarities...'
         X=np.matrix(self.usedTrainingData['length']).transpose()
         self.Similarities = \
                 np.exp(-self.choice_parameter*euclidean_distances(X))
@@ -417,13 +419,6 @@ class ps_data():
         return max(0,length+gauss(self.noise_mu, self.noise_sigma))
 
     # GCM
-    def Similarity(self, length1, length2):
-        """Return similarity measure between the two instances. Here the
-        similarity measure is the exponential decay similarity function (cf.
-        Maddox, 1999). We also use Euclidean distance as the measure of
-        distance."""
-        return math.exp(-self.choice_parameter*math.sqrt((length1-length2)**2))
-
     def ReEstimateCategory(self,instance_no):
         """Re-estimate the category membership of the instance."""
         inst=self.usedTrainingData[instance_no]
@@ -477,8 +472,8 @@ class ps_data():
             cat=psData['modelledCat']
             presented = self.Similarities[instanceId,self.presentedOrder] #select the
             # instances which were already presented
-            catA_lens = presented[self.catA]
-            catB_lens = presented[self.catB]
+            catA_lens = presented[list(self.catA)]
+            catB_lens = presented[list(self.catB)]
             sum_cat_A = np.sum(catA_lens)
             sum_cat_B = np.sum(catB_lens)
             if cat == -1:
