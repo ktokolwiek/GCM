@@ -35,14 +35,10 @@ class ps_data():
     def SetInstances(self, instances=None, dataset='training'):
         """ Sets the instances which we used in the current model.
         """
-        from sklearn.metrics.pairwise import euclidean_distances
         if not instances:
             if dataset == 'training':
                 self.trainingInstances = sorted(self.instanceMap.values())
                 self.usedTrainingData = self.trainingData.copy()
-                X=np.matrix(self.usedTrainingData['length']).transpose()
-                self.Similarities = \
-                        np.exp(-self.choice_parameter*euclidean_distances(X))
             else:
                 self.testInstances = self.testData.keys()
                 self.usedTestData = self.testData.copy()
@@ -55,6 +51,13 @@ class ps_data():
                 self.testInstances = instances
                 self.usedTestData = {key: self.testData[key] for key\
                         in instances}
+
+    def PrecomputeSimilarities(self):
+        from sklearn.metrics.pairwise import euclidean_distances
+        X=np.matrix(self.usedTrainingData['length']).transpose()
+        self.Similarities = \
+                np.exp(-self.choice_parameter*euclidean_distances(X))
+
 
     # DATA INPUT:
     def ReadData(self, fname):
@@ -432,10 +435,13 @@ class ps_data():
         if newModelledCat!=cat_old:
             self.changedCats +=1 # Add one instance to the
             # number of instances which changed category
-            if cat_old == -1:
+            try:
                 self.catA.remove(instance_no)
-            elif cat_old == 1:
-                self.catB.remove(instance_no)
+            except KeyError:
+                try:
+                    self.catB.remove(instance_no)
+                except KeyError:
+                    pass
             if newModelledCat == -1:
                 self.catA.add(instance_no)
             else:
