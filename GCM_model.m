@@ -79,8 +79,8 @@ presented = [];
                 cat = 1;
             end
         else
-            sumCatA=sum(exp(-choice_parameter*sqrt((catA-len).^2)));
-            sumCatB=sum(exp(-choice_parameter*sqrt((catB-len).^2)));
+            sumCatA=sum(exp(-choice_parameter*abs(catA-len)));
+            sumCatB=sum(exp(-choice_parameter*abs(catB-len)));
             if oldCat == -1
                 sumCatA = sumCatA-1;
             else

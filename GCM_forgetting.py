@@ -374,12 +374,12 @@ class ps_data():
         for (i,instId) in enumerate(self.trainingInstances):
             inst=self.usedTrainingData[instId]
             cat=inst['modelledCat']
-            try:
-                # Say, if we are presenting the data again
-                self.presentedOrder.remove(instId)
-            except ValueError, e:
-                # Means we haven't presented the instance yet.
-                pass
+            #try:
+            #    # Say, if we are presenting the data again
+            #    self.presentedOrder.remove(instId)
+            #except ValueError, e:
+            #    # Means we haven't presented the instance yet.
+            #    pass
             self.presentedOrder.append(instId) # saves the presentation order
             if self.forget_rate!=0:
                 self.ForgetOnce()
