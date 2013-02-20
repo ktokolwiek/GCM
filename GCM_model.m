@@ -1,9 +1,9 @@
-function trainingData=GCM_model(fname, varargin)
+function [trainingData, ll] =GCM_model(fname, varargin)
 
 %% Init the model's parameters
 p=inputParser;
 addRequired(p, 'training_fname');
-addOptional(p, 'test_fname','test_ps1.xls');
+addOptional(p, 'test_fname','test_all.xls');
 addOptional(p, 'verbose',15,@isnumeric);
 addOptional(p, 'gamma',1,@isnumeric);
 addOptional(p, 'forget_rate',0.00001,@isnumeric);
@@ -20,7 +20,7 @@ choice_parameter = p.Results.choice_parameter;
 noise_mu = p.Results.noise_mu;
 noise_sigma = p.Results.noise_sigma;
 
-%% Read the training data file
+%% Read the training and test data file
 trainingData = xlsread(training_fname);
 noInstances = length(trainingData(:,1));
 trainingData(:,8) = 2*(trainingData(:,5)>30.5)-1; % -1 for cat A (short), 1 for cat B (long)
@@ -30,6 +30,9 @@ trainingData = [trainingData trainingData(:,6)]; % copy the feedback to modelled
 % (1)ps_id, (2)session, (3)feedType, (4)trial, (5)length, (6)tarCat,
 % (7)respCat, (8)idealCat, (9)modelledCat
 testData = xlsread(test_fname);
+testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
+% (1)subj, (2)session, (3)feedType, (4)trial, (5)length, (6)respSE, 
+% (7)respRT
 %% Get indices of selected instances
     function [selInsts] = get_indices(varargin)
         p=inputParser;
@@ -60,11 +63,11 @@ testData = xlsread(test_fname);
         end
     end
 presented = [];
-
+%% Get category memberships
     function [cat,ll] = get_cat_membership(inst_no)
-        cat=0;
-        presentedData=trainingData(setdiff(presented, inst_no),:);
+        presentedData=trainingData(presented,:);
         len = trainingData(inst_no,5);
+        oldCat = trainingData(inst_no,9);
         catA = presentedData(presentedData(:,9)==-1,5);
         catB = presentedData(presentedData(:,9)==1,5);
         % just the lengths
@@ -78,6 +81,11 @@ presented = [];
         else
             sumCatA=sum(exp(-choice_parameter*sqrt((catA-len).^2)));
             sumCatB=sum(exp(-choice_parameter*sqrt((catB-len).^2)));
+            if oldCat == -1
+                sumCatA = sumCatA-1;
+            else
+                sumCatB = sumCatB-1;
+            end % we subtract exp(0) for difference with itself.
             probA=sumCatA^gamma/(sumCatA^gamma+sumCatB^gamma);
             probB=sumCatB^gamma/(sumCatA^gamma+sumCatB^gamma);
             if probA>probB
@@ -88,14 +96,77 @@ presented = [];
                 cat = 1;
             end
         end
-        
-        
+    end
+%% Do one loop of forgetting
+    function forget()
+        forgotten = find(rand(1,length(presented))<forget_rate);
+        presented = setdiff(presented, forgotten);
+        for j=forgotten
+            presented = [presented j];
+            [newCat,~]=get_cat_membership(j);
+            trainingData(j,9) = newCat;
+        end
+    end
+%% Do the whole loop of presenting instances
+    function presentLoop(instances)
+        instances = reshape(instances,1,length(instances));
+        for i=instances
+            presented = [presented i];
+            if verbose>10
+                if mod(i,length(instances)/20) == 0
+                    fprintf('.')
+                end
+            end
+            [newCat,~]=get_cat_membership(i);
+            trainingData(i,9) = newCat;
+            forget();
+        end
     end
 
-for i=1:noInstances
-    presented = [presented i];
-    newCat=get_cat_membership(i);
-    trainingData(i,9) = newCat;
+%% Get log likelihood
+    function ll=log_likelihood()
+        % All data are presented now
+        lens = testData(:,5);
+        catA = trainingData(trainingData(instances,9)==-1,5);
+        catB = trainingData(trainingData(instances,9)==1,5);
+        % just the lengths
+        sumCatA=sum(exp(-choice_parameter*pdist2(catA, lens)));
+        sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
+        probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        ll=sum(log(probA(find(testData(:,6)==-1))));
+        ll=ll+sum(log(probB(find(testData(:,6)==1))));
+    end
+
+%% Run the model
+
+
+instances = find(trainingData(:,1)==112101);
+instances = 1:noInstances;
+instances = reshape(instances,1,length(instances));
+
+presentLoop(instances);
+
+ll=0;
+if verbose>10
+    disp(' ')
+end
+
+% 
+% for k=instances
+%     if verbose>10
+%         if mod(k,length(instances)/20) == 0
+%             fprintf('.')
+%         end
+%     end
+%     [~,x]=get_cat_membership(k);
+%     ll=ll+x;
+% end
+
+ll=log_likelihood();
+
+if verbose>10
+    disp(' ')
 end
 
 % forgotten instances: a=find(rand(1,len(presented))<0.00001)
