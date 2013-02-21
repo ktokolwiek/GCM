@@ -16,7 +16,7 @@ C={'gamma', 'forget_rate', 'noise_mu', 'noise_sigma', 'choice_parameter',...
 
 combination = 2;
 matlabpool open 12 % on the love01 machine
-fprintf('Progress is %2.0f%%',0)
+fprintf('Progress is %2.0f%%\n',0)
 for gamma = gammas
     for forget_rate = forget_rates
         for noise_sigma = noise_sigmas
@@ -30,8 +30,8 @@ for gamma = gammas
                 end
                 C(combination,:) = {gamma, forget_rate, noise_mu,...
                     noise_sigma, choice_parameter, mean(lls), std(lls)};
-		fprintf(repmat('\b',1,length('Progress is 20p')));
-		fprintf('Progress is %2.0f%%',(combination)/no_combinations)
+		fprintf(repmat('\b',1,length('Progress is 20pn')));
+		fprintf('Progress is %2.0f%%\n',(combination-1.0)*100/no_combinations)
                 combination = combination + 1;
             end
         end
