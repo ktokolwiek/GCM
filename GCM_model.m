@@ -1,4 +1,4 @@
-function [trainingData, ll] = GCM_model(fname, varargin)
+function [trainingData, ll] = GCM_model(varargin)
 
 %% Init the model's parameters
 p=inputParser;
@@ -14,7 +14,7 @@ addOptional(p, 'session',NaN);
 addOptional(p, 'feedType',NaN);
 addOptional(p, 'ps_id',NaN);
 addOptional(p, 'trial',NaN);
-parse(p, fname, varargin{:})
+parse(p,varargin{:})
 training_fname = p.Results.training_fname;
 test_fname = p.Results.test_fname;
 verbose = p.Results.verbose;
@@ -27,6 +27,11 @@ session = p.Results.session;
 feedType = p.Results.feedType;
 ps_id = p.Results.ps_id;
 trial = p.Results.trial;
+
+if verbose==100
+    fprintf('Model with gamma %.1f, forget rate %.10f, choice parameter %d, noise mean %.1f, noise sd %.1f.\n',...
+        gamma, forget_rate,choice_parameter,noise_mu,noise_sigma);
+end
 
 %% Read the training and test data file
 
@@ -137,7 +142,7 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
 
     function ll=log_likelihood()
         % All data are presented now
-        lens = testData(testInstances,5);
+        lens = testData(:,5);
         catA = trainingData(trainingData(instances,9)==-1,5);
         catB = trainingData(trainingData(instances,9)==1,5);
         % just the lengths
@@ -145,13 +150,13 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
         probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
         probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
-        a_indices = intersect(find(testData(:,6)==-1), testInstances);
-        b_indices = intersect(find(testData(:,6)==1), testInstances);
-        ll=sum(log(probA(a_indices)));
-        ll=ll+sum(log(probB(b_indices)));
+        indices_a = intersect(testInstances, find(testData(:,6)==-1));
+        indices_b = intersect(testInstances, find(testData(:,6)==1));
+        ll=sum(log(probA(indices_a)));
+        ll=ll+sum(log(probB(indices_b)));
     end
 
-%% Get the required instance IDs
+%% Get the required instance IDs and init presented instances
 
 [instances, testInstances] = get_indices();
 presented = [];
