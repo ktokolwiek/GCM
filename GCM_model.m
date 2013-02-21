@@ -145,8 +145,10 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
         probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
         probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
-        ll=sum(log(probA(find(testData(:,6)==-1))));
-        ll=ll+sum(log(probB(find(testData(:,6)==1))));
+        a_indices = intersect(find(testData(:,6)==-1), testInstances);
+        b_indices = intersect(find(testData(:,6)==1), testInstances);
+        ll=sum(log(probA(a_indices)));
+        ll=ll+sum(log(probB(b_indices)));
     end
 
 %% Get the required instance IDs
