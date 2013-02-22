@@ -1,4 +1,4 @@
-function [trainingData, testData, ll] = GCM_model(varargin)
+function [trainingData,ll, testData] = GCM_model(varargin)
 
 %% Init the model's parameters
 p=inputParser;
@@ -60,11 +60,9 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         end
         if ~isnan(session)
             trainingInsts=intersect(trainingInsts, find(trainingData(:,2)==session));
-            testInsts=intersect(testInsts, find(testData(:,2)==session));
         end
         if ~isnan(feedType)
             trainingInsts=intersect(trainingInsts, find(trainingData(:,3)==feedType));
-            testInsts=intersect(testInsts, find(testData(:,3)==feedType));
         end
         if ~isnan(trial)
             % this is a range
