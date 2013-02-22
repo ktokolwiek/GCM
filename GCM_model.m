@@ -1,4 +1,4 @@
-function [trainingData, ll] = GCM_model(varargin)
+function [trainingData, testData, ll] = GCM_model(varargin)
 
 %% Init the model's parameters
 p=inputParser;
@@ -143,6 +143,7 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
     function ll=log_likelihood()
         % All data are presented now
         lens = testData(:,5);
+        testData(:,8) = zeros(length(lens),1);
         catA = trainingData(trainingData(instances,9)==-1,5);
         catB = trainingData(trainingData(instances,9)==1,5);
         % just the lengths
@@ -152,6 +153,8 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
         indices_a = intersect(testInstances, find(testData(:,6)==-1));
         indices_b = intersect(testInstances, find(testData(:,6)==1));
+        testData(indices_a,8) = -1;
+        testData(indices_b,8) = 1;
         ll=sum(log(probA(indices_a)));
         ll=ll+sum(log(probB(indices_b)));
     end

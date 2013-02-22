@@ -16,7 +16,7 @@ C={'gamma', 'forget_rate', 'noise_mu', 'noise_sigma', 'choice_parameter',...
 
 combination = 2;
 matlabpool open 12 % on the love01 machine
-fprintf('Progress is %2.0f%%\n',0)
+fprintf('Progress is %2.0f%%',0)
 for gamma = gammas
     for forget_rate = forget_rates
         for noise_sigma = noise_sigmas
@@ -26,13 +26,27 @@ for gamma = gammas
                     [~, lls(iter)] = GCM_model('gamma', gamma, 'forget_rate',...
                         forget_rate, 'choice_parameter', choice_parameter,...
                         'noise_mu', noise_mu, 'noise_sigma', noise_sigma,...
-                        'feedType', 1, 'verbose', -1);
+                        'feedType', 2, 'verbose', -1);
                 end
                 C(combination,:) = {gamma, forget_rate, noise_mu,...
                     noise_sigma, choice_parameter, mean(lls), std(lls)};
 		fprintf(repmat('\b',1,length('Progress is 20p')));
 		fprintf('Progress is %2.0f%%',(combination-1.0)*100/no_combinations)
                 combination = combination + 1;
+		%% write out the results every iteration so that we don't lose anything
+		% If we stop execution.
+
+		[nrows,~]= size(C);
+
+		filename = 'ideal_feedback.csv';
+		fid = fopen(filename, 'w');
+
+		fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
+		for row=2:nrows
+		    fprintf(fid, '%.1f,%.10f,%.1f,%.1f,%.1f,%.7f,%.7f\n', C{row,:});
+		end
+
+		fclose(fid);
             end
         end
     end
@@ -43,7 +57,7 @@ end
 
 [nrows,~]= size(C);
 
-filename = 'actual_feedback.csv';
+filename = 'ideal_feedback.csv';
 fid = fopen(filename, 'w');
 
 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
@@ -53,5 +67,5 @@ end
 
 fclose(fid);
 
-matlab close
+matlabpool close
 end
