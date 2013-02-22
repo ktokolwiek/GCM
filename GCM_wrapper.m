@@ -5,7 +5,7 @@ forget_rates = logspace(-10,-3,5);
 noise_mu = 0;
 noise_sigmas = [0.1 0.5];
 choice_parameters = [1 2];
-no_repeats = 100;
+no_repeats = 10;
 
 no_combinations = length(gammas)*length(forget_rates)*length(noise_sigmas)*...
     length(choice_parameters);
@@ -30,8 +30,8 @@ for gamma = gammas
                 end
                 C(combination,:) = {gamma, forget_rate, noise_mu,...
                     noise_sigma, choice_parameter, mean(lls), std(lls)};
-		fprintf(repmat('\b',1,length('Progress is 20pn')));
-		fprintf('Progress is %2.0f%%\n',(combination-1.0)*100/no_combinations)
+		fprintf(repmat('\b',1,length('Progress is 20p')));
+		fprintf('Progress is %2.0f%%',(combination-1.0)*100/no_combinations)
                 combination = combination + 1;
             end
         end
