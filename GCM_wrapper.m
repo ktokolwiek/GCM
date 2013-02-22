@@ -1,7 +1,7 @@
 function GCM_wrapper()
 %% Wrapper for testing the GCM model in GCM_model.m
 gammas = [0.5 1 2];
-forget_rates = logspace(-10,-1,7);
+forget_rates = logspace(-10,-3,5);
 noise_mu = 0;
 noise_sigmas = [0.1 0.5];
 choice_parameters = [1 2];
