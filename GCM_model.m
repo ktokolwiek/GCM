@@ -151,8 +151,8 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
         indices_a = intersect(testInstances, find(testData(:,6)==-1));
         indices_b = intersect(testInstances, find(testData(:,6)==1));
-        testData(indices_a,8) = -1;
-        testData(indices_b,8) = 1;
+        testData(probA>probB,8) = -1;
+        testData(probB>probA,8) = 1;
         ll=sum(log(probA(indices_a)));
         ll=ll+sum(log(probB(indices_b)));
     end
