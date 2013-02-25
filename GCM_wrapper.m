@@ -1,4 +1,4 @@
-function GCM_wrapper()
+function GCM_wrapper(fType)
 %% Wrapper for testing the GCM model in GCM_model.m
 gammas = [0.5 1 2];
 forget_rates = logspace(-10,-3,5);
@@ -26,7 +26,7 @@ for gamma = gammas
                     [~, lls(iter)] = GCM_model('gamma', gamma, 'forget_rate',...
                         forget_rate, 'choice_parameter', choice_parameter,...
                         'noise_mu', noise_mu, 'noise_sigma', noise_sigma,...
-                        'feedType', 2, 'verbose', -1);
+                        'feedType', fType, 'verbose', -1);
                 end
                 C(combination,:) = {gamma, forget_rate, noise_mu,...
                     noise_sigma, choice_parameter, mean(lls), std(lls)};
@@ -37,8 +37,11 @@ for gamma = gammas
 		% If we stop execution.
 
 		[nrows,~]= size(C);
-
-		filename = 'ideal_feedback.csv';
+		if fType == 1
+			filename = 'actual_feedback.csv';
+		else
+			filename = 'ideal_feedback.csv';
+		end
 		fid = fopen(filename, 'w');
 
 		fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
@@ -57,7 +60,6 @@ end
 
 [nrows,~]= size(C);
 
-filename = 'ideal_feedback.csv';
 fid = fopen(filename, 'w');
 
 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
