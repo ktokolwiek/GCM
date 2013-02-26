@@ -21,15 +21,15 @@ for gamma = gammas
             for choice_parameter = choice_parameters
                 lls = zeros(no_repeats, 1);
                 parfor iter = 1:no_repeats
-                    [train, lls(iter), test] = GCM_model('gamma', gamma, 'forget_rate',...
+                    [trainData, lls(iter), testData] = GCM_model('gamma', gamma, 'forget_rate',...
                         forget_rate, 'choice_parameter', choice_parameter,...
                         'noise_mu', noise_mu, 'noise_sigma', noise_sigma,...
                         'feedType', fType, 'verbose', 100);
-                    train_lengths(:,iter) = train(:,5);
-                    train_ideal(:,iter) = train(:,8);
-                    train_model(:,iter) = train(:,9);
-                    test_lengths(:,iter) = test(:,5);
-                    test_model(:,iter) = test(:,8);
+                    train_lengths(:,iter) = trainData(:,5);
+                    train_ideal(:,iter) = trainData(:,8);
+                    train_model(:,iter) = trainData(:,9);
+                    test_lengths(:,iter) = testData(:,5);
+                    test_model(:,iter) = testData(:,8);
                     % progress bar
                     fprintf(repmat('\b',1,length('Progress is 20p')));
                     fprintf('Progress is %2.0f%%',(combination*100*no_repeats+iter)...
@@ -50,13 +50,13 @@ for gamma = gammas
                         gamma, forget_rate, noise_sigma, choice_parameter);
                 end
                 %% prepare the data
-                train_results = [train(:,1:4) mean(train_lengths')' std(train_lengths')' ...
-                    train(:,6:7) mean(train_ideal')' std(train_ideal')' ...
+                train_results = [trainData(:,1:4) mean(train_lengths')' std(train_lengths')' ...
+                    trainData(:,6:7) mean(train_ideal')' std(train_ideal')' ...
                     mean(train_model')' std(train_model')'];
-                test_results = [test(:,1:4) mean(test_lengths')' std(test_lengths')' ...
-                    train(:,6) mean(test_model')' std(test_model')'];
+                test_results = [testData(:,1:4) mean(test_lengths')' std(test_lengths')' ...
+                    testData(:,6) mean(test_model')' std(test_model')'];
                 %% write out the results
-                nrows=length(train(:,1));
+                nrows=length(trainData(:,1));
                 fid = fopen(train_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_train{:});
                 for row=1:nrows
@@ -64,7 +64,7 @@ for gamma = gammas
                 end
                 fclose(fid);
                 
-                nrows=length(test(:,1));
+                nrows=length(testData(:,1));
                 fid = fopen(test_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_test{:});
                 for row=1:nrows
