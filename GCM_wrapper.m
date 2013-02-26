@@ -1,7 +1,7 @@
 function GCM_wrapper(fType)
 %% Wrapper for testing the GCM model in GCM_model.m
 gammas = [0.5 1 2];
-forget_rates = logspace(-10,-3,5);
+forget_rates = logspace(-15,-7,5);
 noise_mu = 0;
 noise_sigmas = [0.1 0.5];
 choice_parameters = [1 2];
@@ -46,7 +46,7 @@ for gamma = gammas
 
 		fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
 		for row=2:nrows
-		    fprintf(fid, '%.1f,%.10f,%.1f,%.1f,%.1f,%.7f,%.7f\n', C{row,:});
+		    fprintf(fid, '%.1f,%.15f,%.1f,%.1f,%.1f,%.7f,%.7f\n', C{row,:});
 		end
 
 		fclose(fid);
@@ -64,7 +64,7 @@ fid = fopen(filename, 'w');
 
 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s\n', C{1,:});
 for row=2:nrows
-    fprintf(fid, '%.1f,%.10f,%.1f,%.1f,%.1f,%.7f,%.7f\n', C{row,:});
+    fprintf(fid, '%.1f,%.15f,%.1f,%.1f,%.1f,%.7f,%.7f\n', C{row,:});
 end
 
 fclose(fid);
