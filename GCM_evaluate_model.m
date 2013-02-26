@@ -20,6 +20,8 @@ for gamma = gammas
         for noise_sigma = noise_sigmas
             for choice_parameter = choice_parameters
                 lls = zeros(no_repeats, 1);
+                traind = [];
+                testd = [];
                 parfor iter = 1:no_repeats
                     [trainData, lls(iter), testData] = GCM_model('gamma', gamma, 'forget_rate',...
                         forget_rate, 'choice_parameter', choice_parameter,...
@@ -30,6 +32,8 @@ for gamma = gammas
                     train_model(:,iter) = trainData(:,9);
                     test_lengths(:,iter) = testData(:,5);
                     test_model(:,iter) = testData(:,8);
+                    traind = [];
+                    testd = [];
                     % progress bar
                     fprintf(repmat('\b',1,length('Progress is 20p')));
                     fprintf('Progress is %2.0f%%',(combination*100*no_repeats+iter)...
@@ -50,13 +54,13 @@ for gamma = gammas
                         gamma, forget_rate, noise_sigma, choice_parameter);
                 end
                 %% prepare the data
-                train_results = [trainData(:,1:4) mean(train_lengths')' std(train_lengths')' ...
-                    trainData(:,6:7) mean(train_ideal')' std(train_ideal')' ...
+                train_results = [traind(:,1:4) mean(train_lengths')' std(train_lengths')' ...
+                    traind(:,6:7) mean(train_ideal')' std(train_ideal')' ...
                     mean(train_model')' std(train_model')'];
-                test_results = [testData(:,1:4) mean(test_lengths')' std(test_lengths')' ...
-                    testData(:,6) mean(test_model')' std(test_model')'];
+                test_results = [testd(:,1:4) mean(test_lengths')' std(test_lengths')' ...
+                    testd(:,6) mean(test_model')' std(test_model')'];
                 %% write out the results
-                nrows=length(trainData(:,1));
+                nrows=length(traind(:,1));
                 fid = fopen(train_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_train{:});
                 for row=1:nrows
@@ -64,7 +68,7 @@ for gamma = gammas
                 end
                 fclose(fid);
                 
-                nrows=length(testData(:,1));
+                nrows=length(testd(:,1));
                 fid = fopen(test_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_test{:});
                 for row=1:nrows
