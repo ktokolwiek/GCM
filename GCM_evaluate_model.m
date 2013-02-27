@@ -54,20 +54,19 @@ for gamma = gammas
                 end
                 %% prepare the data
                 train_results = [trainData(:,1:4) mean(train_lengths')' std(train_lengths')' ...
-                    trainData(:,6:7) mean(train_ideal')' std(train_ideal')' ...
-                    mean(train_model')' std(train_model')'];
+                    trainData(:,6:8) mean(train_model')' std(train_model')'];
                 test_results = [testData(:,1:4) mean(test_lengths')' std(test_lengths')' ...
                     testData(:,6) mean(test_model')' std(test_model')'];
                 %% write out the results
                 fid = fopen(train_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_train{:});
-                fclose(fid)
+                fclose(fid);
 		dlmwrite(train_fname,train_results,'-append', 'precision','%.2f');
                 
                 fid = fopen(test_fname, 'w');
                 fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_test{:});
                 fclose(fid);
-		dlmwrite(train_fname,test_results,'-append', 'precision','%.2f');
+		dlmwrite(test_fname,test_results,'-append', 'precision','%.2f');
             end
         end
     end
