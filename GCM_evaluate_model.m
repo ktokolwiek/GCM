@@ -1,6 +1,6 @@
 function GCM_evaluate_model(fType, gammas, forget_rates, noise_mu, noise_sigmas, choice_parameters)
 %% Wrapper for testing the GCM model in GCM_model.m
-no_repeats = 100;
+no_repeats = 1000;
 
 no_combinations = length(gammas)*length(forget_rates)*length(noise_sigmas)*...
     length(choice_parameters);
@@ -17,7 +17,7 @@ for gamma = gammas
     for forget_rate = forget_rates
         for noise_sigma = noise_sigmas
             for choice_parameter = choice_parameters
-                lls = zeros(no_repeats, 1);
+		lls = zeros(no_repeats,1);
                 parfor iter = 1:no_repeats
                     [trainData, lls(iter), testData] = GCM_model('gamma', gamma, 'forget_rate',...
                         forget_rate, 'choice_parameter', choice_parameter,...
@@ -64,7 +64,7 @@ for gamma = gammas
 		dlmwrite(train_fname,train_results,'-append', 'precision','%.2f');
                 
                 fid = fopen(test_fname, 'w');
-                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_test{:});
+                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,LL_%.5f,LL_sd_%.5f\n', header_test{:},mean(lls),std(lls));
                 fclose(fid);
 		dlmwrite(test_fname,test_results,'-append', 'precision','%.2f');
             end
