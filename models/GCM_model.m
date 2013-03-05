@@ -47,7 +47,7 @@ testData = xlsread(test_fname);
 testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
 % add perceptual noise
 % (1)subj, (2)session, (3)feedType, (4)trial, (5)length, (6)respSE, 
-% (7)respRT
+% (7)respRT (8)modelledCat (9)modelledCat_no_forgetting
 
 %% Get indices of selected instances
   

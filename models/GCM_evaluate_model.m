@@ -5,8 +5,12 @@ no_repeats = 1000;
 no_combinations = length(gammas)*length(forget_rates)*length(noise_sigmas)*...
     length(choice_parameters);
 % the headers
-header_train={'subj','session','feedType','trial','length_avg','length_sd','tarCat','respCat', 'idealCat','modelledCat_avg','modelledCat_sd'};
-header_test={'subj','session','feedType','trial','length_avg','length_sd','respCat', 'modelledCat_avg','modelledCat_sd'};
+header_train={'subj','session','feedType','trial','length_avg','length_sd',...
+    'tarCat','respCat', 'idealCat','modelledCat_avg','modelledCat_sd',...
+    'modelledCat_no_forget_avg','modelledCat_no_forget_sd'};
+header_test={'subj','session','feedType','trial','length_avg','length_sd',...
+    'respCat', 'modelledCat_avg','modelledCat_sd','modelledCat_no_forget_avg',...
+    'modelledCat_no_forget_sd'};
 
 %% Parallel for loop
 
@@ -27,8 +31,10 @@ for gamma = gammas
                         'feedType', fType, 'verbose', -1);
                     train_lengths(:,iter) = trainData(:,5);
                     train_model(:,iter) = trainData(:,9);
+                    train_model_no_forgetting(:,iter) = trainData(:,10);
                     test_lengths(:,iter) = testData(:,5);
                     test_model(:,iter) = testData(:,8);
+                    test_model_no_forgetting(:,iter) = testData(:,9);
                     % progress bar
                     fprintf(repmat('\b',1,length('Progress is 20p')));
                     fprintf('Progress is %2.0f%%',(combination*no_repeats+iter)...
@@ -56,19 +62,23 @@ for gamma = gammas
                 end
                 %% prepare the data
                 train_results = [trainData(:,1:4) mean(train_lengths')' std(train_lengths')' ...
-                    trainData(:,6:8) mean(train_model')' std(train_model')'];
+                    trainData(:,6:8) mean(train_model')' std(train_model')' ...
+                    mean(train_model_no_forgetting')' std(train_model_no_forgetting')'];
                 test_results = [testData(:,1:4) mean(test_lengths')' std(test_lengths')' ...
-                    testData(:,6) mean(test_model')' std(test_model')'];
+                    testData(:,6) mean(test_model')' std(test_model')' ...
+                    mean(test_model_no_forgetting')' std(test_model_no_forgetting')'];
                 %% write out the results
                 fid = fopen(train_fname, 'w');
-                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_train{:});
+                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n', header_train{:});
                 fclose(fid);
-		dlmwrite(train_fname,train_results,'-append', 'precision','%.2f');
+                dlmwrite(train_fname,train_results,'-append', 'precision','%.2f');
                 
                 fid = fopen(test_fname, 'w');
-                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,LL_%.5f,LL_sd_%.5f\n', header_test{:},mean(lls),std(lls));
+                fprintf(fid, '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,LL_%.5f,LL_sd_%.5f,NO_FORGET_LL_%.5f,LL_sd_%.5f\n',...
+                    header_test{:},mean(lls),std(lls),mean(lls_no_forget),...
+                    std(lls_no_forget));
                 fclose(fid);
-		dlmwrite(test_fname,test_results,'-append', 'precision','%.2f');
+                dlmwrite(test_fname,test_results,'-append', 'precision','%.2f');
             end
         end
     end
