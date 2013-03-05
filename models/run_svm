@@ -1,0 +1,9 @@
+#!/bin/bash
+for i in {6..7}
+do
+python -u SVM-random_forgetting-multiprocessing.py results-$i | tee OUTPUT-$i
+sed '1d' results-$i/BestSVMFit-p112101-session1.txt > results-$i/ALL.txt
+mv results-$i/BestSVMFit-p112101-session1.txt results-$i/tmp.txt
+grep -h -e ^[0-9] results-$i/BestSVMFit-p1* >> results-$i/ALL.txt
+mv results-$i/tmp.txt results-$i/BestSVMFit-p112101-session1.txt
+done
