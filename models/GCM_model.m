@@ -1,9 +1,9 @@
-function [trainingData,ll, testData] = GCM_model(varargin)
+function [trainingData,ll, testData, ll_no_forgetting] = GCM_model(varargin)
 
 %% Init the model's parameters
 p=inputParser;
-addOptional(p, 'training_fname', 'training_all.xls');
-addOptional(p, 'test_fname','test_all.xls');
+addOptional(p, 'training_fname', '../raw_data/training_all.xls');
+addOptional(p, 'test_fname','../raw_data/test_all.xls');
 addOptional(p, 'verbose',15,@isnumeric);
 addOptional(p, 'gamma',1,@isnumeric);
 addOptional(p, 'forget_rate',0.00001,@isnumeric);
@@ -42,7 +42,7 @@ trainingData(:,5) = trainingData(:,5) + (noise_mu + noise_sigma.*randn(noInstanc
 % add perceptual noise
 trainingData = [trainingData trainingData(:,6)]; % copy the feedback to modelled category.
 % (1)ps_id, (2)session, (3)feedType, (4)trial, (5)length, (6)tarCat,
-% (7)respCat, (8)idealCat, (9)modelledCat
+% (7)respCat, (8)idealCat, (9)modelledCat_with_forgetting, (10)modelledCat_no_forgetting
 testData = xlsread(test_fname);
 testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
 % add perceptual noise
@@ -107,6 +107,24 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         end
     end
 
+%% Get the category memberships WITHOUT re-sampling
+
+    function [ll] = get_ideal_membership(instances)
+        lens = trainingData(instances,5);
+        trainingData(:,10)=zeros(length(lens),1);
+        catA = trainingData(trainingData(instances,8)==-1,5);
+        catB = trainingData(trainingData(instances,8)==1,5);
+        sumCatA=sum(exp(-choice_parameter*pdist2(catA, lens)));
+        sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
+        probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        indices_a = find(trainingData(:,8)==-1);
+        indices_b = find(trainingData(:,8)==1);
+        trainingData(probA>probB,10) = -1;
+        trainingData(probB>probA,10) = 1;
+        ll = sum(log(probA(indices_a)))+sum(log(probB(indices_b)));
+    end
+
 %% Do one loop of forgetting
 
     function forget()
@@ -138,10 +156,11 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
 
 %% Get log likelihood
 
-    function ll=log_likelihood()
+    function [ll, ll_no_forgetting]=log_likelihood()
         % All data are presented now
         lens = testData(:,5);
         testData(:,8) = zeros(length(lens),1);
+        testData(:,9) = zeros(length(lens),1); % The version WITHOUT forgetting
         catA = trainingData(trainingData(instances,9)==-1,5);
         catB = trainingData(trainingData(instances,9)==1,5);
         % just the lengths
@@ -155,6 +174,20 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
         testData(probB>probA,8) = 1;
         ll=sum(log(probA(indices_a)));
         ll=ll+sum(log(probB(indices_b)));
+
+        % Below is without forgetting
+        catA = trainingData(trainingData(instances,8)==-1,5);
+        catB = trainingData(trainingData(instances,8)==1,5);
+        sumCatA=sum(exp(-choice_parameter*pdist2(catA, lens)));
+        sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
+        probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+        indices_a = intersect(testInstances, find(testData(:,6)==-1));
+        indices_b = intersect(testInstances, find(testData(:,6)==1));
+        testData(probA>probB,9) = -1;
+        testData(probB>probA,9) = 1;
+        ll_no_forgetting = sum(log(probA(indices_a)))+sum(log(probB(indices_b)));
+        
     end
 
 %% Get the required instance IDs and init presented instances
@@ -165,6 +198,7 @@ presented = [];
 %% Run the model
 
 presentLoop(instances);
+a=get_ideal_membership(instances);
 
 %% Compute the log-likelihood of test data
 
@@ -172,7 +206,7 @@ if verbose>10
     disp(' ')
 end
 
-ll=log_likelihood();
+[ll, ll_no_forgetting]=log_likelihood();
 
 if verbose>10
     disp(' ')
