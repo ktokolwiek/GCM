@@ -110,7 +110,7 @@ testData(:,5) = testData(:,5) + (noise_mu + noise_sigma.*randn(length(testData(:
 %% Get the category memberships WITHOUT re-sampling
 
     function [ll] = get_ideal_membership(instances)
-        lens = trainingData(instances,5);
+        lens = trainingData(:,5);
         trainingData(:,10)=zeros(length(lens),1);
         catA = trainingData(trainingData(instances,8)==-1,5);
         catB = trainingData(trainingData(instances,8)==1,5);
