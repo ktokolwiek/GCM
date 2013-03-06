@@ -1,6 +1,6 @@
 function GCM_evaluate_model(fType, gammas, forget_rates, noise_mu, noise_sigmas, choice_parameters)
 %% Wrapper for testing the GCM model in GCM_model.m
-no_repeats = 1000;
+no_repeats = 100;
 
 no_combinations = length(gammas)*length(forget_rates)*length(noise_sigmas)*...
     length(choice_parameters);
