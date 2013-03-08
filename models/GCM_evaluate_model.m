@@ -21,8 +21,8 @@ for gamma = gammas
     for forget_rate = forget_rates
         for noise_sigma = noise_sigmas
             for choice_parameter = choice_parameters
-		lls = zeros(no_repeats,1);
-        lls_no_forget = zeros(no_repeats,1);
+                lls = zeros(no_repeats,1);
+                lls_no_forget = zeros(no_repeats,1);
                 parfor iter = 1:no_repeats
                     [trainData, lls(iter), testData, lls_no_forget(iter)] =...
                         GCM_model('gamma', gamma, 'forget_rate',...
@@ -41,13 +41,13 @@ for gamma = gammas
                         /(no_combinations*no_repeats*0.01));
                     
                 end
-		%% Read the files again so that we have the raw data for output like subject ID, feedback type etc.
-		trainData = xlsread('../raw_data/training_all.xls');
-		testData = xlsread('../raw_data/test_all.xls');
-		trainData(:,8) = 2*(trainData(:,5)>30.5)-1; % -1 for cat A (short), 1 for cat B (long)
-		trainData = [trainData trainData(:,6)]; % copy the feedback to modelled category.
+                %% Read the files again so that we have the raw data for output like subject ID, feedback type etc.
+                trainData = xlsread('../raw_data/training_all.xls');
+                testData = xlsread('../raw_data/test_all.xls');
+                trainData(:,8) = 2*(trainData(:,5)>30.5)-1; % -1 for cat A (short), 1 for cat B (long)
+                trainData = [trainData trainData(:,6)]; % copy the feedback to modelled category.
                 
-		combination = combination + 1;
+                combination = combination + 1;
                 %% get the filenames
                 if fType == 1
                     train_fname = sprintf('../GCM_results/actual_training_%.1f_%.15f_%.1f_%.1f.csv',...
