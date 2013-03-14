@@ -196,6 +196,7 @@ function GCM_generate_Ps_responses()
                 end
                 [newCat,~]=get_cat_membership(i);
                 trainingData(i,4) = newCat;
+                trainingData(i,5) = newCat;
                 forget();
             end
         end
@@ -260,9 +261,9 @@ function GCM_generate_Ps_responses()
 
 
 %% loop through possibilities
-feedback_types = [1 2]; %1- actual, 2- ideal
-feedback_amounts = [1 2]; %1- 100%, 2- some taken out
-N_per_cell = 50;
+feedback_types = [1]; %1- actual, 2- ideal
+feedback_amounts = [2]; %1- 100%, 2- some taken out
+N_per_cell = 1;
 N_repeats = 1;
 fname_train = '../GCM_predictions/predictions_training.csv';
 fname_test = '../GCM_predictions/predictions_test.csv';
