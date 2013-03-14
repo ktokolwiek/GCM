@@ -271,10 +271,24 @@ end
 
 
 %% loop through possibilities
-feedback_types = [1,2]; %1- actual, 2- ideal
-feedback_amounts = [1,2]; %1- 100%, 2- some taken out
+feedback_types = [1 2]; %1- actual, 2- ideal
+feedback_amounts = [1 2]; %1- 100%, 2- some taken out
 N_per_cell = 50;
 N_repeats = 1;
+
+for fType = feedback_types
+   for fAmount = feedback_amounts
+       train_data_all = [];
+       test_data_all = [];
+       for ps=1:N_per_cell
+           for rep = 1:N_repeats
+               [train,test] = GCM_generative_model();
+           end
+           test_data_all = [test_data_all; test];
+           train_data_all = [train_data_all; train];
+       end
+   end
+end
 
 
 
