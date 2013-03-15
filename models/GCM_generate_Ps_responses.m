@@ -36,12 +36,11 @@ function GCM_generate_Ps_responses()
         end
         
         %% Add test set
-        list_test = (list_test>30.5) * 2 - 1;
-        
+        list_test(:,2) = (list_test>30.5) * 2 - 1;
         %% shuffle both lists
         list_A=list_A(randperm(length(list_A)),:);
         list_D=list_D(randperm(length(list_D)),:);
-        list_test = list_test(randperm(length(list_test)));
+        list_test = list_test(randperm(length(list_test)),:);
         
         training = [list_A;list_D];
         test=list_test;
@@ -106,6 +105,7 @@ function GCM_generate_Ps_responses()
         testData(:,1) = testData(:,1) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
         % add perceptual noise
         testData(:,2) = zeros(size(testData(:,1)));
+        testData(:,3) = zeros(size(testData(:,1)));
         % (1) length, (2) no_forgetting, (3) forgetting
         
         
@@ -275,8 +275,6 @@ fprintf(ftest, 'ps_id,feedback_type,feedback_amount,length,model_no_forg,model_f
 
 for fType = feedback_types
     for fAmount = feedback_amounts
-        train_data_all = [];
-        test_data_all = [];
         for ps=1:N_per_cell
             [trainingset,testset] = get_training_stimuli(fType, fAmount);
             for rep = 1:N_repeats
