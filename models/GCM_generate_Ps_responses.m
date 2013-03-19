@@ -25,13 +25,14 @@ function GCM_generate_Ps_responses()
         end
         
         %% Remove feedback if needed
-        if feed_amount == 2
+        if feed_amount > 1
             %if partial feedback then select some randome elements of A
-            rand_A = randperm(80,25);
+            no_ommitted = 8*(feed_amount-1);
+            rand_A = randperm(80,no_ommitted);
             %multiply them by two so that we know which distribution it came from.
             list_A(rand_A,2) = list_A(rand_A,2)*2;
             %same for category D
-            rand_D = randperm(80,25);
+            rand_D = randperm(80,no_ommitted);
             list_D(rand_D,2) = list_D(rand_D,2)*2;
         end
         
@@ -59,9 +60,9 @@ function GCM_generate_Ps_responses()
         p=inputParser;
         addOptional(p, 'training_set', NaN);
         addOptional(p, 'test_set', NaN);
-        addOptional(p, 'verbose',15,@isnumeric);
+        addOptional(p, 'verbose',0,@isnumeric);
         addOptional(p, 'gamma',1,@isnumeric);
-        addOptional(p, 'forget_rate',0.00001,@isnumeric);
+        addOptional(p, 'forget_rate',0.000001,@isnumeric);
         addOptional(p, 'choice_parameter', 1, @isnumeric);
         addOptional(p, 'noise_mu',0,@isnumeric);
         addOptional(p, 'noise_sigma',0.5, @isnumeric);
@@ -102,11 +103,12 @@ function GCM_generate_Ps_responses()
         % (1) length, (2) feedback, (3) idealCat, (4)
         % modelledCat_no_fogetting, (5) modelledCat_forgetting
         testData = test_set;
+        testData(:,4) = (testData(:,1)>30.5) * 2 - 1;
         testData(:,1) = testData(:,1) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
         % add perceptual noise
         testData(:,2) = zeros(size(testData(:,1)));
         testData(:,3) = zeros(size(testData(:,1)));
-        % (1) length, (2) no_forgetting, (3) forgetting
+        % (1) length, (2) no_forgetting, (3) forgetting, (4) ideal
         
         
         %% Get category memberships
@@ -261,9 +263,9 @@ function GCM_generate_Ps_responses()
 
 
 %% loop through possibilities
-feedback_types = [1]; %1- actual, 2- ideal
-feedback_amounts = [2]; %1- 100%, 2- some taken out
-N_per_cell = 1;
+feedback_types = [1 2]; %1- actual, 2- ideal
+feedback_amounts = 1:11; %1- 100%, 2- some taken out
+N_per_cell = 100;
 N_repeats = 1;
 fname_train = '../GCM_predictions/predictions_training.csv';
 fname_test = '../GCM_predictions/predictions_test.csv';
@@ -271,7 +273,7 @@ ftrain = fopen(fname_train, 'w');
 fprintf(ftrain, 'ps_id,feedback_type,feedback_amount,length,feedback,ideal,model_no_forg,model_forg\n', 1);
 
 ftest = fopen(fname_test, 'w');
-fprintf(ftest, 'ps_id,feedback_type,feedback_amount,length,model_no_forg,model_forg\n', 1);
+fprintf(ftest, 'ps_id,feedback_type,feedback_amount,length,model_no_forg,model_forg,ideal\n', 1);
 
 for fType = feedback_types
     for fAmount = feedback_amounts
@@ -291,7 +293,7 @@ for fType = feedback_types
             %% save the test data
             [nrows,~]= size(test);
             for row=1:nrows
-                fprintf(ftest, '%s,%d,%d,%.2f,%d,%d\n',ps_id,fType,fAmount, test(row,:));
+                fprintf(ftest, '%s,%d,%d,%.2f,%d,%d,%d\n',ps_id,fType,fAmount, test(row,:));
             end
         end
     end
