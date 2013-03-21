@@ -1,4 +1,4 @@
-function GCM_generate_Ps_responses()
+function GCM_generate_Ps_responses(forget_rate)
 
     function [training,test] = get_training_stimuli(feed_type, feed_amount)
         %% Distributions
@@ -54,7 +54,7 @@ function GCM_generate_Ps_responses()
 % from the length.
 %% .
 
-    function [trainingData,ll, testData, ll_no_forgetting] = GCM_generative_model(varargin)
+    function [trainingData,ll, testData] = GCM_generative_model(varargin)
         
         %% Init the model's parameters
         p=inputParser;
@@ -62,7 +62,7 @@ function GCM_generate_Ps_responses()
         addOptional(p, 'test_set', NaN);
         addOptional(p, 'verbose',0,@isnumeric);
         addOptional(p, 'gamma',1,@isnumeric);
-        addOptional(p, 'forget_rate',0.000001,@isnumeric);
+        addOptional(p, 'forget_rate',0.1,@isnumeric);
         addOptional(p, 'choice_parameter', 1, @isnumeric);
         addOptional(p, 'noise_mu',0,@isnumeric);
         addOptional(p, 'noise_sigma',0.5, @isnumeric);
@@ -97,24 +97,23 @@ function GCM_generate_Ps_responses()
         % ideal feedback
         trainingData(:,1) = trainingData(:,1) + (noise_mu + noise_sigma.*randn(noInstances,1));
         % add perceptual noise
-        trainingData = [trainingData trainingData(:,2) trainingData(:,2)];
+        trainingData = [trainingData trainingData(:,2)];
         % copy the feedback to modelled category (twice, once for without
         % and once for with forgetting).
         % (1) length, (2) feedback, (3) idealCat, (4)
-        % modelledCat_no_fogetting, (5) modelledCat_forgetting
+        % modelledCat_with_forgetting
         testData = test_set;
-        testData(:,4) = (testData(:,1)>30.5) * 2 - 1;
+        testData(:,3) = (testData(:,1)>30.5) * 2 - 1;
         testData(:,1) = testData(:,1) + (noise_mu + noise_sigma.*randn(length(testData(:,1)),1));
         % add perceptual noise
         testData(:,2) = zeros(size(testData(:,1)));
-        testData(:,3) = zeros(size(testData(:,1)));
-        % (1) length, (2) no_forgetting, (3) forgetting, (4) ideal
+        % (1) length, (2) forgetting, (3) ideal
         
         
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
-            presentedData=trainingData(presented,:);
+	presentedData=trainingData(presented(1:end-1),:);
             len = trainingData(inst_no,1);
             oldCat = trainingData(inst_no,4); %using modelled category here,
             % it is the same as presented category to begin with anyway.
@@ -138,11 +137,12 @@ function GCM_generate_Ps_responses()
                 % don't compare it to instances of its own category. If we
                 % don't know the category membership (i.e. no feedback for
                 % this instance), then we compare it to both categories.
-                if oldCat == -1
-                    sumCatA = sumCatA-1;
-                else
-                    sumCatB = sumCatB-1;
-                end % we subtract exp(0) for difference with itself.
+                %if oldCat == -1
+                %    sumCatA = sumCatA-1;
+                %else
+                %    sumCatB = sumCatB-1;
+                %end % we subtract exp(0) for difference with itself.
+		% We don't need to do that actually, because we are using only presented(1:end-1)
                 probA=sumCatA^gamma/(sumCatA^gamma+sumCatB^gamma);
                 probB=sumCatB^gamma/(sumCatA^gamma+sumCatB^gamma);
                 if probA>probB
@@ -181,7 +181,7 @@ function GCM_generate_Ps_responses()
             for j=forgotten
                 presented = [presented j];
                 [newCat,~]=get_cat_membership(j);
-                trainingData(j,5) = newCat;
+                trainingData(j,4) = newCat; %save it in modelled category
             end
         end
         
@@ -198,19 +198,18 @@ function GCM_generate_Ps_responses()
                 end
                 [newCat,~]=get_cat_membership(i);
                 trainingData(i,4) = newCat;
-                trainingData(i,5) = newCat;
                 forget();
             end
         end
         
         %% Get log likelihood
         
-        function [ll, ll_no_forgetting]=log_likelihood()
+        function [ll]=log_likelihood()
             % All data are presented now
+	    % Here we evaluate the test data.
             lens = testData(:,1);
-            testData(:,2) = zeros(length(lens),1);% The version WITHOUT forgetting
-            testData(:,3) = zeros(length(lens),1); 
-            %% With forgetting
+            testData(:,2) = zeros(length(lens),1);% The version WITH
+	    % forgetting at the given forget rate
             catA = trainingData(trainingData(instances,4)==-1,1);
             catB = trainingData(trainingData(instances,4)==1,1);
             % just the lengths
@@ -218,25 +217,25 @@ function GCM_generate_Ps_responses()
             sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
             probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
             probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
-            indices_a = find(testData(:,3)==-1);
-            indices_b = find(testData(:,3)==1);
+            indices_a = find(testData(:,3)==-1); %ideal
+            indices_b = find(testData(:,3)==1); %ideal
             testData(probA>probB,2) = -1;
             testData(probB>probA,2) = 1;
             ll=sum(log(probA(indices_a)));
             ll=ll+sum(log(probB(indices_b)));
             
             %% Below is without forgetting
-            catA = trainingData(trainingData(instances,5)==-1,1);
-            catB = trainingData(trainingData(instances,5)==1,1);
-            sumCatA=sum(exp(-choice_parameter*pdist2(catA, lens)));
-            sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
-            probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
-            probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
-            indices_a = find(testData(:,1)<30.5);
-            indices_b = find(testData(:,1)>30.5);
-            testData(probA>probB,3) = -1;
-            testData(probB>probA,3) = 1;
-            ll_no_forgetting = sum(log(probA(indices_a)))+sum(log(probB(indices_b)));
+            %catA = trainingData(trainingData(instances,5)==-1,1);
+            %catB = trainingData(trainingData(instances,5)==1,1);
+            %sumCatA=sum(exp(-choice_parameter*pdist2(catA, lens)));
+            %sumCatB=sum(exp(-choice_parameter*pdist2(catB, lens)));
+            %probA=sumCatA.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+            %probB=sumCatB.^gamma./(sumCatA.^gamma+sumCatB.^gamma);
+            %indices_a = find(testData(:,1)<30.5);
+            %indices_b = find(testData(:,1)>30.5);
+            %testData(probA>probB,3) = -1;
+            %testData(probB>probA,3) = 1;
+            %ll_no_forgetting = sum(log(probA(indices_a)))+sum(log(probB(indices_b)));
             
         end
         
@@ -253,7 +252,7 @@ function GCM_generate_Ps_responses()
             disp(' ')
         end
         
-        [ll, ll_no_forgetting]=log_likelihood();
+        [ll]=log_likelihood();
         
         if verbose>10
             disp(' ')
@@ -265,41 +264,39 @@ function GCM_generate_Ps_responses()
 %% loop through possibilities
 feedback_types = [1 2]; %1- actual, 2- ideal
 feedback_amounts = 1:11; %1- 100%, 2- some taken out
-N_per_cell = 10000;
+N_per_cell = 1000;
 N_repeats = 1;
-fname_train = '../GCM_predictions/predictions_training.csv';
-fname_test = '../GCM_predictions/predictions_test.csv';
+fname_train = ['../GCM_predictions/predictions_training' num2str(forget_rate) '.csv'];
+fname_test = ['../GCM_predictions/predictions_test' num2str(forget_rate) '.csv'];
 ftrain = fopen(fname_train, 'w');
-fprintf(ftrain, 'ps_id,feedback_type,feedback_amount,length,feedback,ideal,model_no_forg,model_forg\n', 1);
-
+if forget_rate == 0
+fprintf(ftrain, 'ps_id,forget_rate,feedback_type,feedback_amount,length,feedback,ideal,model_forg\n', 1);
+end
 ftest = fopen(fname_test, 'w');
-fprintf(ftest, 'ps_id,feedback_type,feedback_amount,length,model_no_forg,model_forg,ideal\n', 1);
-
+if forget_rate==0
+fprintf(ftest, 'ps_id,forget_rate,feedback_type,feedback_amount,length,model_forg,ideal\n', 1);
+end
 for fType = feedback_types
     for fAmount = feedback_amounts
-        for ps=1:N_per_cell
-            [trainingset,testset] = get_training_stimuli(fType, fAmount);
-            for rep = 1:N_repeats
-                [train,ll,test,ll_no_forget] = GCM_generative_model('training_set', trainingset,...
-                    'test_set', testset);
-            end
-            ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
-            
-            %% save the training data
-            [nrows,~]= size(train);
-            for row=1:nrows
-                fprintf(ftrain, '%s,%d,%d,%.2f,%d,%d,%d,%d\n', ps_id,fType,fAmount,train(row,:));
-            end
-            %% save the test data
-            [nrows,~]= size(test);
-            for row=1:nrows
-                fprintf(ftest, '%s,%d,%d,%.2f,%d,%d,%d\n',ps_id,fType,fAmount, test(row,:));
-            end
-        end
+	for ps=1:N_per_cell
+	    [trainingset,testset] = get_training_stimuli(fType, fAmount);
+	    for rep = 1:N_repeats
+		[train,ll,test] = GCM_generative_model('training_set', trainingset,...
+		    'test_set', testset, 'forget_rate', forget_rate);
+	    end
+	    ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
+	    
+	    %% save the training data
+	    [nrows,~]= size(train);
+	    for row=1:nrows
+		fprintf(ftrain, '%s,%.5f,%d,%d,%.2f,%d,%d,%d\n', ps_id,forget_rate,fType,fAmount,train(row,:));
+	    end
+	    %% save the test data
+	    [nrows,~]= size(test);
+	    for row=1:nrows
+		fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps_id,forget_rate,fType,fAmount, test(row,:));
+	    end
+	end
     end
 end
-
-fclose(ftrain);
-fclose(ftest);
-
 end
