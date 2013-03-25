@@ -61,7 +61,7 @@ function GCM_generate_Ps_responses(forget_rate)
         addOptional(p, 'training_set', NaN);
         addOptional(p, 'test_set', NaN);
         addOptional(p, 'verbose',0,@isnumeric);
-        addOptional(p, 'gamma',1,@isnumeric);
+        addOptional(p, 'gamma',2,@isnumeric);
         addOptional(p, 'forget_rate',0.1,@isnumeric);
         addOptional(p, 'choice_parameter', 1, @isnumeric);
         addOptional(p, 'noise_mu',0,@isnumeric);
@@ -113,7 +113,7 @@ function GCM_generate_Ps_responses(forget_rate)
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
-	presentedData=trainingData(presented(1:end-1),:);
+            presentedData=trainingData(presented(1:end-1),:);
             len = trainingData(inst_no,1);
             oldCat = trainingData(inst_no,4); %using modelled category here,
             % it is the same as presented category to begin with anyway.
@@ -142,7 +142,7 @@ function GCM_generate_Ps_responses(forget_rate)
                 %else
                 %    sumCatB = sumCatB-1;
                 %end % we subtract exp(0) for difference with itself.
-		% We don't need to do that actually, because we are using only presented(1:end-1)
+                % We don't need to do that actually, because we are using only presented(1:end-1)
                 probA=sumCatA^gamma/(sumCatA^gamma+sumCatB^gamma);
                 probB=sumCatB^gamma/(sumCatA^gamma+sumCatB^gamma);
                 if probA>probB
@@ -206,10 +206,10 @@ function GCM_generate_Ps_responses(forget_rate)
         
         function [ll]=log_likelihood()
             % All data are presented now
-	    % Here we evaluate the test data.
+            % Here we evaluate the test data.
             lens = testData(:,1);
             testData(:,2) = zeros(length(lens),1);% The version WITH
-	    % forgetting at the given forget rate
+            % forgetting at the given forget rate
             catA = trainingData(trainingData(instances,4)==-1,1);
             catB = trainingData(trainingData(instances,4)==1,1);
             % just the lengths
@@ -270,33 +270,33 @@ fname_train = ['../GCM_predictions/predictions_training' num2str(forget_rate) '.
 fname_test = ['../GCM_predictions/predictions_test' num2str(forget_rate) '.csv'];
 ftrain = fopen(fname_train, 'w');
 if forget_rate == 0
-fprintf(ftrain, 'ps_id,forget_rate,feedback_type,feedback_amount,length,feedback,ideal,model_forg\n', 1);
+    fprintf(ftrain, 'ps_id,forget_rate,feedback_type,feedback_amount,length,feedback,ideal,model_forg\n', 1);
 end
 ftest = fopen(fname_test, 'w');
 if forget_rate==0
-fprintf(ftest, 'ps_id,forget_rate,feedback_type,feedback_amount,length,model_forg,ideal\n', 1);
+    fprintf(ftest, 'ps_id,forget_rate,feedback_type,feedback_amount,length,model_forg,ideal\n', 1);
 end
 for fType = feedback_types
     for fAmount = feedback_amounts
-	for ps=1:N_per_cell
-	    [trainingset,testset] = get_training_stimuli(fType, fAmount);
-	    for rep = 1:N_repeats
-		[train,ll,test] = GCM_generative_model('training_set', trainingset,...
-		    'test_set', testset, 'forget_rate', forget_rate);
-	    end
-	    ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
-	    
-	    %% save the training data
-	    [nrows,~]= size(train);
-	    for row=1:nrows
-		fprintf(ftrain, '%s,%.5f,%d,%d,%.2f,%d,%d,%d\n', ps_id,forget_rate,fType,fAmount,train(row,:));
-	    end
-	    %% save the test data
-	    [nrows,~]= size(test);
-	    for row=1:nrows
-		fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps_id,forget_rate,fType,fAmount, test(row,:));
-	    end
-	end
+        for ps=1:N_per_cell
+            [trainingset,testset] = get_training_stimuli(fType, fAmount);
+            for rep = 1:N_repeats
+                [train,ll,test] = GCM_generative_model('training_set', trainingset,...
+                    'test_set', testset, 'forget_rate', forget_rate);
+            end
+            ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
+            
+            %% save the training data
+            [nrows,~]= size(train);
+            for row=1:nrows
+                fprintf(ftrain, '%s,%.5f,%d,%d,%.2f,%d,%d,%d\n', ps_id,forget_rate,fType,fAmount,train(row,:));
+            end
+            %% save the test data
+            [nrows,~]= size(test);
+            for row=1:nrows
+                fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps_id,forget_rate,fType,fAmount, test(row,:));
+            end
+        end
     end
 end
 end
