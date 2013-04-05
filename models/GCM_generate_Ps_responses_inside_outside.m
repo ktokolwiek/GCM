@@ -1,4 +1,4 @@
-function GCM_generate_Ps_responses(forget_rate)
+function GCM_generate_Ps_responses_inside_outside(forget_rate)
 
     function [training,test] = get_training_stimuli(feed_type, feed_amount, region)
         % region 1 = overlapping (right half of the left distribution and
@@ -18,22 +18,22 @@ function GCM_generate_Ps_responses(forget_rate)
         list_test = (1:60)';
         N_first_instances = 5; % minimum number of instances with feedback at the beginning
         %% Take the N first instances randomly sampled from both distributions
-        first_A = randi(80,[1 N_first_instances]);
-        first_D = randi(80,[1 N_first_instances]);
+        first_A = randperm(80,N_first_instances);
+        first_D = randperm(80,N_first_instances)+80;
         indices_first = [first_A first_D];
-        indices_first = indices_first(randperm(2*N_first_instances));
+        indices_first = shuffle(indices_first); % shuffle the indices
         if region == 1
             % overlapping
             no_feedback_indices_A = setdiff(41:80, first_A);
             feedback_indices_A = setdiff(1:40, first_A);
-            no_feedback_indices_D = setdiff(1:40, first_D);
-            feedback_indices_D = setdiff(41:80, first_D);
+            no_feedback_indices_D = setdiff(81:120, first_D);
+            feedback_indices_D = setdiff(121:160, first_D);
         elseif region == 2
             % non-overlapping
             no_feedback_indices_A = setdiff(1:40, first_A);
             feedback_indices_A = setdiff(41:80, first_A);
-            no_feedback_indices_D = setdiff(41:80, first_D);
-            feedback_indices_D = setdiff(1:40, first_D);
+            no_feedback_indices_D = setdiff(121:160, first_D);
+            feedback_indices_D = setdiff(81:120, first_D);
         end
         
         %% Add feedback
@@ -46,9 +46,9 @@ function GCM_generate_Ps_responses(forget_rate)
             list_A(:,2) = (list_A>30.5) * 2 - 1;
             list_D(:,2) = (list_D>30.5) * 2 - 1;
         end
+        list_training = [list_A; list_D]; % list with all training instances.
         
-        %% Remove feedback if needed
-        %%%%%%%%%%%%%%%% edit 3/04/2013 up to here.
+        %% Which feedback to remove?
         % Make sure here that the lists are shuffled.
         if feed_amount > 1
             %if partial feedback then select some randome elements of A
@@ -58,34 +58,31 @@ function GCM_generate_Ps_responses(forget_rate)
             rand_A = randsample(no_feedback_indices_A,no_ommitted_A);
             rand_D = randsample(no_feedback_indices_D,no_ommitted_D);
             % ^ sample from the lists of feedback to remove
-            first_instances_A = setdiff(1:80, rand_A);
-            first_instances_D = setdiff(1:80, rand_D);
-            % ^ get the instances for which we give feedback
-            first_instances_A = randsample(first_instances_A, N_first_instances);
-            first_instances_D = randsample(first_instances_D, N_first_instances);
-            % ^ sample N of these - we will put them at the beginning of
-            % the training list.
-            
-            %multiply them by two so that we know which distribution it came from.
-            list_A(rand_A,2) = list_A(rand_A,2)*2;
-            %same for category D
-            
-            list_D(rand_D,2) = list_D(rand_D,2)*2;
+        else
+            % no feedback is removed, so these indices are empty.
+            rand_A=[];
+            rand_D=[];
         end
-        
+        % Now we know for which indices we remove feedback (rand_A and
+        % rand_D) and for which ones we don't (feedback_indices_A and
+        % feedback_indices_D). Just shuffle the indices and build a list,
+        % which is order of presentation.
+        feedback_indices_A = [feedback_indices_A setdiff(no_feedback_indices_A,rand_A)];
+        feedback_indices_D = [feedback_indices_D setdiff(no_feedback_indices_D,rand_D)];
+        indices_later = [feedback_indices_A feedback_indices_D rand_A rand_D];
+        indices_later = shuffle(indices_later);
+        order_of_presentation = [indices_first indices_later];
+        %% Now remove the feedback for the instances we found
+        list_training([rand_A rand_D],2) = list_training([rand_A rand_D],2)*2; % mark it times 2
         %% Add test set
         list_test(:,2) = (list_test>30.5) * 2 - 1;
-        %% shuffle both lists
-        list_A=list_A(randperm(length(list_A)),:);
-        list_D=list_D(randperm(length(list_D)),:);
-        list_test = list_test(randperm(length(list_test)),:);
-        
-        training = [list_A;list_D];
-        test=list_test;
+        %% shuffle both lists (training list order is already found in order_of_presentation.
+        test = list_test(randperm(length(list_test)),:);
+        training = list_training(order_of_presentation,:);
     end
 
 
-
+%%%%%%%%%%%%%%%% edit 4/04/2013 up to here.
 %%%%%%%%
 %% Here we need to implement the different feedback types and how we infer
 % from the length.
@@ -157,6 +154,7 @@ function GCM_generate_Ps_responses(forget_rate)
             if (oldCat == -2) || (oldCat == 2)
                 % no feedback was given
             end
+            % we use presented category here... 
             catA = presentedData(presentedData(:,4)==-1,1);
             catB = presentedData(presentedData(:,4)==1,1);
             % just the lengths of instances in Cat A or B
@@ -296,6 +294,7 @@ function GCM_generate_Ps_responses(forget_rate)
         end
         
     end
+
 
 
 %% loop through possibilities
