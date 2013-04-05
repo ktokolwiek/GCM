@@ -1,4 +1,4 @@
-function GCM_generate_Ps_responses_inside_outside()
+function GCM_generate_Ps_responses_inside_outside_harder()
 
     function [training,test] = get_training_stimuli(feed_type, feed_amount, region)
         % region 1 = overlapping (right half of the left distribution and
@@ -22,18 +22,19 @@ function GCM_generate_Ps_responses_inside_outside()
         first_D = randperm(80,N_first_instances)+80;
         indices_first = [first_A first_D];
         indices_first = shuffle(indices_first); % shuffle the indices
+        overlap = 20;
         if region == 1
             % overlapping
-            no_feedback_indices_A = setdiff(41:80, first_A);
-            feedback_indices_A = setdiff(1:40, first_A);
-            no_feedback_indices_D = setdiff(81:120, first_D);
-            feedback_indices_D = setdiff(121:160, first_D);
+            no_feedback_indices_A = setdiff(81-overlap:80, first_A);
+            feedback_indices_A = setdiff(1:80-overlap, first_A);
+            no_feedback_indices_D = setdiff(81:80+overlap, first_D);
+            feedback_indices_D = setdiff(81+overlap:160, first_D);
         elseif region == 2
             % non-overlapping
-            no_feedback_indices_A = setdiff(1:40, first_A);
-            feedback_indices_A = setdiff(41:80, first_A);
-            no_feedback_indices_D = setdiff(121:160, first_D);
-            feedback_indices_D = setdiff(81:120, first_D);
+            no_feedback_indices_A = setdiff(1:80-overlap, first_A);
+            feedback_indices_A = setdiff(81-overlap:80, first_A);
+            no_feedback_indices_D = setdiff(81+overlap:160, first_D);
+            feedback_indices_D = setdiff(81:80+overlap, first_D);
         end
         
         %% Add feedback
@@ -283,8 +284,8 @@ feedback_amounts = 1:11; %1- 100%, 2- some taken out
 feedback_removed = [1 2]; %1- overlap, 2-no overlap
 N_per_cell = 10;
 N_repeats = 1;
-fname_train = '../GCM_predictions/predictions_training.csv';
-fname_test = '../GCM_predictions/predictions_test.csv';
+fname_train = '../GCM_predictions/predictions_training_overlap_20.csv';
+fname_test = '../GCM_predictions/predictions_test_overlap_20.csv';
 ftrain = fopen(fname_train, 'w');
 fprintf(ftrain, 'ps_id,feedback_type,feedback_amount,region,length,feedback,ideal,model_answer,feedback_actually_received,memory_state\n', 1);
 ftest = fopen(fname_test, 'w');
