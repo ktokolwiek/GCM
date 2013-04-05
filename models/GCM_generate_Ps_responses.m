@@ -38,12 +38,11 @@ function GCM_generate_Ps_responses(forget_rate)
         
         %% Add test set
         list_test(:,2) = (list_test>30.5) * 2 - 1;
-        %% shuffle both lists
-        list_A=list_A(randperm(length(list_A)),:);
-        list_D=list_D(randperm(length(list_D)),:);
-        list_test = list_test(randperm(length(list_test)),:);
-        
+        %% Join lists
         training = [list_A;list_D];
+        %% shuffle both lists
+        list_test = list_test(randperm(length(list_test)),:);
+        training = training(randperm(length(training)),:);
         test=list_test;
     end
 

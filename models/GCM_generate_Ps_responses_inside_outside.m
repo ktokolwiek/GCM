@@ -1,9 +1,10 @@
 function GCM_generate_Ps_responses(forget_rate)
 
     function [training,test] = get_training_stimuli(feed_type, feed_amount, region)
-        % region 1 = outer edges of distributions (v. short and v. long)
-        % region 2 = boundary
-        % region 3 = inner edges
+        % region 1 = overlapping (right half of the left distribution and
+        % left half of the right distribution)
+        % region 2 = non-overlapping (left half of the left distribution
+        % and right half of the right distribution)
         %% Distributions
         %High variance
         list_A = [6 7 8 9 10 11 12 13 14 14 15 15 16 16 17 17 18 18 19 19 ...
@@ -16,14 +17,23 @@ function GCM_generate_Ps_responses(forget_rate)
             44 45 45 46 46 47 47 48 49 50 51 52 53 54 55]';
         list_test = (1:60)';
         N_first_instances = 5; % minimum number of instances with feedback at the beginning
+        %% Take the N first instances randomly sampled from both distributions
+        first_A = randi(80,[1 N_first_instances]);
+        first_D = randi(80,[1 N_first_instances]);
+        indices_first = [first_A first_D];
+        indices_first = indices_first(randperm(2*N_first_instances));
         if region == 1
-            % edges of distributions
-            no_feedback_indices_A = find(list_A<20);
-            no_feedback_indices_D = find(list_D>40);
+            % overlapping
+            no_feedback_indices_A = setdiff(41:80, first_A);
+            feedback_indices_A = setdiff(1:40, first_A);
+            no_feedback_indices_D = setdiff(1:40, first_D);
+            feedback_indices_D = setdiff(41:80, first_D);
         elseif region == 2
-            % boundary
-            no_feedback_indices_A = find(list_A>25 & list_A<35);
-            no_feedback_indices_D = find(list_D>25 & list_D<35);
+            % non-overlapping
+            no_feedback_indices_A = setdiff(1:40, first_A);
+            feedback_indices_A = setdiff(41:80, first_A);
+            no_feedback_indices_D = setdiff(41:80, first_D);
+            feedback_indices_D = setdiff(1:40, first_D);
         end
         
         %% Add feedback
@@ -38,10 +48,12 @@ function GCM_generate_Ps_responses(forget_rate)
         end
         
         %% Remove feedback if needed
+        %%%%%%%%%%%%%%%% edit 3/04/2013 up to here.
+        % Make sure here that the lists are shuffled.
         if feed_amount > 1
             %if partial feedback then select some randome elements of A
-            no_ommitted_A = length(no_feedback_indices_A)/10*(feed_amount-1);
-            no_ommitted_D = length(no_feedback_indices_D)/10*(feed_amount-1);
+            no_ommitted_A = ceil(length(no_feedback_indices_A)/10*(feed_amount-1));
+            no_ommitted_D = ceil(length(no_feedback_indices_D)/10*(feed_amount-1));
             % ^ count how many
             rand_A = randsample(no_feedback_indices_A,no_ommitted_A);
             rand_D = randsample(no_feedback_indices_D,no_ommitted_D);
