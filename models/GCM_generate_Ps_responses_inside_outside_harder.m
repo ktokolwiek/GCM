@@ -1,4 +1,4 @@
-function GCM_generate_Ps_responses_inside_outside_harder()
+function GCM_generate_Ps_responses_inside_outside_harder(overlap)
 
     function [training,test] = get_training_stimuli(feed_type, feed_amount, region)
         % region 1 = overlapping (right half of the left distribution and
@@ -22,7 +22,6 @@ function GCM_generate_Ps_responses_inside_outside_harder()
         first_D = randperm(80,N_first_instances)+80;
         indices_first = [first_A first_D];
         indices_first = shuffle(indices_first); % shuffle the indices
-        overlap = 20;
         if region == 1
             % overlapping
             no_feedback_indices_A = setdiff(81-overlap:80, first_A);
@@ -192,9 +191,13 @@ function GCM_generate_Ps_responses_inside_outside_harder()
               
         %% Forget instance
         function forget()
-            for inst=presented
+            presented_before = presented;
+            for inst=presented_before
                 if rand<forget_rate
+                    % remove this inst from presented
+                    presented = setdiff(presented, inst);
                     [cat,~] = get_cat_membership(inst);
+                    presented = [presented inst];
                     trainingData(inst,6)=cat; % save it in the memory state.
                 end
             end
@@ -282,7 +285,7 @@ function GCM_generate_Ps_responses_inside_outside_harder()
 feedback_types = [1 2]; %1- actual, 2- ideal
 feedback_amounts = 1:11; %1- 100%, 2- some taken out
 feedback_removed = [1 2]; %1- overlap, 2-no overlap
-N_per_cell = 10;
+N_per_cell = 100;
 N_repeats = 1;
 fname_train = '../GCM_predictions/predictions_training_overlap_20.csv';
 fname_test = '../GCM_predictions/predictions_test_overlap_20.csv';
