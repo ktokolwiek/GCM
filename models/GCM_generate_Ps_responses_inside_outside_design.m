@@ -9,7 +9,7 @@ function GCM_generate_Ps_responses_inside_outside_design(overlap)
         training_phase_1(:,2) = (training_phase_1>30)*2-1;
         training_phase_2 = [repmat((1:20)',2,1); repmat((41:60)',2,1)];
         training_phase_2(training_phase_2(:,1)<11,2) = -1;
-        training_phase_2(training_phase_2(:,1)>49,2) = 1;
+        training_phase_2(training_phase_2(:,1)>49,2) = 1; % deterministic feedback in regions 1 and 6
         if feed_type == 2
             % if we give Ps the 60% / 40% feedback in regions 2 and 5
             multiplier = 1;
@@ -26,7 +26,7 @@ function GCM_generate_Ps_responses_inside_outside_design(overlap)
                     % it is 40% cat A
                     prob = 0.4;
                 end
-                if randn < prob
+                if rand < prob
                     training_phase_2(i,2) = -multiplier;
                 else
                     training_phase_2(i,2) = multiplier;
@@ -243,7 +243,7 @@ function GCM_generate_Ps_responses_inside_outside_design(overlap)
 
 %% loop through possibilities
 feedback_types = [1 2]; %1- 'fake', 2- 60%/40%
-N_per_cell = 1000;
+N_per_cell = 100;
 N_repeats = 1;
 fname_train = '../GCM_predictions/predictions_training_study_design.csv';
 fname_test = '../GCM_predictions/predictions_test_study_design.csv';
