@@ -95,7 +95,12 @@ function GCM_generate_Ps_responses_inside_outside_design()
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
-            presentedData=trainingData(presented(max(1,end-sample_n+1):end-1),:); % We don't have
+            if length(presented)>sample_n
+                sample = randsample(presented(1:end-1),sample_n);
+            else
+                sample = presented(1:end-1);
+            end
+            presentedData=trainingData(sample,:); % We don't have
             % the feedback for the instamnce which is just presented (the
             % one which we are comparing now to all the previously
             % presented ones).
