@@ -1,38 +1,24 @@
-function GCM_generate_Ps_responses_inside_outside_design(overlap)
-
+function GCM_generate_Ps_responses_inside_outside_design()
+    sample_n = 6;
     function [training,test] = get_training_stimuli(feed_type)
         % the lengths are divided into 6 regions - 100% cat A, 60% cat A,
         % blank, blank, 40% cat A, 0% cat A
         % phase 1 - we train on regions 1 and 6.
-        training_phase_1 = [repmat((1:10)',2,1); repmat((51:60)',2,1)];
+        training_phase_1 = [repmat((6:13)',3,1); repmat((46:53)',3,1)];
         training_phase_1 = shuffle(training_phase_1);
         training_phase_1(:,2) = (training_phase_1>30)*2-1;
-        training_phase_2 = [repmat((1:20)',2,1); repmat((41:60)',2,1)];
-        training_phase_2(training_phase_2(:,1)<11,2) = -1;
-        training_phase_2(training_phase_2(:,1)>49,2) = 1; % deterministic feedback in regions 1 and 6
+        training_phase_2 = [repmat((6:13)',5,1) -ones(40,1);
+            repmat((14:21)',3,1) -ones(3*8,1);
+            repmat((14:21)',2,1) ones(2*8,1);
+            repmat((38:45)',2,1) -ones(2*8,1);
+            repmat((38:45)',3,1) ones(3*8,1);
+            repmat((46:53)',5,1) ones(40,1)]; % that is the 100%/60%/40%/0%
+        % distribution.
         if feed_type == 2
-            % if we give Ps the 60% / 40% feedback in regions 2 and 5
-            multiplier = 1;
-        else
-            multiplier = 2; % means we give Ps the 'fake' feedback
-        end
-        for i=1:length(training_phase_2)
-            if training_phase_2(i,2) == 0
-                % i.e. it is in region 3 or 5
-                if training_phase_2(i,1) <30
-                    %it is 60% cat A
-                    prob = 0.6;
-                else
-                    % it is 40% cat A
-                    prob = 0.4;
-                end
-                if rand < prob
-                    training_phase_2(i,2) = -multiplier;
-                else
-                    training_phase_2(i,2) = multiplier;
-                end
-            end
-        end
+            training_phase_2(training_phase_2(:,1)<46 & training_phase_2(:,1)>13,2) = ...
+                2*training_phase_2(training_phase_2(:,1)<46 & training_phase_2(:,1)>13,2);
+        end % <- Make the feedback for the inner regions 'fake',
+        % i.e. times it by two.
         list_test = (1:60)';
         %% Add test set
         list_test(:,2) = (list_test>30.5) * 2 - 1;
@@ -109,7 +95,7 @@ function GCM_generate_Ps_responses_inside_outside_design(overlap)
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
-            presentedData=trainingData(presented(1:end-1),:); % We don't have
+            presentedData=trainingData(presented(max(1,end-sample_n+1):end-1),:); % We don't have
             % the feedback for the instamnce which is just presented (the
             % one which we are comparing now to all the previously
             % presented ones).
@@ -242,11 +228,11 @@ function GCM_generate_Ps_responses_inside_outside_design(overlap)
 
 
 %% loop through possibilities
-feedback_types = [1 2]; %1- 'fake', 2- 60%/40%
+feedback_types = [1 2]; %1- 60%/40%, 2 - 'fake'
 N_per_cell = 100;
 N_repeats = 1;
-fname_train = '../GCM_predictions/predictions_training_study_design.csv';
-fname_test = '../GCM_predictions/predictions_test_study_design.csv';
+fname_train = '../GCM_predictions/predictions_training_study_design_simple.csv';
+fname_test = '../GCM_predictions/predictions_test_study_design_simple.csv';
 ftrain = fopen(fname_train, 'w');
 fprintf(ftrain, 'ps_id,feedback_type,length,feedback,ideal,model_answer,feedback_actually_received,memory_state\n', 1);
 ftest = fopen(fname_test, 'w');
