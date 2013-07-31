@@ -269,11 +269,11 @@ fname_train = ['../GCM_predictions/predictions_training' num2str(forget_rate) '.
 fname_test = ['../GCM_predictions/predictions_test' num2str(forget_rate) '.csv'];
 ftrain = fopen(fname_train, 'w');
 if forget_rate == 0
-    fprintf(ftrain, 'ps_id,forget_rate,feedback_type,feedback_amount,length,feedback,ideal,model_forg\n', 1);
+    fprintf(ftrain, 'ps_id,forget_rate,length,feedback,ideal,model_forg\n', 1);
 end
 ftest = fopen(fname_test, 'w');
 if forget_rate==0
-    fprintf(ftest, 'ps_id,forget_rate,feedback_type,feedback_amount,length,model_forg,ideal\n', 1);
+    fprintf(ftest, 'ps_id,forget_rate,length,model_forg,ideal\n', 1);
 end
 ps_ids_used = [112101 112102 112103 112104 112105 112106 112107 ...
     112108 112110 112202 112203 112204 112205 112206 112207 112208 112209 ...
@@ -282,24 +282,23 @@ ps_ids_used = [112101 112102 112103 112104 112105 112106 112107 ...
 for fType = feedback_types
     for fAmount = feedback_amounts
         for ps=ps_ids_used
-            [trainingset,testset] = get_training_stimuli(...
+            [trainingset,testset] = read_training_stimuli(...
                 '../../raw_data/randall_learn_recoded.csv',...
                 '../../raw_data/randall_test_recoded.csv',ps);
             for rep = 1:N_repeats
                 [train,ll,test] = GCM_generative_model('training_set', trainingset,...
                     'test_set', testset, 'forget_rate', forget_rate);
             end
-            ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
             
             %% save the training data
             [nrows,~]= size(train);
             for row=1:nrows
-                fprintf(ftrain, '%s,%.5f,%d,%d,%.2f,%d,%d,%d\n', ps_id,forget_rate,fType,fAmount,train(row,:));
+                fprintf(ftrain, '%s,%.5f,%.2f,%d,%d,%d\n', ps,forget_rate,train(row,:));
             end
             %% save the test data
             [nrows,~]= size(test);
             for row=1:nrows
-                fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps_id,forget_rate,fType,fAmount, test(row,:));
+                fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps,forget_rate, test(row,:));
             end
         end
     end
