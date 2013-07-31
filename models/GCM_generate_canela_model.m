@@ -1,33 +1,51 @@
- 	function GCM_generate_Ps_responses_inside_outside_design()
-    recency_sample = 0;
+function GCM_generate_canela_model()
+    recency_sample = 1;
     similarity_sample = 1;
     sample_n = 6;
-    function [training,test] = get_training_stimuli(feed_type)
-        % the lengths are divided into 6 regions - 100% cat A, 60% cat A,
-        % blank, blank, 40% cat A, 0% cat A
-        % phase 1 - we train on regions 1 and 6.
-        training_phase_1 = [repmat((6:13)',3,1); repmat((46:53)',3,1)];
-        training_phase_1 = shuffle(training_phase_1);
-        training_phase_1(:,2) = (training_phase_1>30)*2-1;
-        training_phase_2 = [repmat((6:13)',5,1) -ones(40,1);
-            repmat((14:21)',3,1) -ones(3*8,1);
-            repmat((14:21)',2,1) ones(2*8,1);
-            repmat((38:45)',2,1) -ones(2*8,1);
-            repmat((38:45)',3,1) ones(3*8,1);
-            repmat((46:53)',5,1) ones(40,1)]; % that is the 100%/60%/40%/0%
-        % distribution.
-        if feed_type == 2
-            training_phase_2(training_phase_2(:,1)<46 & training_phase_2(:,1)>13,2) = ...
-                2*training_phase_2(training_phase_2(:,1)<46 & training_phase_2(:,1)>13,2);
-        end % <- Make the feedback for the inner regions 'fake',
-        % i.e. times it by two.
+    function [training,test] = get_training_stimuli(feed_type, feed_amount)
+        %% Distributions
+        %High variance
+        list_A = [6 7 8 9 10 11 12 13 14 14 15 15 16 16 17 17 18 18 19 19 ...
+            20 20 21 21 21 22 22 22 23 23 23 24 24 24 25 25 25 26 26 26 27 27 27 ...
+            28 28 28 29 29 29 30 30 30 31 31 31 32 32 32 33 33 34 34 35 35 36 36 ...
+            37 37 38 38 39 39 40 41 42 43 44 45 46 47]';
+        list_D = [14 15 16 17 18 19 20 21 22 22 23 23 24 24 25 25 26 26 27 ...
+            27 28 28 29 29 29 30 30 30 31 31 31 32 32 32 33 33 33 34 34 34 35 35 ...
+            35 36 36 36 37 37 37 38 38 38 39 39 39 40 40 40 41 41 42 42 43 43 44 ...
+            44 45 45 46 46 47 47 48 49 50 51 52 53 54 55]';
         list_test = (1:60)';
+        
+        %% Add feedback
+        if feed_type == 1
+            % actual feedback
+            list_A(:,2) = -1;
+            list_D(:,2) = 1;
+        elseif feed_type == 2
+            % ideal feedback
+            list_A(:,2) = (list_A>30.5) * 2 - 1;
+            list_D(:,2) = (list_D>30.5) * 2 - 1;
+        end
+        
+        %% Remove feedback if needed
+        if feed_amount > 1
+            %if partial feedback then select some randome elements of A
+            no_ommitted = 8*(feed_amount-1);
+            rand_A = randperm(80,no_ommitted);
+            %multiply them by two so that we know which distribution it came from.
+            list_A(rand_A,2) = list_A(rand_A,2)*2;
+            %same for category D
+            rand_D = randperm(80,no_ommitted);
+            list_D(rand_D,2) = list_D(rand_D,2)*2;
+        end
+        
         %% Add test set
         list_test(:,2) = (list_test>30.5) * 2 - 1;
-        %% shuffle both lists (training list order is already found in order_of_presentation.
-        test = list_test(randperm(length(list_test)),:);
-        training_phase_2 = training_phase_2(randperm(length(training_phase_2)),:);
-        training = [training_phase_1; training_phase_2];
+        %% Join lists
+        training = [list_A;list_D];
+        %% shuffle both lists
+        list_test = list_test(randperm(length(list_test)),:);
+        training = training(randperm(length(training)),:);
+        test=list_test;
     end
 
 
@@ -237,32 +255,34 @@
 feedback_types = [1 2]; %1- 60%/40%, 2 - 'fake'
 N_per_cell = 100;
 N_repeats = 1;
-fname_train = '../GCM_predictions/predictions_training_study_design_simple_no_sampling.csv';
-fname_test = '../GCM_predictions/predictions_test_study_design_simple_no_sampling.csv';
+fname_train = '../GCM_predictions/predictions_training_canela.csv';
+fname_test = '../GCM_predictions/predictions_test_canela.csv';
 ftrain = fopen(fname_train, 'w');
-fprintf(ftrain, 'ps_id,feedback_type,length,feedback,ideal,model_answer,feedback_actually_received,memory_state\n', 1);
+fprintf(ftrain, 'ps_id,feedback_type,feedback_amount,length,feedback,ideal,model_answer,feedback_actually_received,memory_state\n', 1);
 ftest = fopen(fname_test, 'w');
-fprintf(ftest, 'ps_id,feedback_type,length,model_answer,ideal\n', 1);
+fprintf(ftest, 'ps_id,feedback_type,feedback_amount,length,model_answer,ideal\n', 1);
 for fType = feedback_types
-    for ps=1:N_per_cell
-        [trainingset,testset] = get_training_stimuli(fType);
-        for rep = 1:N_repeats
-            [train,test,ll_train,ll_test] = GCM_generative_model('training_set', trainingset,...
-                'test_set', testset);
+    for fAmount = [1 3]
+        for ps=1:N_per_cell
+            [trainingset,testset] = get_training_stimuli(fType,fAmount);
+            for rep = 1:N_repeats
+                [train,test,ll_train,ll_test] = GCM_generative_model('training_set', trainingset,...
+                    'test_set', testset);
+            end
+            ps_id = sprintf('%1d%1d%02d', fType,fAmount,ps);
+            
+            %% save the training data
+            [nrows,~]= size(train);
+            for row=1:nrows
+                fprintf(ftrain, '%s,%d,%d,%.2f,%d,%d,%d,%d,%d\n', ps_id,fType,fAmount,train(row,:));
+            end
+            %% save the test data
+            [nrows,~]= size(test);
+            for row=1:nrows
+                fprintf(ftest, '%s,%d,%d,%.2f,%d,%d\n',ps_id,fType,fAmount,test(row,:));
+            end
+            
         end
-        ps_id = sprintf('%1d%02d', fType,ps);
-        
-        %% save the training data
-        [nrows,~]= size(train);
-        for row=1:nrows
-            fprintf(ftrain, '%s,%d,%.2f,%d,%d,%d,%d,%d\n', ps_id,fType,train(row,:));
-        end
-        %% save the test data
-        [nrows,~]= size(test);
-        for row=1:nrows
-            fprintf(ftest, '%s,%d,%.2f,%d,%d\n',ps_id,fType,test(row,:));
-        end
-        
     end
 end
 end
