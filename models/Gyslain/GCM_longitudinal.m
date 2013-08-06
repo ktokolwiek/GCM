@@ -85,11 +85,11 @@ function GCM_longitudinal(forget_rate)
         trial = p.Results.trial;
         
         if verbose==100
-            fprintf('Model with gamma %.1f, forget rate %.10f, choice parameter %d, noise mean %.1f, noise sd %.1f.\n',...
-                gamma, forget_rate,choice_parameter,noise_mu,noise_sigma);
+            fprintf('Model with gamma %.1f, forget rate %.10f, choice parameter %d, noise mean %.1f, noise sd %.1f., PS: %d\n',...
+                gamma, forget_rate,choice_parameter,noise_mu,noise_sigma,ps_id);
         end
         
-        %% Read the training and test data file
+        %% Read the training and test data
         
         trainingData = training_set;
         noInstances = length(trainingData(:,1));
@@ -98,8 +98,7 @@ function GCM_longitudinal(forget_rate)
         trainingData(:,1) = trainingData(:,1) + (noise_mu + noise_sigma.*randn(noInstances,1));
         % add perceptual noise
         trainingData = [trainingData trainingData(:,2)];
-        % copy the feedback to modelled category (twice, once for without
-        % and once for with forgetting).
+        % copy the feedback to modelled category
         % (1) length, (2) feedback, (3) idealCat, (4)
         % modelledCat_with_forgetting
         testData = test_set;
@@ -113,13 +112,17 @@ function GCM_longitudinal(forget_rate)
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
-            presentedData=trainingData(presented(1:end-1),:);
+            %% Sampling here: get up to 10 last items
+            if length(presented)<10
+                sample_end = length(presented)-1;
+            else
+                sample_end = 9;
+            end
+            
+            presentedData=trainingData(presented(1:sample_end),:);
             len = trainingData(inst_no,1);
             oldCat = trainingData(inst_no,4); %using modelled category here,
             % it is the same as presented category to begin with anyway.
-            if (oldCat == -2) || (oldCat == 2)
-                % no feedback was given
-            end
             catA = presentedData(presentedData(:,4)==-1,1);
             catB = presentedData(presentedData(:,4)==1,1);
             % just the lengths of instances in Cat A or B
@@ -131,6 +134,8 @@ function GCM_longitudinal(forget_rate)
                     cat = 1;
                 end
             else
+                %% IMPLEMENT SAMPLING!!!
+                %% IMPLEMENT RESAMPLING!!!
                 sumCatA=sum(exp(-choice_parameter*abs(catA-len)));
                 sumCatB=sum(exp(-choice_parameter*abs(catB-len)));
                 % If we know the category membership of an instance then we
@@ -265,41 +270,41 @@ function GCM_longitudinal(forget_rate)
 feedback_types = [1 2]; %1- actual, 2- ideal
 feedback_amounts = 1:11; %1- 100%, 2- some taken out
 N_repeats = 100;
-fname_train = ['../GCM_predictions/predictions_training' num2str(forget_rate) '.csv'];
-fname_test = ['../GCM_predictions/predictions_test' num2str(forget_rate) '.csv'];
-ftrain = fopen(fname_train, 'w');
-if forget_rate == 0
-    fprintf(ftrain, 'ps_id,forget_rate,length,feedback,ideal,model_forg\n', 1);
-end
-ftest = fopen(fname_test, 'w');
-if forget_rate==0
-    fprintf(ftest, 'ps_id,forget_rate,length,model_forg,ideal\n', 1);
-end
+
+%% parameters
+forget_rates = [0, 1E-7, 1E-5, 1E-3, 0.1, 0.2, 0.5];
 ps_ids_used = [112101 112102 112103 112104 112105 112106 112107 ...
     112108 112110 112202 112203 112204 112205 112206 112207 112208 112209 ...
     112210 112211];
 
-for fType = feedback_types
-    for fAmount = feedback_amounts
-        for ps=ps_ids_used
-            [trainingset,testset] = read_training_stimuli(...
-                '../../raw_data/randall_learn_recoded.csv',...
-                '../../raw_data/randall_test_recoded.csv',ps);
-            for rep = 1:N_repeats
-                [train,ll,test] = GCM_generative_model('training_set', trainingset,...
-                    'test_set', testset, 'forget_rate', forget_rate);
-            end
-            
-            %% save the training data
-            [nrows,~]= size(train);
-            for row=1:nrows
-                fprintf(ftrain, '%s,%.5f,%.2f,%d,%d,%d\n', ps,forget_rate,train(row,:));
-            end
-            %% save the test data
-            [nrows,~]= size(test);
-            for row=1:nrows
-                fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps,forget_rate, test(row,:));
-            end
+%% init files
+fname_train = ['../../GCM_predictions/Gyslain/predictions_training.csv'];
+fname_test = ['../../GCM_predictions/Gyslain/predictions_test.csv'];
+ftrain = fopen(fname_train, 'w');
+fprintf(ftrain, 'ps_id,forget_rate,length,feedback,ideal,model_forg\n', 1);
+ftest = fopen(fname_test, 'w');
+fprintf(ftest, 'ps_id,forget_rate,length,model_forg,ideal\n', 1);
+
+
+for ps=ps_ids_used
+    for frate = forget_rates
+        [trainingset,testset] = read_training_stimuli(...
+            '../../raw_data/randall_learn_recoded.csv',...
+            '../../raw_data/randall_test_recoded.csv',ps);
+        for rep = 1:N_repeats
+            [train,ll,test] = GCM_generative_model('training_set', trainingset,...
+                'test_set', testset, 'forget_rate', frate, 'ps_id', ps);
+        end
+
+        %% save the training data
+        [nrows,~]= size(train);
+        for row=1:nrows
+            fprintf(ftrain, '%s,%.5f,%.2f,%d,%d,%d\n', ps,frate,train(row,:));
+        end
+        %% save the test data
+        [nrows,~]= size(test);
+        for row=1:nrows
+            fprintf(ftest, '%s,%.5f,%d,%d,%.2f,%d,%d\n',ps,frate, test(row,:));
         end
     end
 end
