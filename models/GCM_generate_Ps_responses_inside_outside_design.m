@@ -97,6 +97,17 @@
         %% Get category memberships
         
         function [cat,ll] = get_cat_membership(inst_no)
+<<<<<<< HEAD
+            if length(presented)>sample_n
+                sample = randsample(presented(1:end-1),sample_n);
+            else
+                sample = presented(1:end-1);
+            end
+            presentedData=trainingData(sample,:); % We don't have
+            % the feedback for the instamnce which is just presented (the
+            % one which we are comparing now to all the previously
+            % presented ones).
+=======
             if recency_sample
                 presentedData=trainingData(presented(max(1,end-sample_n+1):end-1),:); % We don't have
                 % the feedback for the instamnce which is just presented (the
@@ -105,6 +116,7 @@
             else
                 presentedData = trainingData(presented(1:end-1),:);
             end
+>>>>>>> 2edd5b4cccb4307c50e2a2aa675d35057a0ddd9c
             len = trainingData(inst_no,1);
             % we use the sixth column, i.e. the memory state, incl.
             % feedback we actually received (including the 'fake' feedback).
